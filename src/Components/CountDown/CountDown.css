@@ -1,0 +1,53 @@
+.container {
+  width: 50%;
+}
+
+.container h2 {
+  text-align: center;
+  color: #f44436;
+  margin: 1em 0;
+  font-size: 18px;
+}
+
+.counterBox {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.counterBox div {
+  text-align: center;
+}
+
+.counterBox p {
+  font-family: "iransB";
+  color: #f44436;
+  font-size: 24px;
+}
+
+.counterBox span {
+  color: #f44436;
+  font-size: 18px;
+}
+
+@media screen and (max-width: 880px) {
+  .container h2 {
+    font-size: 16px;
+  }
+  .counterBox p {
+    font-size: 18px;
+  }
+  .counterBox span {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 720px) {
+  .container {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .Container {
+    width: 100%;
+  }
+}

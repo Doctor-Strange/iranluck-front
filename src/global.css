@@ -1,0 +1,40 @@
+/* ADD STYLE FOR GLOBAL PURPOSE */
+
+.Drop {
+  border: 1px solid #176ccf;
+  position: relative;
+  height: 40px;
+  width: 0px;
+  display: block;
+  margin: auto;
+}
+.Drop:after {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: #176ccf;
+  content: "";
+  clear: both;
+  display: block;
+  bottom: -8px;
+  right: -4px;
+  left: 0%;
+  margin: auto;
+  border-radius: 50%;
+}
+
+/* RESPONSIVE */
+
+.Responsive {
+  padding: 0 10px;
+  width: 1346px;
+  margin: auto;
+  display: block;
+}
+
+@media screen and (max-width: 1366px) {
+  .Responsive {
+    padding: 0 1%;
+    width: 98%;
+  }
+}
