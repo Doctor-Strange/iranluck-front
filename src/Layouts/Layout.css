@@ -1,0 +1,17 @@
+.ToggleIcon {
+    padding: 10px;
+    background: #2f2c61;
+    display: none;
+    cursor: pointer;
+}
+.ToggleIcon div{
+    border: 2px solid #fff;
+    margin: 4px;
+    width: 30px;
+}
+
+@media screen and (max-width: 650px) {
+    .ToggleIcon {
+        display: block;
+    }
+}

@@ -1,12 +1,12 @@
 import React from "react";
 import classes from "./SendToFriends.css";
-import global from "../../global.css";
-import netWorkIcon from "../../Assets/netWorkIcon.png";
-import telegram from "../../Assets/telegram.png";
-import instagram from "../../Assets/instagram.png";
-import facebook from "../../Assets/facebook.png";
-import whatsapp from "../../Assets/whatsapp.png";
-import twitter from "../../Assets/twitter.png";
+import global from "../../../global.css";
+import netWorkIcon from "../../../Assets/netWorkIcon.png";
+import telegram from "../../../Assets/telegram.png";
+import instagram from "../../../Assets/instagram.png";
+import facebook from "../../../Assets/facebook.png";
+import whatsapp from "../../../Assets/whatsapp.png";
+import twitter from "../../../Assets/twitter.png";
 
 const SendToFriends = props => {
   return (
@@ -27,35 +27,35 @@ const SendToFriends = props => {
         </label>
       </form>
       <div className={classes.SocilaContainer}>
-        <a href="">
+        <a target="_blank" without rel="noopener noreferrer" href="https://facebook.com/">
           <img
             className={classes.SocialIcon}
             src={facebook}
             alt="Social media"
           />
         </a>
-        <a href="">
+        <a target="_blank" without rel="noopener noreferrer" href="https://twitter.com/intent/tweet?text=https://temp.iranluck.com/?ref=234324">
           <img
             className={classes.SocialIcon}
             src={twitter}
             alt="Social media"
           />
         </a>
-        <a href="">
+        <a target="_blank" without rel="noopener noreferrer" href="https://api.whatsapp.com/send?phone=whatsappphonenumber&text=https://temp.iranluck.com">
           <img
             className={classes.SocialIcon}
             src={whatsapp}
             alt="Social media"
           />
         </a>
-        <a href="">
+        <a target="_blank" without rel="noopener noreferrer" href="https://telegram.me/share/url?url=https://temp.iranluck.com&text=این لینک به وسیله دوستتان برای شما ارسال شده است.با ثبت نام در سایت برنده شوید">
           <img
             className={classes.SocialIcon}
             src={telegram}
             alt="Social media"
           />
         </a>
-        <a href="">
+        <a target="_blank" without rel="noopener noreferrer" href="http://instagram.com/_u/iranLuck/">
           <img
             className={classes.SocialIcon}
             src={instagram}

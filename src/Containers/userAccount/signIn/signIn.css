@@ -1,0 +1,209 @@
+.continer {
+  vertical-align: top;
+  width: 50%;
+  height: 100%;
+  border-radius: 0;
+  border-bottom-right-radius: 4px;
+  border-top-right-radius: 4px;
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+  background: #fff;
+}
+
+.box {
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+
+.forgetPass {
+  font-family: "iransM";
+  color: firebrick;
+  font-size: 12px;
+  display: block;
+  width: 71%;
+  margin: 4px auto 15px auto;
+}
+
+.ButtonForm {
+  cursor: pointer;
+  margin: 35px auto 20px auto;
+  width: 71%;
+}
+
+.ButtonForm:hover {
+  transition: 0.25s;
+  background: #349aec;
+}
+
+.googleLogin {
+  cursor: pointer;
+  text-align: right;
+  background: #4981ed;
+  border: 1px solid #4981ed;
+  width: 71%;
+  margin: auto;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 10px 20px rgba(73, 129, 237, 0.3),
+    0 6px 6px rgba(73, 129, 237, 0.3);
+  -moz-box-shadow: 0 10px 20px rgba(73, 129, 237, 0.3),
+    0 6px 6px rgba(73, 129, 237, 0.3);
+  -ms-box-shadow: 0 10px 20px rgba(73, 129, 237, 0.3),
+    0 6px 6px rgba(73, 129, 237, 0.3);
+  -o-box-shadow: 0 10px 20px rgba(73, 129, 237, 0.3),
+    0 6px 6px rgba(73, 129, 237, 0.3);
+  box-shadow: 0 10px 20px rgba(73, 129, 237, 0.3),
+    0 6px 6px rgba(73, 129, 237, 0.3);
+}
+
+.googleLogin p,
+.googleLogin img {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.googleLogin p {
+  padding-right: 53px;
+  font-family: "iransM";
+  color: #fff;
+}
+
+.googleLogin img {
+  padding: 10px;
+  width: 23px;
+  border-radius: 0;
+  border-bottom-right-radius: 4px;
+  border-top-right-radius: 4px;
+  background: #fff;
+}
+
+/* Customize the label (the container) */
+
+.checkbox_container {
+  display: block;
+  text-align: right;
+  position: relative;
+  padding-right: 30px;
+  width: 65%;
+  margin: auto;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 12px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+
+.checkbox_container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+
+.checkbox_checkmark {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  height: 15px;
+  width: 15px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+}
+
+/* On mouse-over, add a grey background color */
+
+.checkbox_container:hover input ~ .checkbox_checkmark {
+  background-color: #eee;
+}
+
+/* When the checkbox is checked, add a blue background */
+
+.checkbox_container input:checked ~ .checkbox_checkmark {
+  background-color: #fff;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+
+.checkbox_checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+
+.checkbox_container input:checked ~ .checkbox_checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+
+.checkbox_container .checkbox_checkmark:after {
+  right: 5px;
+  top: 1px;
+  width: 3px;
+  height: 8px;
+  border: solid #333333;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.Move {
+  animation: move 0.5s cubic-bezier(0.75, -0.28, 0.84, 0.6) forwards;
+}
+
+@keyframes move {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-330px, 0);
+    opacity: 0;
+    z-index: -1;
+  }
+}
+
+.fadein {
+  opacity: 0;
+  animation: fade 0.3s linear 0.4s forwards;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .continer {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  .box {
+    padding-top: 0px;
+  }
+  .box input {
+    margin: 12px auto 0;
+  }
+  .ButtonForm {
+    margin: 27px auto 20px auto;
+  }
+}

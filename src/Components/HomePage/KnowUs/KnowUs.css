@@ -1,0 +1,67 @@
+.father {
+  margin-top: 50px;
+  padding-top: 50px;
+  background: url(../../../Assets/Lottery.png) no-repeat;
+  background-position: right center;
+  background-size: auto;
+  direction: ltr;
+}
+
+.father div {
+  width: 50%;
+  margin-bottom: 70px;
+  text-align: right;
+}
+
+.father h2 {
+  color: #176ccf;
+  margin-bottom: 15px;
+  font-family: iransB;
+  text-align: right;
+}
+.father p {
+  color: #676767;
+  font-family: iransM;
+  text-align: right;
+  font-size: 14px;
+  line-height: 2.5;
+}
+
+.button {
+  transition: 0.25s;
+  background: #009026;
+  background-position: 15px center;
+  display: inline-block;
+  border-radius: 10px;
+  padding: 7px 20px;
+  color: #fff;
+  margin-top: 50px;
+}
+
+.button:hover {
+  background: green;
+}
+
+@media screen and (max-width: 980px) {
+  .father {
+    background-size: 420px;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .father {
+    background-size: 250px;
+    background-position: top center;
+    text-align: center;
+  }
+  .father h2 {
+    text-align: center;
+  }
+  .father div {
+    width: 80%;
+    margin: auto;
+    margin-top: 150px;
+    margin-bottom: 70px;
+    text-align: center;
+  }
+}

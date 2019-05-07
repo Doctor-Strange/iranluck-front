@@ -1,5 +1,5 @@
 import React from "react";
-import global from "../../global.css";
+import global from "../../../global.css";
 import classes from "./HomePageHeader.css";
 
 const HomePageHeader = props => {

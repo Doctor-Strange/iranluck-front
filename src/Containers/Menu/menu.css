@@ -1,0 +1,89 @@
+.container {
+  position: relative;
+  z-index: 2;
+  background: #2f2c61;
+  transition: 0.25s all;
+  top: 0;
+}
+
+.firstPart,
+.secondPart {
+  width: 40%;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.secondPart {
+  width: 60%;
+  text-align: left;
+}
+
+.firstPart div {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.menulist li {
+  padding: 0 20px;
+  color: #fff;
+  display: inline-block;
+}
+
+.logo {
+  width: 51px;
+  margin: 9px 0px 9px 10px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+@media screen and (max-width: 860px) {
+  .menulist li {
+    padding: 0 12px;
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .menulist li {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .shwoMenu {
+    padding-top: 10px;
+    background: #44458c;
+    position: fixed;
+    height: 100%;
+    width: 200px;
+    z-index: 1000;
+    transform: translateX(0px);
+    box-shadow: 0px 0px 25px #333;
+    padding-right: 10px;
+  }
+  .hideMenu {
+    background: #44458c;
+    z-index: 1000;
+    position: fixed;
+    height: 100%;
+    width: 200px;
+    transform: translateX(500px);
+  }
+  .firstPart,
+  .secondPart {
+    width: 100%;
+    display: block;
+  }
+  .menulist li {
+    display: block;
+    padding: 0;
+    font-size: 14px;
+    text-align: right;
+    line-height: 3;
+  }
+  .logo {
+    width: 51px;
+    margin: 10px 0 25px 0;
+    display: block;
+  }
+}

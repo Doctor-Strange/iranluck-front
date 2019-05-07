@@ -1,0 +1,33 @@
+.menulist li {
+  padding: 0 20px;
+  display: inline-block;
+  color: #fff;
+  cursor: pointer;
+}
+
+.menulist li:last-child {
+  padding-left: 0;
+}
+
+@media screen and (max-width: 860px) {
+  .menulist li {
+    padding: 0 12px;
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .menulist li {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .menulist li {
+    display: block;
+    padding: 0;
+    font-size: 14px;
+    text-align: right;
+    line-height: 3;
+  }
+}

@@ -3,7 +3,7 @@
 }
 
 .bannerPart {
-  background: url("../../Assets/banner.jpg") no-repeat;
+  background: url("../../../Assets/banner.jpg") no-repeat;
   background-position: left 30%;
   background-size: 550px;
   height: 550px;

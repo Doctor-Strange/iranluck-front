@@ -19,56 +19,6 @@
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.08), 0 10px 10px rgba(0, 0, 0, 0.09);
 }
 
-.rectangel1 {
-  display: block;
-  margin: auto;
-  border: 15px solid red;
-  background: red;
-  width: 35px;
-  height: 38px;
-  position: relative;
-  z-index: 2;
-  margin-bottom: -33px;
-  border-top-right-radius: 50%;
-  border-top-left-radius: 50%;
-}
-.rectangel2 {
-  display: block;
-  margin: auto;
-  position: relative;
-  border: 15px solid red;
-  width: 197px;
-}
-.rectangel2:after,
-.rectangel2:before {
-  position: absolute;
-  width: 126px;
-  height: 109px;
-  background: #fff;
-  content: "";
-  clear: both;
-  display: block;
-  bottom: -33px;
-  left: -60px;
-  margin: auto;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 35%;
-}
-
-.rectangel2:before {
-  left: auto;
-  right: -60px;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 35%;
-}
-
-.rectangel3 {
-  display: block;
-  margin: auto;
-  border: 9px solid red;
-  width: 130px;
-}
-
 @media screen and (max-width: 1366px) {
   .TicketContainer {
     width: 90%;
