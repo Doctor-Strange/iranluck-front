@@ -1,0 +1,43 @@
+.flexFather {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+.partLeft {
+  width: 75%;
+}
+.partRight {
+  transition: 0.25s all;
+  background: #222d32;
+  width: 25%;
+  padding: 30px 0px 0 0;
+  padding-bottom: 130px;
+}
+
+@media screen and (max-width: 650px) {
+  .flexFather {
+    display: block;
+  }
+  .partLeft {
+    width: 100%;
+  }
+  .shwoMenu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 250px;
+    z-index: 1005;
+    transform: translateX(0px);
+    box-shadow: 0px 0px 25px #333;
+  }
+  .hideMenu {
+    z-index: 1005;
+    position: fixed;
+    height: 100%;
+    top: 0;
+    right: 0;
+    width: 250px;
+    transform: translateX(500px);
+  }
+}

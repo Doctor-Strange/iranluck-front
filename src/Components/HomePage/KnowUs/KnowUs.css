@@ -50,7 +50,7 @@
 
 @media screen and (max-width: 720px) {
   .father {
-    background-size: 250px;
+    background-size: 300px;
     background-position: top center;
     text-align: center;
   }
@@ -58,7 +58,7 @@
     text-align: center;
   }
   .father div {
-    width: 80%;
+    width: 94%;
     margin: auto;
     margin-top: 150px;
     margin-bottom: 70px;

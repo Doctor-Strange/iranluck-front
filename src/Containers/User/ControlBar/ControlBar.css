@@ -1,0 +1,112 @@
+.father {
+  background: #3c8dbc;
+  padding: 10px 0;
+  position: relative;
+}
+
+.Responsive{
+  padding: 0 1%;
+}
+
+.p1,
+.p2 {
+  width: 100%;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: left;
+}
+
+.p1 {
+  display: none;
+  width: 10%;
+}
+
+.p1 img {
+  cursor: pointer;
+  width: 21px;
+  padding: 3px;
+  margin-bottom: -11px;
+  border: 1px solid #fff;
+}
+
+.p2 div,
+.p2 p {
+  margin: 0 20px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.p2 div {
+  position: relative;
+}
+
+.p2 div span {
+  position: absolute;
+  background: firebrick;
+  display: block;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  line-height: 1.4;
+  color: #fff;
+  border-radius: 10px;
+  top: 0;
+  right: -10px;
+}
+
+.p2 img {
+  cursor: pointer;
+  margin-bottom: -11px;
+  width: 22px;
+}
+
+.p2 div.Gear {
+  margin-left: 0;
+}
+
+.Gear img {
+  width: 22px;
+  border: 1px solid #fff;
+  padding: 2px;
+}
+
+.p2 p {
+  color: #fff;
+  font-family: iransM;
+  margin: 0 10px -9px 10px;
+}
+
+.ToggleIcon {
+  cursor: pointer;
+}
+
+.ToggleIcon div {
+  border: 2px solid #fff;
+  margin: 4px;
+  width: 30px;
+}
+
+@media screen and (max-width: 650px) {
+  .p1 {
+    position: absolute;
+    top: -37px;
+    left: 5px;
+    display: inline-block;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .p2 {
+    display: flex;
+    text-align: right;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .ControlBar div,
+  .ControlBar p {
+    margin: 0 10px;
+  }
+  .p2 p {
+    font-size: 12px;
+  }
+}

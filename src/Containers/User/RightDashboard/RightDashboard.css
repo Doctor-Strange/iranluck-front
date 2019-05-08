@@ -1,0 +1,48 @@
+.UserId {
+  padding-right: 10px;
+}
+.UserId img {
+  width: 54px;
+  margin-left: 10px;
+  margin-bottom: 5px;
+  display: inline-block;
+  vertical-align: middle;
+}
+.UserId div {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0px 0 0px 10px;
+}
+
+.UserId div h3,
+.UserId div p {
+  color: #fff;
+  font-size: 14px;
+}
+
+.UserId div p {
+  font-size: 11px;
+}
+
+.Gap {
+  background-color: #1a2226;
+  color: #787878;
+  font-size: 14px;
+  padding: 10px 10px 10px 0;
+  margin-top: 20px;
+}
+
+.menu li a {
+    transition: 0.25s;
+  margin: 14px 0;
+  color: #fff;
+  display: block;
+  padding-right: 10px;
+  font-size: 14px;
+}
+
+.menu li a:hover {
+  background: #1a2226;
+  font-family: iransM;
+}
+

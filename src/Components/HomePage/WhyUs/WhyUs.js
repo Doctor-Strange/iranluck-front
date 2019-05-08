@@ -18,7 +18,7 @@ const WhyUs = props => {
         قرعه کشی آنلاین، بدون نیاز به احراز هویت، پرداخت ایمن از طریق کیف پول
         دیجیتال!
       </h3>
-      <div>
+      <div className={classes.padding}>
         <div className={classes.reason}>
           <div className={classes.firstDIV}>
             <img src={withdrawal} alt="آیکون های بخش چرا ایران لاک" />
