@@ -6,6 +6,24 @@
   top: 0;
 }
 
+/* width */
+.container::-webkit-scrollbar {
+  width:5px;
+}
+
+/* Track */
+.container::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background:transparent;
+}
+
+/* Handle */
+.container::-webkit-scrollbar-thumb {
+  background: transparent; 
+  border-radius: 10px;
+}
+
+
 .firstPart,
 .secondPart {
   width: 40%;
@@ -50,6 +68,9 @@
 }
 
 @media screen and (max-width: 650px) {
+  .container {
+    overflow-y: scroll
+  }
   .shwoMenu {
     padding-top: 10px;
     background: #44458c;
@@ -59,7 +80,6 @@
     z-index: 1000;
     transform: translateX(0px);
     box-shadow: 0px 0px 25px #333;
-    padding-right: 10px;
   }
   .hideMenu {
     background: #44458c;
@@ -83,7 +103,8 @@
   }
   .logo {
     width: 51px;
-    margin: 10px 0 25px 0;
+    margin: 10px 10px 25px 0;
     display: block;
+
   }
 }

@@ -1,4 +1,5 @@
 import React from "react";
+import { withRouter, NavLink } from "react-router-dom";
 
 import classes from "./RightDashboard.css";
 import userIcon from "../../../Assets/user/userIcon.png";
@@ -16,19 +17,19 @@ const RightDashboard = props => {
       <h3 className={classes.Gap}>منو اصلی</h3>
       <ul className={classes.menu}>
         <li>
-          <a href="">داشبورد</a>
+          <NavLink to="/account">داشبورد</NavLink>
         </li>
         <li>
-          <a href="">کیف پول</a>
+          <NavLink to="/account/Wallet">کیف پول</NavLink>
         </li>
         <li>
-          <a href="">ویرایش اطلاعات</a>
+          <NavLink to="/account/EditProfile">ویرایش اطلاعات</NavLink>
         </li>
         <li>
-          <a href="">گزارش گیری</a>
+          <NavLink to="">گزارش گیری</NavLink>
         </li>
         <li>
-          <a href="">ارسال تیکت</a>
+          <NavLink to="/account/Ticket/">تیکت ها</NavLink>
         </li>
       </ul>
       <p />
@@ -36,4 +37,4 @@ const RightDashboard = props => {
   );
 };
 
-export default RightDashboard;
+export default withRouter(RightDashboard);

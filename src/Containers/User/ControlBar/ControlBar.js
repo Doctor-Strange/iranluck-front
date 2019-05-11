@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { withRouter, NavLink } from "react-router-dom";
 import classes from "./ControlBar.css";
 import global from "../../../global.css";
 import gear from "../../../Assets/user/gear.png";
@@ -23,9 +24,10 @@ class ControlBar extends Component {
               <img src={envelope} alt="آیکون پیام رسانی" />
               <span>1</span>
             </div>
-            <p>کاربر kalam rehimi </p>
             <div className={classes.Gear}>
-              <img src={gear} alt="آیکون تنظیمات" />
+              <NavLink to="/account/information">
+                <img src={gear} alt="آیکون تنظیمات" />
+              </NavLink>
             </div>
           </div>
         </div>
@@ -34,4 +36,4 @@ class ControlBar extends Component {
   }
 }
 
-export default ControlBar;
+export default withRouter(ControlBar);

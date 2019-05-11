@@ -21,7 +21,7 @@ class Menu extends Component {
             </div>
           </div>
           <div className={classes.secondPart}>
-            <MenuItems OnDrawelClick={this.props.OnDrawelClick} />
+            <MenuItems OnDrawelClick={this.props.OnDrawelClick} OnItemClick={this.props.OnItemClick}/>
           </div>
         </div>
       </div>

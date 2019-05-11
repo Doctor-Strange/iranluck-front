@@ -22,12 +22,16 @@ class Layout extends Component {
     });
   };
 
-  onmenuToggle = () => {
-    this.setState(pre => {
-      return {
-        ResToggleminu: !pre.ResToggleminu
-      };
-    });
+  onmenuToggle = (arg = true) => {
+    arg
+      ? this.setState(pre => {
+          return {
+            ResToggleminu: !pre.ResToggleminu
+          };
+        })
+      : this.setState({
+          ResToggleminu: false
+        });
   };
 
   render() {
@@ -53,14 +57,14 @@ class Layout extends Component {
             <Menu
               OnDrawelClick={this.OnDrawelClick}
               menuToggle={this.state.ResToggleminu}
+              OnItemClick={() => this.onmenuToggle(false)}
             />
           </nav>
           <BackDraw
             DrawelClose={!this.state.ResToggleminu}
-            OnDrawelClick={this.onmenuToggle}
+            OnDrawelClick={() => this.onmenuToggle(true)}
           />
         </header>
-        {/* <UserBox /> */}
         <main>{this.props.children}</main>
         <Footer />
       </Hoc>

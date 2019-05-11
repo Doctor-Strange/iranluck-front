@@ -1,0 +1,84 @@
+.Quickaccess {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 30px;
+}
+.Quickaccess a {
+  margin: 1%;
+  transition: 0.25s;
+  width: 220px;
+  display: flex;
+  background: #fff;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.Quickaccess a p {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+.Quickaccess a img {
+  padding: 10px;
+  width: 54px;
+}
+
+.walet {
+  border: 1px solid #00a65a;
+}
+
+.walet:hover {
+  background: #00a65a;
+}
+.Quickaccess a:hover p {
+  color: #fff;
+  font-family: iransM;
+}
+
+.walet img {
+  background: #00a65a;
+}
+
+.info {
+  border: 1px solid #f39c12;
+}
+.info:hover {
+  background: #f39c12;
+}
+
+.info img {
+  background: #f39c12;
+}
+
+.accout {
+  border: 1px solid #00c0ef;
+}
+.accout:hover {
+  background: #00c0ef;
+}
+
+.accout img {
+  background: #00c0ef;
+}
+
+@media screen and (max-width: 650px) {
+  .Quickaccess a img {
+    padding: 6px;
+    margin-left: 0px;
+    width: 38px;
+  }
+  .Quickaccess a p {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .Quickaccess {
+    flex-wrap: wrap;
+  }
+  .Quickaccess a {
+    width: 174px;
+  }
+}

@@ -1,0 +1,21 @@
+.panelControl {
+    background: #fff;
+    width: 92%;
+    padding: 2%;
+    box-shadow: 0px 4px 8px #cecece;
+    margin: auto;
+    padding-bottom: 50px;
+    margin-top: 46px;
+  }
+ .panelControl textarea {
+    background: #f7f7f7;
+    border: 1px solid #d3d3d3;
+    border-radius: 4px;
+    padding: 11px;
+    width: 65%;
+    display: block;
+    font-family: "iransM";
+    text-align: right;
+    color: #424242;
+    margin: 20px auto 0; 
+  }

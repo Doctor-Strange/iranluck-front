@@ -1,9 +1,34 @@
 import React, { Component } from "react";
 import classes from "./signIn.css";
+import axios from "axios";
 
 import googleIcon from "../../../Assets/googleIcon.png";
 
 class SignIn extends Component {
+  componentDidMount = () => {
+    axios({
+      method: "post",
+      url: "https://info.iranluck.com/api/Customer/Login",
+      headers: {
+        "Content-Type": "application/json",
+        DeviceId: "Asus",
+        DeviceName: "Nowrouzi PC",
+        OS: "Windows 8"
+      },
+      data: {
+        Email: "azita.nowrouzi@gmail.com",
+        Password: "121012101210",
+        Type: "Site"
+      }
+    })
+      .then(response => {
+        console.log(response);
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  };
+
   render() {
     return (
       <div
