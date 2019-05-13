@@ -82,8 +82,26 @@ const CreatePerfectMoney = props => {
           </div>
           <div>
             <h3>گام سوم </h3>
-            <NavLink onClick={GotoTop} to="">
-              ساخت کیف پول ارز دیجیتال
+            <NavLink onClick={GotoTop} to="/Learn/BuyPerfectMoney">
+              خرید پرفکت مانی
+            </NavLink>
+          </div>
+          <div>
+            <h3>گام چهارم </h3>
+            <NavLink onClick={GotoTop} to="/">
+              آموزش شارژحساب
+            </NavLink>
+          </div>
+          <div>
+            <h3>ثبت / تغییر آدرس کیف پول</h3>
+            <NavLink onClick={GotoTop} to="/">
+              آموزش شارژحساب
+            </NavLink>
+          </div>
+          <div>
+            <h3>ثبت / تغییر آدرس کیف پول</h3>
+            <NavLink onClick={GotoTop} to="/">
+              برداشت وجه
             </NavLink>
           </div>
         </div>

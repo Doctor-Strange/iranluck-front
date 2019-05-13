@@ -59,7 +59,7 @@ const Footer = props => {
                 </NavLink>
               </li>
               <li>
-                <NavLink onClick={GotoTop} to="/Learn/CreateWallet">
+                <NavLink onClick={GotoTop} to="/Learn/BuyPerfectMoney">
                   آموزش خرید پرفکت مانی
                 </NavLink>
               </li>
@@ -69,7 +69,12 @@ const Footer = props => {
                 </NavLink>
               </li>
               <li>
-                <NavLink onClick={GotoTop} to="">
+                <NavLink onClick={GotoTop} to="/Learn/Walletaddress">
+                  تغییر / ثبت آدرس کیف پول
+                </NavLink>
+              </li>
+              <li>
+                <NavLink onClick={GotoTop} to="/Learn/WithDrawal">
                   آموزش برداشت وجه
                 </NavLink>
               </li>

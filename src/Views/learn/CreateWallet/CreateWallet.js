@@ -14,7 +14,11 @@ const CreateWallet = props => {
         <h3>ساخت کیف پول ارز دیجیتال</h3>
       </div>
       <div className={classes.Refer}>
-        <a target="_blank" rel="noopener noreferrer" href="https://www.excoino.net">
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://www.excoino.net"
+        >
           <img src={excoino} alt="excoino" />
         </a>
         <a target="_blank" rel="noopener noreferrer" href="https://pay98.cash">
@@ -42,14 +46,18 @@ const CreateWallet = props => {
           </div>
           <div>
             <h3>گام دوم </h3>
-            <NavLink className={classes.uareHere} onClick={GotoTop} to="/Learn/CreateWallet">
+            <NavLink
+              className={classes.uareHere}
+              onClick={GotoTop}
+              to="/Learn/CreateWallet"
+            >
               شما اینجا هستید
             </NavLink>
           </div>
           <div>
             <h3>گام سوم </h3>
-            <NavLink onClick={GotoTop} to="">
-              ساخت کیف پول ارز دیجیتال
+            <NavLink onClick={GotoTop} to="/Learn/BuyPerfectMoney">
+              خرید پرفکت مانی
             </NavLink>
           </div>
         </div>

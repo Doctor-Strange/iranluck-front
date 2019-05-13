@@ -27,10 +27,10 @@ const Wallet = props => {
       <div className={classes.teach}>
         <NavLink to="/Learn">+ آموزش ساخت حساب پرفکت مانی</NavLink>
         <NavLink to="/Learn/CreateWallet">+ آموزش ساخت کیف پول دیجیتال</NavLink>
-        <NavLink to="">+ آموزش خرید پرفکت مانی</NavLink>
+        <NavLink to="/Learn/BuyPerfectMoney">+ آموزش خرید پرفکت مانی</NavLink>
+        <NavLink to="/Learn/Walletaddress">+ تغییر / ثبت آدرس کیف پول</NavLink>
         <NavLink to="">+ آموزش شارژ حساب</NavLink>
-        <NavLink to="">+ آموزش تسویه حساب</NavLink>
-        <NavLink to="">+ تغییر آدرس کیف پول</NavLink>
+        <NavLink to="/Learn/WithDrawal">+ آموزش تسویه حساب</NavLink>
       </div>
     </div>
   );
