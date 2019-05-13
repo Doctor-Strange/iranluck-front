@@ -1,0 +1,31 @@
+.father {
+    margin-top: 50px;
+    margin-bottom: 80px;
+  }
+  .father a {
+    transition: 0.25s;
+    color: #0099ff;
+    font-family: iransBL;
+    padding: 010px;
+    text-decoration: underline;
+    line-height: 3;
+  }
+  
+  .father a:hover {
+    color: #0879c4;
+  }
+  .father p {
+    font-family: iransM;
+  }
+  .father img {
+    display: block;
+    box-shadow: 0px 3px 6px #dadada;
+    margin: 8px auto 80px;
+    max-width: 100%;
+  }
+  
+  .father p.Alert {
+    color: firebrick;
+    font-family: iransBL;
+  }
+  

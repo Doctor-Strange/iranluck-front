@@ -1,0 +1,38 @@
+.panelControl {
+  background: #fff;
+  width: 92%;
+  padding: 2%;
+  box-shadow: 0px 4px 8px #cecece;
+  margin: auto;
+  padding-bottom: 50px;
+  margin-top: 46px;
+}
+
+.Open {
+    background: #0099ff;
+    color: #fff;
+    padding: 2px 15px;
+    border-radius: 4px;
+    font-size: 12px;
+  }
+  
+  .Inprogress {
+    background: firebrick;
+    color: #fff;
+    padding: 2px 15px;
+    font-size: 12px;
+    border-radius: 4px;
+  }
+  
+  .panelControl table td {
+    cursor: pointer;
+  }
+  
+  .Close {
+    background: green;
+    color: #fff;
+    padding: 2px 15px;
+    font-size: 12px;
+    border-radius: 4px;
+  }
+  

@@ -33,6 +33,7 @@
 .InputFather input {
   margin-bottom: 34px;
   transition: 0.25s;
+  max-width: 450px;
 }
 
 .InputFather input:hover {
@@ -70,10 +71,6 @@
   padding: 3px;
   margin-top: 15px;
   transition: 0.25s;
-}
-
-.withdrawal button:hover {
-  background: #1680d6;
 }
 
 .teach {

@@ -25,12 +25,12 @@ const RightDashboard = props => {
         <li>
           <NavLink to="/account/EditProfile">ویرایش اطلاعات</NavLink>
         </li>
-        <li>
+        {/* <li>
           <NavLink to="">گزارش گیری</NavLink>
         </li>
         <li>
           <NavLink to="/account/Ticket/">تیکت ها</NavLink>
-        </li>
+        </li> */}
       </ul>
       <p />
     </div>

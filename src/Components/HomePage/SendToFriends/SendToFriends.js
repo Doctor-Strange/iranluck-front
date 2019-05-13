@@ -27,35 +27,35 @@ const SendToFriends = props => {
         </label>
       </form>
       <div className={classes.SocilaContainer}>
-        <a target="_blank" without rel="noopener noreferrer" href="https://facebook.com/">
+        <a target="_blank" rel="noopener noreferrer" href="https://facebook.com/">
           <img
             className={classes.SocialIcon}
             src={facebook}
             alt="Social media"
           />
         </a>
-        <a target="_blank" without rel="noopener noreferrer" href="https://twitter.com/intent/tweet?text=https://temp.iranluck.com/?ref=234324">
+        <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/intent/tweet?text=https://temp.iranluck.com/?ref=234324">
           <img
             className={classes.SocialIcon}
             src={twitter}
             alt="Social media"
           />
         </a>
-        <a target="_blank" without rel="noopener noreferrer" href="https://api.whatsapp.com/send?phone=whatsappphonenumber&text=https://temp.iranluck.com">
+        <a target="_blank" rel="noopener noreferrer" href="https://api.whatsapp.com/send?phone=whatsappphonenumber&text=https://temp.iranluck.com">
           <img
             className={classes.SocialIcon}
             src={whatsapp}
             alt="Social media"
           />
         </a>
-        <a target="_blank" without rel="noopener noreferrer" href="https://telegram.me/share/url?url=https://temp.iranluck.com&text=این لینک به وسیله دوستتان برای شما ارسال شده است.با ثبت نام در سایت برنده شوید">
+        <a target="_blank" rel="noopener noreferrer" href="https://telegram.me/share/url?url=https://temp.iranluck.com&text=این لینک به وسیله دوستتان برای شما ارسال شده است.با ثبت نام در سایت برنده شوید">
           <img
             className={classes.SocialIcon}
             src={telegram}
             alt="Social media"
           />
         </a>
-        <a target="_blank" without rel="noopener noreferrer" href="http://instagram.com/_u/iranLuck/">
+        <a target="_blank" rel="noopener noreferrer" href="http://instagram.com/_u/iranLuck/">
           <img
             className={classes.SocialIcon}
             src={instagram}

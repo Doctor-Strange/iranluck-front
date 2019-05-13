@@ -16,14 +16,14 @@ class ControlBar extends Component {
             <img src={moreMenu} alt="left arrow" />
           </div>
           <div className={classes.p2}>
-            <div className={classes.notification}>
+            {/* <div className={classes.notification}>
               <img src={bell} alt="آیکون اطلاع رسانی" />
               <span>1</span>
             </div>
             <div className={classes.Message}>
               <img src={envelope} alt="آیکون پیام رسانی" />
               <span>1</span>
-            </div>
+            </div> */}
             <div className={classes.Gear}>
               <NavLink to="/account/information">
                 <img src={gear} alt="آیکون تنظیمات" />

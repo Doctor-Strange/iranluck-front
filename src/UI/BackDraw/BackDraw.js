@@ -1,7 +1,7 @@
 import React from "react";
 import classes from "./BackDraw.css";
 
-const backDraw = props => {
+const BackDraw = props => {
   return (
     <div
       className={props.DrawelClose ? classes.hidden : classes.backDraw}
@@ -10,4 +10,4 @@ const backDraw = props => {
   );
 };
 
-export default backDraw;
+export default BackDraw;

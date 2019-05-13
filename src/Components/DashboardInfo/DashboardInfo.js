@@ -6,6 +6,7 @@ class DashboardInfo extends Component {
   render() {
     return (
       <div className={classes.panelControl}>
+        <h3>کیف پول</h3>
         <div className={classes.deposit}>
           <p>
             موجودی :<span>1</span>عدد پرفکت مانی

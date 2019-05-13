@@ -1,4 +1,5 @@
 import React from "react";
+import { withRouter, NavLink } from "react-router-dom";
 import classes from "./Footer.css";
 import global from "../../global.css";
 import logo from "../../Assets/WhiteLOGO.png";
@@ -44,23 +45,43 @@ const Footer = props => {
           <section className={classes.linkirnLuck}>
             <h3>دسترسی سریع</h3>
             <ul>
+              {/* <li>
+                <NavLink to="">سوالات متداول</NavLink>
+              </li> */}
               <li>
-                <a href="">سوالات متداول</a>
+                <NavLink onClick={GotoTop} to="/Learn">
+                  آموزش ساخت حساب پرفکت مانی
+                </NavLink>
               </li>
               <li>
-                <a href="">آموزش ساخت کیف پول</a>
+                <NavLink onClick={GotoTop} to="/Learn/CreateWallet">
+                  آموزش ساخت کیف پول
+                </NavLink>
               </li>
               <li>
-                <a href="">آموزش شارژحساب</a>
+                <NavLink onClick={GotoTop} to="/Learn/CreateWallet">
+                  آموزش خرید پرفکت مانی
+                </NavLink>
               </li>
               <li>
-                <a href="">آموزش برداشت وجه</a>
+                <NavLink onClick={GotoTop} to="">
+                  آموزش شارژحساب
+                </NavLink>
               </li>
               <li>
-                <a href="">حساب کاربری</a>
+                <NavLink onClick={GotoTop} to="">
+                  آموزش برداشت وجه
+                </NavLink>
               </li>
               <li>
-                <a href="">کیف پول</a>
+                <NavLink onClick={GotoTop} to="/account">
+                  حساب کاربری
+                </NavLink>
+              </li>
+              <li>
+                <NavLink onClick={GotoTop} to="/account/Wallet">
+                  کیف پول
+                </NavLink>
               </li>
             </ul>
           </section>
@@ -95,4 +116,9 @@ const Footer = props => {
     </footer>
   );
 };
-export default Footer;
+
+const GotoTop = () => {
+  window.scrollTo(0, 0);
+};
+
+export default withRouter(Footer);

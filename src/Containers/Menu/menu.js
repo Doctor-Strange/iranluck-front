@@ -3,11 +3,17 @@ import MenuItems from "./MenuItems/menuItems";
 import classes from "./menu.css";
 import logo from "../../Assets/WhiteLOGO.png";
 import global from "../../global.css";
+import { withRouter, NavLink } from "react-router-dom";
 
 class Menu extends Component {
   render() {
     return (
-      <div className={[classes.container, this.props.menuToggle ? classes.shwoMenu : classes.hideMenu].join(" ")}>
+      <div
+        className={[
+          classes.container,
+          this.props.menuToggle ? classes.shwoMenu : classes.hideMenu
+        ].join(" ")}
+      >
         <div className={global.Responsive}>
           <div className={classes.firstPart}>
             <a href="/">
@@ -15,13 +21,20 @@ class Menu extends Component {
             </a>
             <div className={classes.menulist}>
               <ul>
-                <li>شارژ / تسویه</li>
-                <li>قوانین</li>
+                <li onClick={this.onItemClick}>
+                  <NavLink to="/Learn">آموزش شارژ / تسویه</NavLink>
+                </li>
+                <li onClick={this.onItemClick}>
+                  <NavLink to="/Law">قوانین</NavLink>
+                </li>
               </ul>
             </div>
           </div>
           <div className={classes.secondPart}>
-            <MenuItems OnDrawelClick={this.props.OnDrawelClick} OnItemClick={this.props.OnItemClick}/>
+            <MenuItems
+              OnDrawelClick={this.props.OnDrawelClick}
+              OnItemClick={this.props.OnItemClick}
+            />
           </div>
         </div>
       </div>
@@ -29,4 +42,4 @@ class Menu extends Component {
   }
 }
 
-export default Menu;
+export default withRouter(Menu);

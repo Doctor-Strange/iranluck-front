@@ -19,7 +19,7 @@ const TicketPrice = props => {
         {img ? (
           <img className={classes.Jackpot} src={Jackpot} alt="Jackpot" />
         ) : (
-          <p className={classes.firstP}>{props.children}</p>
+          <div className={classes.firstP}>{props.children}</div>
         )}
       </div>
       <div className={classes.rectangle}>{array}</div>

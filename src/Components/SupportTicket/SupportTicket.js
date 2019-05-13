@@ -4,40 +4,79 @@ import classes from "./SupportTicket.css";
 import plus from "../../Assets/user/plus.png";
 import history from "../../Assets/user/history.png";
 import TicketForm from "./TicketForm/TicketForm";
+import TicketHistory from "./TicketHistory/TicketHistory";
+import BackDraw from "../../UI/BackDraw/BackDraw";
+import TicketPopUp from "./TicketPopUp/TicketPopUp";
 
 class SupportTicket extends Component {
+  state = { switch: null, ticketNum: null };
+
+  newTicket = (arg = null) => {
+    arg
+      ? this.setState({
+          switch: "new"
+        })
+      : this.setState({
+          switch: "history"
+        });
+  };
+
   render() {
     return (
       <div>
         <div className={classes.Quickaccess}>
-          <NavLink to="/account/Ticket/post" className={classes.CreateNew}>
+          <div
+            onClick={() => {
+              this.newTicket("new");
+            }}
+            to="/account/Ticket/post"
+            className={classes.CreateNew}
+          >
             <img src={plus} alt="تیکت جدید" />
             <p>تیکت جدید</p>
-          </NavLink>
-          <NavLink to="/account/Ticket/History" className={classes.histort}>
+          </div>
+          <div
+            onClick={() => {
+              this.newTicket();
+            }}
+            className={classes.histort}
+          >
             <img src={history} alt="تیکت جدید" />
             <p>مشاهده سوابق</p>
-          </NavLink>
+          </div>
         </div>
-        <TicketForm />
-        <div className={classes.panelControl}>
-          <h3>آخرین تیکت</h3>
-          <table>
-            <tbody>
-              <th>
-                <td>موضوع</td>
-                <td>تاریخ</td>
-                <td>واحد</td>
-                <td>وضعیت</td>
-              </th>
-              <tr>
-                <td>عدم شارژ حساب</td>
-                <td>1398-02-12</td>
-                <td>فنی</td>
-                <td>باز</td>
-              </tr>
-            </tbody>
-          </table>
+        {this.state.switch ? (
+          this.state.switch === "new" ? (
+            <TicketForm />
+          ) : (
+            <TicketHistory />
+          )
+        ) : (
+          <div className={classes.panelControl}>
+            <h3>آخرین تیکت</h3>
+            <table>
+              <tbody>
+                <tr>
+                  <th>شماره تیکت</th>
+                  <th>موضوع</th>
+                  <th>تاریخ</th>
+                  <th>وضعیت</th>
+                </tr>
+                <tr>
+                  <th>#23439</th>
+                  <td>عدم شارژ حساب</td>
+                  <td>1398-02-12</td>
+                  <td>
+                    <span className={classes.Open}>باز</span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        )}
+        <div>
+          <TicketPopUp Ticketinfo={this.state.ticketNum} />
+          <BackDraw />
         </div>
       </div>
     );

@@ -1,85 +1,95 @@
 .panelControl {
-    background: #fff;
-    width: 92%;
-    padding: 2%;
-    box-shadow: 0px 4px 8px #cecece;
-    margin: auto;
-    padding-bottom: 50px;
-    margin-top: 46px;
-  }
+  background: #fff;
+  width: 92%;
+  padding: 2%;
+  box-shadow: 0px 4px 8px #cecece;
+  margin: auto;
+  padding-bottom: 50px;
+  margin-top: 46px;
+}
 
+.Open {
+  background: #0099ff;
+  color: #fff;
+  padding: 2px 15px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+.panelControl table td {
+  cursor: pointer;
+}
+
+.Quickaccess {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 30px;
+}
+.Quickaccess div {
+  margin: 1%;
+  transition: 0.25s;
+  width: 220px;
+  display: flex;
+  background: #fff;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.Quickaccess div p {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+.Quickaccess div img {
+  padding: 10px;
+  width: 24px;
+}
+
+.CreateNew {
+  border: 1px solid #00a65a;
+}
+
+.CreateNew:hover {
+  background: #00a65a;
+}
+.Quickaccess div:hover p {
+  color: #fff;
+  font-family: iransM;
+}
+
+.CreateNew img {
+  background: #00a65a;
+}
+
+.histort {
+  border: 1px solid #00c0ef;
+}
+.histort:hover {
+  background: #00c0ef;
+}
+
+.histort img {
+  background: #00c0ef;
+}
+
+@media screen and (max-width: 650px) {
+  .Quickaccess div img {
+    padding: 6px;
+    margin-left: 0px;
+    width: 38px;
+  }
+  .Quickaccess div p {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 480px) {
   .Quickaccess {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin-top: 30px;
+    flex-wrap: wrap;
   }
-  .Quickaccess a {
-    margin: 1%;
-    transition: 0.25s;
-    width: 220px;
-    display: flex;
-    background: #fff;
-    justify-content: flex-start;
-    align-items: center;
+  .Quickaccess div {
+    width: 174px;
   }
-  
-  .Quickaccess a p {
-    display: block;
-    width: 100%;
-    text-align: center;
-  }
-  
-  .Quickaccess a img {
-    padding: 10px;
-    width: 24px;
-  }
-  
-  .CreateNew {
-    border: 1px solid #00a65a;
-  }
-  
-  .CreateNew:hover {
-    background: #00a65a;
-  }
-  .Quickaccess a:hover p {
-    color: #fff;
-    font-family: iransM;
-  }
-  
-  .CreateNew img {
-    background: #00a65a;
-  }
-  
-  .histort {
-    border: 1px solid #00c0ef;
-  }
-  .histort:hover {
-    background: #00c0ef;
-  }
-  
-  .histort img {
-    background: #00c0ef;
-  }
-  
-  @media screen and (max-width: 650px) {
-    .Quickaccess a img {
-      padding: 6px;
-      margin-left: 0px;
-      width: 38px;
-    }
-    .Quickaccess a p {
-      font-size: 14px;
-    }
-  }
-  
-  @media screen and (max-width: 480px) {
-    .Quickaccess {
-      flex-wrap: wrap;
-    }
-    .Quickaccess a {
-      width: 174px;
-    }
-  }
-  
-  
+}

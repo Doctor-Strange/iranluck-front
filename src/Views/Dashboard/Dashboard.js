@@ -53,7 +53,7 @@ class Dashboard extends Component {
                 <Route path="/account/WithDrawal" component={WithDrawal} />
                 <Route path="/account/Wallet" component={Wallet} />
                 <Route path="/account/EditProfile" component={EditProfile} />
-                <Route path="/account/Ticket" component={SupportTicket} />
+                {/* <Route path="/account/Ticket" component={SupportTicket} /> */}
                 <Route
                   path="/account/information"
                   component={UserInformation}
