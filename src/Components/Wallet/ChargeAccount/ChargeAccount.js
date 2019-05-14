@@ -14,12 +14,20 @@ class ChargeAccount extends Component {
           <p>پرفکت مانی</p>
         </div>
         <div className={classes.teach}>
-          <NavLink to="">+ آموزش پرداخت از درگاه</NavLink>
-          <NavLink to="">+ آموزش ساخت کیف پول پرفکت مانی</NavLink>
+          <NavLink onClick={GotoTop} to="/" to="">
+            + آموزش پرداخت از درگاه
+          </NavLink>
+          <NavLink onClick={GotoTop} to="/Learn" to="">
+            + آموزش ساخت کیف پول پرفکت مانی
+          </NavLink>
         </div>
       </div>
     );
   }
 }
+
+const GotoTop = () => {
+  window.scrollTo(0, 0);
+};
 
 export default withRouter(ChargeAccount);

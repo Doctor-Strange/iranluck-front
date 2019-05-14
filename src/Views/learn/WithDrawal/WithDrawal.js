@@ -44,44 +44,6 @@ const WithDrawal = props => {
         <img src={four} alt="perfect Money" />
         <p>بعد از گذشت 3 الی 10 دقیقه حساب پرفکت مانی شما شارژ میگردد</p>
         <img src={five} alt="perfect Money" />
-        <div className={classes.Steps}>
-          <div>
-            <h3>گام اول </h3>
-            <NavLink className={classes.uareHere} onClick={GotoTop} to="/Learn">
-              شما اینجا هستید
-            </NavLink>
-          </div>
-          <div>
-            <h3>گام دوم </h3>
-            <NavLink onClick={GotoTop} to="/Learn/CreateWallet">
-              ساخت کیف پول ارز دیجیتال
-            </NavLink>
-          </div>
-          <div>
-            <h3>گام سوم </h3>
-            <NavLink onClick={GotoTop} to="/Learn/BuyPerfectMoney">
-              خرید پرفکت مانی
-            </NavLink>
-          </div>
-          <div>
-            <h3>گام چهارم </h3>
-            <NavLink onClick={GotoTop} to="/">
-              آموزش شارژحساب
-            </NavLink>
-          </div>
-          <div>
-            <h3>ثبت / تغییر آدرس کیف پول</h3>
-            <NavLink onClick={GotoTop} to="/">
-              آموزش شارژحساب
-            </NavLink>
-          </div>
-          <div>
-            <h3>ثبت / تغییر آدرس کیف پول</h3>
-            <NavLink onClick={GotoTop} to="/">
-              برداشت وجه
-            </NavLink>
-          </div>
-        </div>
       </div>
     </div>
   );

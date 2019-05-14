@@ -9,16 +9,74 @@ import BuyPerfectMoney from "./BuyPerfectMoney/BuyPerfectMoney";
 import Walletaddress from "./Walletaddress/Walletaddress";
 import WithDrawal from "./WithDrawal/WithDrawal";
 
+const GotoTop = () => {
+  window.scrollTo(0, 0);
+};
+
 const Learn = props => {
   return (
     <div className={global.Responsive}>
-      <Switch>
-        <Route path="/Learn/CreateWallet" component={CreateWallet} />
-        <Route path="/Learn/BuyPerfectMoney" component={BuyPerfectMoney} />
-        <Route path="/Learn/Walletaddress" component={Walletaddress} />
-        <Route path="/Learn/WithDrawal" component={WithDrawal} />
-        <Route path="/Learn" component={CreatePerfectMoney} />
-      </Switch>
+      <div>
+        <div className={classes.Steps}>
+          <div className={classes.wi}>
+            <div>
+              <h3>گام اول </h3>
+              <NavLink
+                className={classes.uareHere}
+                onClick={GotoTop}
+                to="/Learn"
+              >
+                - ساخت حساب پرفکت مانی
+              </NavLink>
+            </div>
+            <div>
+              <h3>گام دوم </h3>
+              <NavLink onClick={GotoTop} to="/Learn/CreateWallet">
+                - ساخت کیف پول ارز دیجیتال
+              </NavLink>
+              <NavLink onClick={GotoTop} to="/Learn/CreateWallet/excoino">
+                - ساخت کیف پول در excoino
+              </NavLink>
+              <NavLink onClick={GotoTop} to="/Learn/CreateWallet/pay98">
+                - ساخت کیف پول در Pay98
+              </NavLink>
+            </div>
+            <div>
+              <h3>گام سوم </h3>
+              <NavLink onClick={GotoTop} to="/Learn/BuyPerfectMoney">
+                - خرید پرفکت مانی
+              </NavLink>
+            </div>
+            <div>
+              <h3>گام چهارم </h3>
+              <NavLink onClick={GotoTop} to="/">
+                آموزش شارژحساب
+              </NavLink>
+            </div>
+            <div>
+              <h3>گام پنجم</h3>
+              <NavLink onClick={GotoTop} to="/Learn/Walletaddress">
+                - ثبت / تغییر آدرس کیف پول
+              </NavLink>
+            </div>
+            <div>
+              <h3>گام آخر</h3>
+              <NavLink onClick={GotoTop} to="/Learn/WithDrawal">
+                - برداشت وجه
+              </NavLink>
+            </div>
+          </div>
+        </div>
+        <div className={classes.ViewPart}>
+          <Switch>
+            <Route path="/Learn/CreateWallet" component={CreateWallet} />
+            <Route path="/Learn/BuyPerfectMoney" component={BuyPerfectMoney} />
+            <Route path="/Learn/Walletaddress" component={Walletaddress} />
+            <Route path="/Learn/WithDrawal" component={WithDrawal} />
+            <Route path="/Learn" component={CreatePerfectMoney} />
+          </Switch>
+        </div>
+      </div>
     </div>
   );
 };

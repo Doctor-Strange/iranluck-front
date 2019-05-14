@@ -39,20 +39,3 @@
   color: firebrick;
   font-family: iransBL;
 }
-
-.Steps {
-  text-align: center;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.Steps div {
-  box-shadow: 0px 7px 20px #eaeaea;
-  margin: 2%;
-  width: 98%;
-}
-
-a.uareHere {
-  color: firebrick;
-}

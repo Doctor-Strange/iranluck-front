@@ -48,6 +48,7 @@
 .menulist li a {
   display: inline-block;
   color: #fff;
+  padding-right: 10px;
 }
 .menulist li a:hover {
   text-decoration: underline;
@@ -87,6 +88,20 @@
     transform: translateX(0px);
     box-shadow: 0px 0px 25px #333;
   }
+  .firstPart div {
+    display: block;
+  }
+  .menulist li a{
+    display: block;
+    padding: 0;
+    font-size: 14px;
+    text-align: right;
+    line-height: 3;
+    padding-right: 10px;
+  }
+  .menulist li a:hover {
+    background: #2d2e71;
+  }
   .hideMenu {
     background: #44458c;
     z-index: 1000;
@@ -101,11 +116,8 @@
     display: block;
   }
   .menulist li {
+    padding: 0%;
     display: block;
-    padding: 0;
-    font-size: 14px;
-    text-align: right;
-    line-height: 3;
   }
   .logo {
     width: 51px;

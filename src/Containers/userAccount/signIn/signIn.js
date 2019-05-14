@@ -8,7 +8,7 @@ class SignIn extends Component {
   componentDidMount = () => {
     axios({
       method: "post",
-      url: "https://info.iranluck.com/api/Customer/Login",
+      url: "http://info.iranluck.com/api/Customer/Login",
       headers: {
         "Content-Type": "application/json",
         DeviceId: "Asus",

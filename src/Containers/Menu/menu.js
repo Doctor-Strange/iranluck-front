@@ -6,6 +6,10 @@ import global from "../../global.css";
 import { withRouter, NavLink } from "react-router-dom";
 
 class Menu extends Component {
+  onItemClick = () => {
+    this.props.OnItemClick();
+  };
+
   render() {
     return (
       <div

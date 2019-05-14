@@ -1,0 +1,83 @@
+.ViewPart,
+.Steps {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.Steps {
+  width: 28%;
+  padding-top: 20px;
+  margin-left: 2%;
+  box-shadow: -36px 0px 23px -25px #eaeaea;
+}
+
+.ViewPart {
+  width: 70%;
+}
+
+.Steps .wi h3 {
+  transition: 0.25s;
+  font-family: iransB;
+}
+
+.Steps .wi div:hover h3 {
+  color: #0099ff;
+}
+
+.wi div {
+  margin: 2% 0% 2em 1%;
+  width: 99%;
+}
+
+.Steps .wi div a {
+  transition: 0.25s;
+  display: block;
+  font-size: 14px;
+}
+.Steps .wi div a:hover {
+  font-weight: bold;
+  color: firebrick;
+}
+
+@media screen and (max-width: 720px) {
+  .Steps {
+    width: 100%;
+    padding-top: 0px;
+    margin-left: 0;
+    box-shadow: none;
+    display: block;
+    border-bottom: 2px solid #f1f1f1;
+    overflow-x: scroll;
+  }
+  .wi {
+    width: 1366px;
+  }
+  .wi div {
+    margin: 1em 1% 1em 1%;
+    width: 200px;
+    display: inline-block;
+    vertical-align: top;
+  }
+  .ViewPart {
+    width: 98%;
+    margin: auto;
+    display: block;
+  }
+  /* width */
+  .Steps::-webkit-scrollbar {
+    height: 8px;
+  }
+
+  /* Track */
+  .Steps::-webkit-scrollbar-track {
+    box-shadow: none;
+    border:1px solid #24aae1;
+    border-radius: 10px;
+  }
+
+  /* Handle */
+  .Steps::-webkit-scrollbar-thumb {
+    background: #44458c;
+    border-radius: 10px;
+  }
+}
