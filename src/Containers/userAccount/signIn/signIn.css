@@ -29,14 +29,22 @@
 }
 
 .ButtonForm {
+  height: 45px;
   cursor: pointer;
   margin: 35px auto 20px auto;
   width: 71%;
+  border: 1px solid transparent;
 }
 
-.ButtonForm:hover {
+.ButtonForm:disabled:hover {
+  border: 1px solid transparent;
+}
+
+.ButtonForm:hover,
+.googleLogin:hover {
   transition: 0.25s;
   background: #349aec;
+  border: 1px solid #349aec;
 }
 
 .googleLogin {

@@ -1,0 +1,17 @@
+.father {
+  min-height: 480px;
+}
+
+.father h2 {
+  font-family: iransBL;
+  color: #0099ff;
+  margin: 2em 0 10px;
+}
+
+.father h3 {
+  color: firebrick;
+  margin: 30px 0 10px;
+}
+.Alert {
+  color: firebrick;
+}

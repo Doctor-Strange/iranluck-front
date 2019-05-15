@@ -43,7 +43,7 @@ class Layout extends Component {
               DrawelClose={this.state.DrawelClose}
               OnDrawelClick={this.OnDrawelClick}
             />
-            <UserBox />
+            <UserBox OnDrawelClick={this.OnDrawelClick} />
           </Hoc>
         )}
         <Taaj />

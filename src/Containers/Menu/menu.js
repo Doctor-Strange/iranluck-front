@@ -1,9 +1,9 @@
 import React, { Component } from "react";
+import { withRouter, NavLink } from "react-router-dom";
 import MenuItems from "./MenuItems/menuItems";
 import classes from "./menu.css";
 import logo from "../../Assets/WhiteLOGO.png";
 import global from "../../global.css";
-import { withRouter, NavLink } from "react-router-dom";
 
 class Menu extends Component {
   onItemClick = () => {

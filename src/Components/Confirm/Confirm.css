@@ -1,0 +1,14 @@
+.father {
+  min-height: 480px;
+  text-align: center
+}
+
+.father h2 {
+  font-family: iransBL;
+  color: #0099ff;
+  margin: 2em 0 10px;
+}
+
+.father p {
+  margin: 10px 0 10px;
+}

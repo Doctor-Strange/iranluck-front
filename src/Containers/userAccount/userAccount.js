@@ -22,7 +22,10 @@ class UserBox extends Component {
   render() {
     return (
       <div className={classes.boxcontainer}>
-        <SignUp Show={this.state.loginBox} />
+        <SignUp
+          OnDrawelClick={this.props.OnDrawelClick}
+          Show={this.state.loginBox}
+        />
         <div
           onClick={this.changeView}
           className={[
@@ -42,7 +45,10 @@ class UserBox extends Component {
             </Hoc>
           )}
         </div>
-        <SignIn Show={this.state.loginBox} />
+        <SignIn
+          OnDrawelClick={this.props.OnDrawelClick}
+          Show={this.state.loginBox}
+        />
       </div>
     );
   }

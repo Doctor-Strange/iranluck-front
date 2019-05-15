@@ -1,8 +1,9 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import { withRouter } from "react-router-dom";
 
 import Hoc from "../../Hoc/Hoc";
 import classes from "./HomePage.css";
-import global from "../../global.css";
 import HomePageHeader from "../../Components/HomePage/HomePageHeader/HomePageHeader";
 import CountDown from "../../Components/CountDown/CountDown";
 import TicketBook from "../../Containers/ticketBook/ticketBook";
@@ -10,8 +11,23 @@ import SendToFriends from "../../Components/HomePage/SendToFriends/SendToFriends
 import WinningTickets from "../../Components/HomePage/WinningTickets/WinningTickets";
 import WhyUs from "../../Components/HomePage/WhyUs/WhyUs";
 import KnowUs from "../../Components/HomePage/KnowUs/KnowUs";
+import { log_in_Req } from "../../Store/Action";
+var CryptoJS = require("crypto-js");
 
 class HomePage extends Component {
+  componentDidMount = () => {
+    // if  Auth is false and User Object is exist do the Automatic login
+
+    if (!this.props.AuthorizeStatus && localStorage["user"]) {
+      //get user information from Storage
+      const key = "IranLuckHashCode";
+      let storage = localStorage.getItem("user");
+      let decrypted = CryptoJS.AES.decrypt(storage, key);
+      const Data = JSON.parse(decrypted.toString(CryptoJS.enc.Utf8));
+      this.props.log_in_Req(Data);
+    } 
+  };
+
   render() {
     return (
       <Hoc>
@@ -25,23 +41,27 @@ class HomePage extends Component {
         <SendToFriends />
         <WinningTickets />
         <WhyUs />
-        <KnowUs/>
-        {/* <div>
-          <div>
-            <div>
-              <div className={classes.rectangel1} />
-              <div className={classes.rectangel2} />
-              <div className={classes.rectangel3} />
-            </div>
-            <div>
-              <div className={global.Drop} />
-            </div>
-            <h3 />
-          </div>
-        </div> */}
+        <KnowUs />
       </Hoc>
     );
   }
 }
 
-export default HomePage;
+const mapStateToProps = state => {
+  return {
+    AuthorizeStatus: state.AUTH.AuthorizeStatus
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    log_in_Req: data => dispatch(log_in_Req(data))
+  };
+};
+
+export default withRouter(
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(HomePage)
+);
