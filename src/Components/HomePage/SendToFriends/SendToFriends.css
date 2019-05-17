@@ -13,7 +13,7 @@
 }
 
 .OfferToFriends {
-  position: relative;
+  position: relative; 
   display: block;
   margin: auto;
   width: 65%;
@@ -25,12 +25,14 @@
   width: 32px;
 }
 .OfferToFriends input {
-  border:none;
+  border: none;
   text-align: left;
   color: #176ccf;
   font-family: iransB;
   width: 97%;
-  font-size: 16px;
+  font-size: 14px;
+  line-height: 1.6;
+  border-radius: 4px;
   padding: 12px;
   direction: ltr;
   text-indent: 50px;
@@ -46,16 +48,17 @@
   width: 112px;
   border-radius: 6px;
   position: absolute;
-  top: 10px;
+  top: 9px;
   padding: 3px;
   padding-right: 0;
+  cursor: pointer;
   padding-left: 25px;
   box-shadow: none;
   right: 10px;
 }
 
 .OfferToFriends button:hover {
-  background-color: #2c7c18
+  background-color: #2c7c18;
 }
 
 .SocilaContainer {
@@ -82,7 +85,7 @@
   .SocilaContainer {
     width: 98%;
   }
-  .OfferToFriends input{
+  .OfferToFriends input {
     padding: 11px 0;
     text-indent: 40px;
     font-size: 14px;

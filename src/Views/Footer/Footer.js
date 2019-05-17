@@ -38,8 +38,8 @@ const Footer = props => {
             <p>
               <strong>شماهم شانس برنده شدن را تجربه خواهید کرد.</strong>
             </p>
-            <a target="-_blank" rel="noopener" href="https://t.me/irnsupport">
-              پشتیبانی تلگرام: <strong>IRNsupport@</strong>
+            <a target="-_blank" rel="noopener" href="https://t.me/iranlucksupport">
+              پشتیبانی تلگرام: <strong>iranlucksupport@</strong>
             </a>
           </section>
           <section className={classes.linkirnLuck}>
