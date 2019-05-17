@@ -1,5 +1,4 @@
 import React from "react";
-import { withRouter, NavLink } from "react-router-dom";
 import one from "../../../Assets/Learn/BuyPerfectMoney/1.jpg";
 import two from "../../../Assets/Learn/BuyPerfectMoney/2.jpg";
 import three from "../../../Assets/Learn/BuyPerfectMoney/3.jpg";
@@ -58,4 +57,4 @@ const BuyPerfectMoney = props => {
   );
 };
 
-export default withRouter(BuyPerfectMoney);
+export default BuyPerfectMoney;

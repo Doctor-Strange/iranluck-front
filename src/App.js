@@ -5,9 +5,10 @@ import Layout from "./Layouts/layout";
 import HomePage from "./Views/HomePage/HomePage";
 import Hoc from "./Hoc/Hoc";
 import Dashboard from "./Views/Dashboard/Dashboard";
-import Learn from "./Views/learn/Learn";
 import EventPage from "./Components/EventPage/EventPage";
 import Confirm from "./Components/Confirm/Confirm";
+import Laws from "./Views/Laws/Laws";
+import Learn from "./Views/learn/Learn";
 
 class App extends Component {
   componentDidMount = () => {};
@@ -23,6 +24,7 @@ class App extends Component {
             <Route path="/Learn" component={Learn} />
             <Route path="/EventPage" component={EventPage} />
             <Route path="/Confirm" component={Confirm} />
+            <Route path="/Laws" component={Laws} />
             <Route exact path="/" component={HomePage} />
             {route}
           </Switch>

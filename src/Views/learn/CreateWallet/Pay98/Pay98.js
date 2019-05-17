@@ -21,6 +21,7 @@ const Pay98 = props => {
           <div className={classes.h_iframe}>
             <span style={{ display: "block", paddingTop: "57%" }} />
             <iframe
+            title ="َAparatVideo"
               src="https://www.aparat.com/video/video/embed/videohash/fdqN5/vt/frame"
               allowFullScreen="true"
               webkitallowfullscreen="true"

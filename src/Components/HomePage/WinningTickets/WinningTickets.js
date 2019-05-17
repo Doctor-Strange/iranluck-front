@@ -1,5 +1,5 @@
 import React from "react";
-
+import { NavLink } from "react-router-dom";
 import global from "../../../global.css";
 import classes from "./WinningTickets.css";
 import TicketPrice from "../TicketPrice/TicketPrice";
@@ -33,8 +33,7 @@ const WinningTickets = props => {
             Bullets={[true, true, true, true, false, false]}
             img={false}
           >
-            <p className={classes.secondP}>250</p>
-            {" "}هزار تومان
+            <p className={classes.secondP}>250</p> هزار تومان
           </TicketPrice>
         </div>
         <div className={classes.boxTicket}>
@@ -42,21 +41,25 @@ const WinningTickets = props => {
             Bullets={[true, true, true, false, false, false]}
             img={false}
           >
-            <p className={classes.secondP}>25</p>
-            {" "}هزار تومان
+            <p className={classes.secondP}>25</p> هزار تومان
           </TicketPrice>
           <TicketPrice
             Bullets={[true, true, false, false, false, false]}
             img={false}
           >
-            یک بلیط{" "}
-            <p className={classes.secondP}>رایگان</p>
+            یک بلیط <p className={classes.secondP}>رایگان</p>
           </TicketPrice>
         </div>
-        <a className = {classes.laws} href = "">قوانین بازی</a>
+        <NavLink onClick={GotoTop} className={classes.laws} to="/Laws/Winners">
+          قوانین بازی
+        </NavLink>
       </div>
     </div>
   );
+};
+
+const GotoTop = () => {
+  window.scrollTo(0, 0);
 };
 
 export default WinningTickets;

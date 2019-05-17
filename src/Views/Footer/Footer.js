@@ -24,7 +24,7 @@ const Footer = props => {
           </div>
         </div>
         <div className={classes.branding}>
-          <img src={logo} aly="لوگو ایران لاک" />
+          <img src={logo} alt="لوگو ایران لاک" />
           <h2>ایران لاک</h2>
         </div>
         <div className={classes.sortSection}>
@@ -38,7 +38,7 @@ const Footer = props => {
             <p>
               <strong>شماهم شانس برنده شدن را تجربه خواهید کرد.</strong>
             </p>
-            <a target="-_blank" rel="noopener" href="https://t.me/iranlucksupport">
+            <a target="-_blank" rel="noopener noreferrer" href="https://t.me/iranlucksupport">
               پشتیبانی تلگرام: <strong>iranlucksupport@</strong>
             </a>
           </section>
@@ -97,7 +97,7 @@ const Footer = props => {
               href="https://www.instagram.com/iranluck"
               className={classes.instaBTN}
               target="_blank"
-              rel="noopener"
+              rel="noopener noreferrer"
             >
               <img src={instagram} alt="آیکون اینستاگرام" />
               ما را دنبال کنید
@@ -106,7 +106,7 @@ const Footer = props => {
               href="https://t.me/IranLuck"
               className={classes.telegramBTN}
               target="_blank"
-              rel="noopener"
+              rel="noopener noreferrer"
             >
               <img src={telegramIcon} alt="آیکون تلگرام" />
               ما را دنبال کنید

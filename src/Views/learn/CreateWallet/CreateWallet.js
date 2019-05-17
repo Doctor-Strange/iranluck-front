@@ -1,5 +1,5 @@
 import React from "react";
-import { Switch, Route, withRouter, NavLink } from "react-router-dom";
+import { Switch, Route, withRouter } from "react-router-dom";
 import excoino from "../../../Assets/Learn/CreateWallet/excoino.png";
 import pay98 from "../../../Assets/Learn/CreateWallet/pay98.png";
 import classes from "./CreateWallet.css";
@@ -13,7 +13,10 @@ const CreateWallet = props => {
         <h2>- گام دوم</h2>
         <h3>ساخت کیف پول ارز دیجیتال</h3>
       </div>
-      <p className={classes.P}>شما میتوانید به اختیار خود در یکی از وبسایت های زیر کیف پول خود را ایجاد کنید</p>
+      <p className={classes.P}>
+        شما میتوانید به اختیار خود در یکی از وبسایت های زیر کیف پول خود را ایجاد
+        کنید
+      </p>
       <div className={classes.Refer}>
         <a
           target="_blank"

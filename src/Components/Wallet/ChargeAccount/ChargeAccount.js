@@ -14,10 +14,10 @@ class ChargeAccount extends Component {
           <p>پرفکت مانی</p>
         </div>
         <div className={classes.teach}>
-          <NavLink onClick={GotoTop} to="/" to="">
+          <NavLink onClick={GotoTop} to="/">
             + آموزش پرداخت از درگاه
           </NavLink>
-          <NavLink onClick={GotoTop} to="/Learn" to="">
+          <NavLink onClick={GotoTop} to="/Learn">
             + آموزش ساخت کیف پول پرفکت مانی
           </NavLink>
         </div>

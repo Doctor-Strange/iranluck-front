@@ -7,10 +7,12 @@ import instagram from "../../../Assets/instagram.png";
 import facebook from "../../../Assets/facebook.png";
 import whatsapp from "../../../Assets/whatsapp.png";
 import twitter from "../../../Assets/twitter.png";
+import { CopyToClipboard } from "react-copy-to-clipboard";
 var CryptoJS = require("crypto-js");
 
 class SendToFriends extends Component {
   state = {
+    clicked: false,
     UserRefId: ""
   };
 
@@ -26,9 +28,19 @@ class SendToFriends extends Component {
       });
     }
   };
+
   onCopyClick = () => {
-    navigator.clipboard.writeText(
-      `http://www.iranluck.com${this.state.UserRefId}`
+    this.setState(
+      {
+        clicked: true
+      },
+      () => {
+        setInterval(() => {
+          this.setState({
+            clicked: false
+          });
+        }, 1000);
+      }
     );
   };
 
@@ -43,11 +55,24 @@ class SendToFriends extends Component {
           ایران لاک را به دوستانتان معرفی کنید، اگر دوستان شما برنده شوند، شما
           هم نصف قیمت برنده شده را هدیه خواهید گرفت.
         </h3>
-        <div className={classes.OfferToFriends}>
-          <p>{`http://www.iranluck.com${this.state.UserRefId}`}</p>
+        <label className={classes.OfferToFriends}>
+          <input
+            onChange={() => {}}
+            type="text"
+            value={`http://www.iranluck.com${this.state.UserRefId}`}
+          />
           <img className={classes.Icon} src={netWorkIcon} alt="icon link" />
-          <button onClick={this.onCopyClick}>کپی</button>
-        </div>
+          <CopyToClipboard
+            text={`http://www.iranluck.com${this.state.UserRefId}`}
+          >
+            <button onClick={this.onCopyClick}>
+              کپی
+              <span className={this.state.clicked ? classes.toolTip : null}>
+                کپی شد
+              </span>
+            </button>
+          </CopyToClipboard>
+        </label>
         <div className={classes.SocilaContainer}>
           <a
             target="_blank"

@@ -12,7 +12,7 @@ import WithDrawal from "../../Components/Wallet/WithDrawal/WithDrawal";
 import Wallet from "../../Components/Wallet/Wallet";
 import EditProfile from "../../Containers/EditProfile/EditProfile";
 import UserInformation from "../../Components/UserInformation/UserInformation";
-import SupportTicket from "../../Components/SupportTicket/SupportTicket";
+// import SupportTicket from "../../Components/SupportTicket/SupportTicket";
 
 class Dashboard extends Component {
   state = {
@@ -74,4 +74,4 @@ class Dashboard extends Component {
   }
 }
 
-export default Dashboard;
+export default withRouter(Dashboard);

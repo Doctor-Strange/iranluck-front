@@ -1,5 +1,4 @@
 import React from "react";
-import { withRouter, NavLink } from "react-router-dom";
 import one from "../../../Assets/Learn/CreatePerfectMoney/1.jpg";
 import two from "../../../Assets/Learn/CreatePerfectMoney/2.jpg";
 import three from "../../../Assets/Learn/CreatePerfectMoney/3.jpg";
@@ -20,7 +19,7 @@ const CreatePerfectMoney = props => {
       <div className={classes.father}>
         <p>
           به وبسایت اصلی شرکت پرفکت مانی به آدرس
-          <a href="https://perfectmoney.is" target="_blank" rel="noopener">
+          <a href="https://perfectmoney.is" target="_blank" rel="noopener noreferrer">
             www.perfectmoney.is
           </a>
           مراجعه میکنید
@@ -72,4 +71,4 @@ const CreatePerfectMoney = props => {
   );
 };
 
-export default withRouter(CreatePerfectMoney);
+export default CreatePerfectMoney;

@@ -20,16 +20,16 @@ class Menu extends Component {
       >
         <div className={global.Responsive}>
           <div className={classes.firstPart}>
-            <a href="/">
+            <NavLink to="/">
               <img src={logo} className={classes.logo} alt="لوگو" />
-            </a>
+            </NavLink>
             <div className={classes.menulist}>
               <ul>
                 <li onClick={this.onItemClick}>
                   <NavLink to="/Learn">آموزش شارژ / تسویه</NavLink>
                 </li>
                 <li onClick={this.onItemClick}>
-                  <NavLink to="/Law">قوانین</NavLink>
+                  <NavLink to="/Laws">قوانین</NavLink>
                 </li>
               </ul>
             </div>

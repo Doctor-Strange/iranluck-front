@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { withRouter, NavLink } from "react-router-dom";
 import classes from "./EditWalletAddress.css";
 
 class EditWalletAddress extends Component {
@@ -18,4 +17,4 @@ class EditWalletAddress extends Component {
   }
 }
 
-export default withRouter(EditWalletAddress);
+export default EditWalletAddress;

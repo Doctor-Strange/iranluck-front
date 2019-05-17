@@ -116,7 +116,7 @@ class SignUp extends Component {
               </button>
             ) : (
               <button className={classes.ButtonForm} type="submit">
-                ورود{" "}
+                ثبت نام
               </button>
             )}
             <GoogleLogin

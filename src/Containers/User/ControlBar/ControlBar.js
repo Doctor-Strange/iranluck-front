@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import { withRouter, NavLink } from "react-router-dom";
 import classes from "./ControlBar.css";
-import global from "../../../global.css";
 import gear from "../../../Assets/user/gear.png";
-import bell from "../../../Assets/user/bell.png";
 import moreMenu from "../../../Assets/user/moreMenu.png";
-import envelope from "../../../Assets/user/envelope.png";
+// import bell from "../../../Assets/user/bell.png";
+// import global from "../../../global.css";
+// import envelope from "../../../Assets/user/envelope.png";
 
 class ControlBar extends Component {
   render() {

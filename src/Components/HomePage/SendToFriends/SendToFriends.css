@@ -13,7 +13,7 @@
 }
 
 .OfferToFriends {
-  position: relative; 
+  position: relative;
   display: block;
   margin: auto;
   width: 65%;
@@ -30,7 +30,6 @@
   color: #176ccf;
   font-family: iransB;
   width: 97%;
-  font-size: 14px;
   line-height: 1.6;
   border-radius: 4px;
   padding: 12px;
@@ -48,13 +47,31 @@
   width: 112px;
   border-radius: 6px;
   position: absolute;
-  top: 9px;
+  top: 7px;
   padding: 3px;
   padding-right: 0;
   cursor: pointer;
   padding-left: 25px;
   box-shadow: none;
   right: 10px;
+}
+
+.OfferToFriends button span {
+  position: absolute;
+  right: 11px;
+  top: -40px;
+  background: #42a5f5;
+  padding: 1px 25px;
+  font-size: 12px;
+  border-radius: 4px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02), 0 4px 8px rgba(0, 0, 0, 0.09);
+  color: #fff;
+  transition: 0.5s;
+  opacity: 0;
+}
+
+.OfferToFriends button span.toolTip {
+  animation: Show 1s ease-in-out forwards;
 }
 
 .OfferToFriends button:hover {
@@ -101,5 +118,17 @@
   }
   .SocialIcon {
     width: 32px;
+  }
+}
+
+@keyframes Show {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }

@@ -1,6 +1,11 @@
 import React from "react";
 import classes from "./KnowUs.css";
 import global from "../../../global.css";
+import { NavLink } from "react-router-dom";
+
+const GotoTop = () => {
+  window.scrollTo(0, 0);
+};
 
 const KnowUs = props => {
   return (
@@ -15,7 +20,13 @@ const KnowUs = props => {
           داشته باشند. شما می توانید آموزش نحوه ثبت نام و پرداخت را از لینک زیر
           و یا در کانال اینستاگرام و تلگرام ما مشاهده کنید
         </p>
-        <a className={classes.button} href="">آموزش برداشت وجه</a>
+        <NavLink
+          onClick={GotoTop}
+          className={classes.button}
+          to="/Learn/WithDrawal"
+        >
+          آموزش برداشت وجه
+        </NavLink>
       </div>
     </div>
   );

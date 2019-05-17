@@ -15,7 +15,7 @@ class Panel extends Component {
             <img src={Userwallet} alt="Dashboard Icon" />
             <p>کیف پول</p>
           </NavLink>
-          <a className={classes.info} href="">
+          <a className={classes.info} href="/account/Wallet">
             <img src={info} alt="Dashboard Icon" />
             <p>گزارشات</p>
           </a>

@@ -10,22 +10,24 @@ const Taaj = props => {
       <div className={global.Responsive}>
         <div className={classes.DIV}>
           <a
-            target="_blank"
-            rel="noopener"
+            rel="noopener noreferrer"
             target="-_blank"
-            rel="noopener"
             href="https://t.me/iranlucksupport"
           >
             پشتیبانی تلگرام: iranlucksupport@
           </a>
         </div>
         <div className={classes.DIV}>
-          <a target="_blank" rel="noopener" href="https://t.me/IranLuck">
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://t.me/IranLuck"
+          >
             <img src={telegram} alt="telegram" />
           </a>
           <a
             target="_blank"
-            rel="noopener"
+            rel="noopener noreferrer"
             href="https://www.instagram.com/iranluck"
           >
             <img src={instagram} alt="instagram" />
