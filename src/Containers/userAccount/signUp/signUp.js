@@ -40,7 +40,7 @@ class SignUp extends Component {
   componentWillReceiveProps = props => {
     if (props.redirect && !props.fail) {
       this.props.OnDrawelClick();
-      this.props.history.push("/EventPage");
+      this.props.history.push(`/EventPage/?${this.state.Email}`);
     } else {
       this.setState({
         loading: false
@@ -58,6 +58,7 @@ class SignUp extends Component {
       };
       this.props.sign_Up_Req(Data);
       this.setState({
+        Email: value.profileObj.email.trim(),
         loading: true
       });
     } else {
@@ -88,6 +89,7 @@ class SignUp extends Component {
           <h2>ثبت نام</h2>
           <form onSubmit={this.onSubmitForm}>
             <input
+              autoComplete="false"
               onChange={e => this.onInput(e, "Email")}
               type="Text"
               placeholder="ایمیل"

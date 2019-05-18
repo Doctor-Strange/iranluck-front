@@ -32,8 +32,12 @@
   margin-top: 20px;
 }
 
+.menu li {
+  transition: 0.25s all;
+}
+
 .menu li a {
-    transition: 0.25s;
+  transition: 0.25s;
   margin: 14px 0;
   color: #fff;
   display: block;
@@ -41,8 +45,15 @@
   font-size: 14px;
 }
 
-.menu li a:hover {
+.menu li.Active {
+  padding-right: 10px;
+}
+
+.menu li.Active a {
+  border-right: 1px solid #fff;
+}
+
+.menu li:hover:not(.Active) {
   background: #1a2226;
   font-family: iransM;
 }
-

@@ -10,13 +10,17 @@ import twitter from "../../../Assets/twitter.png";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 var CryptoJS = require("crypto-js");
 
+let time = setInterval(() => {});
+
 class SendToFriends extends Component {
+  _isMounted = false;
   state = {
     clicked: false,
     UserRefId: ""
   };
 
   componentDidMount = () => {
+    this._isMounted = true;
     if (localStorage["user"]) {
       //get user information from Storage
       const key = "IranLuckHashCode";
@@ -27,6 +31,16 @@ class SendToFriends extends Component {
         UserRefId: "/?" + Data.Email
       });
     }
+    if (sessionStorage["user"]) {
+      //get user information from Storage
+      const key = "IranLuckHashCode";
+      let storage = sessionStorage.getItem("user");
+      let decrypted = CryptoJS.AES.decrypt(storage, key);
+      const Data = JSON.parse(decrypted.toString(CryptoJS.enc.Utf8));
+      this.setState({
+        UserRefId: "/?" + Data.OwnRefNumber
+      });
+    }
   };
 
   onCopyClick = () => {
@@ -35,13 +49,17 @@ class SendToFriends extends Component {
         clicked: true
       },
       () => {
-        setInterval(() => {
+        time = setInterval(() => {
           this.setState({
             clicked: false
           });
         }, 1000);
       }
     );
+  };
+
+  componentWillUnmount = () => {
+    clearInterval(time);
   };
 
   render() {

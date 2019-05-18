@@ -26,14 +26,18 @@ class Panel extends Component {
         </div>
         <DashboardInfo />
         <div className={classes.panelControl}>
-        <h3>آموزش ها</h3>        
+          <h3>آموزش ها</h3>
           <div className={classes.teach}>
-            <NavLink to="">+ آموزش ساخت حساب پرفکت مانی</NavLink>
-            <NavLink to="">+ آموزش ساخت کیف پول دیجیتال</NavLink>
-            <NavLink to="">+ آموزش پرداخت از درگاه پرفکت مانی</NavLink>
-            <NavLink to="">+ آموزش شارژ حساب</NavLink>
-            <NavLink to="">+ آموزش تسویه حساب</NavLink>
-            <NavLink to="">+ تغییر آدرس کیف پول</NavLink>
+            <NavLink to="/Learn">+ آموزش ساخت حساب پرفکت مانی</NavLink>
+            <NavLink to="/Learn/CreateWallet">
+              + آموزش ساخت کیف پول دیجیتال
+            </NavLink>
+            <NavLink to="/Learn/BuyPerfectMoney">
+              + آموزش خرید پرفکت مانی
+            </NavLink>
+            <NavLink to="/">+ آموزش شارژ حساب</NavLink>
+            <NavLink to="/Learn/WithDrawal">+ آموزش تسویه حساب</NavLink>
+            <NavLink to="/Learn/Walletaddress">+ تغییر آدرس کیف پول</NavLink>
           </div>
         </div>
       </div>

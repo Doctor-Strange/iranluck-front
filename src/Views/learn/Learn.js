@@ -14,6 +14,7 @@ const GotoTop = () => {
 };
 
 const Learn = props => {
+  const url = props.history.location.pathname;
   return (
     <div className={global.Responsive}>
       <div>
@@ -22,7 +23,7 @@ const Learn = props => {
             <div>
               <h3>گام اول </h3>
               <NavLink
-                className={classes.uareHere}
+                className={url === "/Learn" ? classes.Active : null}
                 onClick={GotoTop}
                 to="/Learn"
               >
@@ -31,37 +32,75 @@ const Learn = props => {
             </div>
             <div>
               <h3>گام دوم </h3>
-              <NavLink onClick={GotoTop} to="/Learn/CreateWallet">
+              <NavLink
+                className={
+                  url === "/Learn/CreateWallet" ? classes.Active : null
+                }
+                onClick={GotoTop}
+                to="/Learn/CreateWallet"
+              >
                 - ساخت کیف پول ارز دیجیتال
               </NavLink>
-              <NavLink onClick={GotoTop} to="/Learn/CreateWallet/excoino">
+              <NavLink
+                className={
+                  url === "/Learn/CreateWallet/excoino" ? classes.Active : null
+                }
+                onClick={GotoTop}
+                to="/Learn/CreateWallet/excoino"
+              >
                 - ساخت کیف پول در excoino
               </NavLink>
-              <NavLink onClick={GotoTop} to="/Learn/CreateWallet/pay98">
+              <NavLink
+                className={
+                  url === "/Learn/CreateWallet/pay98" ? classes.Active : null
+                }
+                onClick={GotoTop}
+                to="/Learn/CreateWallet/pay98"
+              >
                 - ساخت کیف پول در Pay98
               </NavLink>
             </div>
             <div>
               <h3>گام سوم </h3>
-              <NavLink onClick={GotoTop} to="/Learn/BuyPerfectMoney">
+              <NavLink
+                className={
+                  url === "/Learn/BuyPerfectMoney" ? classes.Active : null
+                }
+                onClick={GotoTop}
+                to="/Learn/BuyPerfectMoney"
+              >
                 - خرید پرفکت مانی
               </NavLink>
             </div>
             <div>
               <h3>گام چهارم </h3>
-              <NavLink onClick={GotoTop} to="/">
+              <NavLink
+                className={url === "/Learn" ? classes.Active : null}
+                onClick={GotoTop}
+                to="/"
+              >
                 آموزش شارژحساب
               </NavLink>
             </div>
             <div>
               <h3>گام پنجم</h3>
-              <NavLink onClick={GotoTop} to="/Learn/Walletaddress">
+              <NavLink
+                className={
+                  url === "/Learn/Walletaddress" ? classes.Active : null
+                }
+                onClick={GotoTop}
+                to="/Learn/Walletaddress"
+              >
                 - ثبت / تغییر آدرس کیف پول
               </NavLink>
             </div>
             <div>
               <h3>گام آخر</h3>
-              <NavLink onClick={GotoTop} to="/Learn/WithDrawal">
+              <NavLink
+                className={url === "/Learn/WithDrawal" ? classes.Active : null}
+                onClick={GotoTop}
+                to="/Learn/WithDrawal"
+              >
                 - برداشت وجه
               </NavLink>
             </div>

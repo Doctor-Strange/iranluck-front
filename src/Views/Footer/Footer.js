@@ -38,7 +38,11 @@ const Footer = props => {
             <p>
               <strong>شماهم شانس برنده شدن را تجربه خواهید کرد.</strong>
             </p>
-            <a target="-_blank" rel="noopener noreferrer" href="https://t.me/iranlucksupport">
+            <a
+              target="-_blank"
+              rel="noopener noreferrer"
+              href="https://t.me/iranlucksupport"
+            >
               پشتیبانی تلگرام: <strong>iranlucksupport@</strong>
             </a>
           </section>
@@ -49,43 +53,18 @@ const Footer = props => {
                 <NavLink to="">سوالات متداول</NavLink>
               </li> */}
               <li>
-                <NavLink onClick={GotoTop} to="/Learn">
-                  آموزش ساخت حساب پرفکت مانی
-                </NavLink>
-              </li>
-              <li>
-                <NavLink onClick={GotoTop} to="/Learn/CreateWallet">
-                  آموزش ساخت کیف پول
-                </NavLink>
-              </li>
-              <li>
-                <NavLink onClick={GotoTop} to="/Learn/BuyPerfectMoney">
-                  آموزش خرید پرفکت مانی
-                </NavLink>
-              </li>
-              <li>
-                <NavLink onClick={GotoTop} to="">
-                  آموزش شارژحساب
-                </NavLink>
-              </li>
-              <li>
-                <NavLink onClick={GotoTop} to="/Learn/Walletaddress">
-                  تغییر / ثبت آدرس کیف پول
-                </NavLink>
-              </li>
-              <li>
-                <NavLink onClick={GotoTop} to="/Learn/WithDrawal">
-                  آموزش برداشت وجه
-                </NavLink>
-              </li>
-              <li>
                 <NavLink onClick={GotoTop} to="/account">
                   حساب کاربری
                 </NavLink>
               </li>
               <li>
-                <NavLink onClick={GotoTop} to="/account/Wallet">
-                  کیف پول
+                <NavLink onClick={GotoTop} to="/Laws/PrivacyPolicy">
+                  حریم خصوصی
+                </NavLink>
+              </li>
+              <li>
+                <NavLink onClick={GotoTop} to="/Learn">
+                  آموزش ساخت حساب پرفکت مانی
                 </NavLink>
               </li>
             </ul>

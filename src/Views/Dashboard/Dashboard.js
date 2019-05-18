@@ -19,12 +19,16 @@ class Dashboard extends Component {
     RightmenuToggle: false
   };
 
-  onMenuToggle = () => {
-    this.setState(prev => {
-      return {
-        RightmenuToggle: !prev.RightmenuToggle
-      };
-    });
+  onMenuToggle = (arg = true) => {
+    arg
+      ? this.setState(pre => {
+          return {
+            RightmenuToggle: !pre.RightmenuToggle
+          };
+        })
+      : this.setState({
+          RightmenuToggle: false
+        });
   };
 
   render() {
@@ -37,7 +41,7 @@ class Dashboard extends Component {
               this.state.RightmenuToggle ? classes.shwoMenu : classes.hideMenu
             ].join(" ")}
           >
-            <RightDashboard />
+            <RightDashboard OnItemClick={() => this.onMenuToggle(false)} />
           </div>
           {this.state.RightmenuToggle ? (
             <BackDraw

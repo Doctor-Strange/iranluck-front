@@ -3,6 +3,7 @@ import classes from "./EventPage.css";
 import global from "../../global.css";
 
 const EventPage = props => {
+  const url = props.history.location.search.slice(1);
   return (
     <div className={classes.father}>
       <div className={global.Responsive}>
@@ -10,7 +11,8 @@ const EventPage = props => {
         <p>
           - برای
           <strong> تایید عملیات </strong>
-          به ایمیل خود مراجعه کرده و بر روی لینک
+          به ایمیل <strong> {url} </strong>
+          مراجعه کرده و بر روی لینک
           <strong> " تایید ایمیل " </strong>
           کلیک کنید
         </p>

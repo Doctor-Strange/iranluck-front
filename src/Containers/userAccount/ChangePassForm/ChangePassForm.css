@@ -1,0 +1,52 @@
+.Container {
+  position: relative;
+  z-index: 1;
+  background: rgba(252, 253, 255, 0.9);
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.Container h2 {
+  margin: auto;
+  color: #026ac9;
+  font-family: iransB;
+}
+
+.Container img {
+  display: block;
+  margin: auto;
+}
+
+.Container form {
+  width: 90%;
+}
+
+.Container p {
+  text-align: right;
+  font-family: iransBL;
+}
+
+.Container input {
+  width: 96%;
+  padding: 2%;
+}
+
+.CaptchaFather {
+  text-align: center;
+}
+.Captcha {
+  margin-top: 20px;
+  display: inline-block;
+}
+
+.Container button {
+  height: 45px;
+  cursor: pointer;
+  margin: auto;
+  width: 160px;
+  border: 1px solid transparent;
+  padding: 5px 10px;
+}

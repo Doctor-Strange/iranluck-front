@@ -20,7 +20,7 @@ class Menu extends Component {
       >
         <div className={global.Responsive}>
           <div className={classes.firstPart}>
-            <NavLink to="/">
+            <NavLink to="/" onClick={this.onItemClick}>
               <img src={logo} className={classes.logo} alt="لوگو" />
             </NavLink>
             <div className={classes.menulist}>

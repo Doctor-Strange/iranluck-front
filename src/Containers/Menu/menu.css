@@ -25,13 +25,13 @@
 
 .firstPart,
 .secondPart {
-  width: 40%;
+  width: 42%;
   display: inline-block;
   vertical-align: middle;
 }
 
 .secondPart {
-  width: 60%;
+  width: 58%;
   text-align: left;
 }
 

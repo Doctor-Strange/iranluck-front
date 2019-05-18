@@ -13,6 +13,7 @@ const GotoTop = () => {
 };
 
 const Laws = props => {
+  const url = props.history.location.pathname;
   return (
     <div className={global.Responsive}>
       <div>
@@ -20,7 +21,7 @@ const Laws = props => {
           <div className={classes.wi}>
             <div>
               <NavLink
-                className={classes.uareHere}
+                className={url === "/Laws" ? classes.Active : null}
                 onClick={GotoTop}
                 to="/Laws"
               >
@@ -28,17 +29,31 @@ const Laws = props => {
               </NavLink>
             </div>
             <div>
-              <NavLink onClick={GotoTop} to="/Laws/Winners">
+              <NavLink
+                className={url === "/Laws/Winners" ? classes.Active : null}
+                onClick={GotoTop}
+                to="/Laws/Winners"
+              >
                 بلیط های برنده
               </NavLink>
             </div>
             <div>
-              <NavLink onClick={GotoTop} to="/Laws/WithDrawal">
-              برداشت، شارژ و سکه شانس
+              <NavLink
+                className={url === "/Laws/WithDrawal" ? classes.Active : null}
+                onClick={GotoTop}
+                to="/Laws/WithDrawal"
+              >
+                برداشت، شارژ و سکه شانس
               </NavLink>
             </div>
             <div>
-              <NavLink onClick={GotoTop} to="/Laws/PrivacyPolicy">
+              <NavLink
+                className={
+                  url === "/Laws/PrivacyPolicy" ? classes.Active : null
+                }
+                onClick={GotoTop}
+                to="/Laws/PrivacyPolicy"
+              >
                 حریم خصوصی
               </NavLink>
             </div>

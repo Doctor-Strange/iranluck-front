@@ -39,6 +39,12 @@
   color: firebrick;
 }
 
+.Steps .wi div a.Active {
+  color: #009688;
+  padding-right: 10px;
+  border-right: 1px solid #009688;
+}
+
 @media screen and (max-width: 720px) {
   .Steps {
     width: 100%;
@@ -71,7 +77,7 @@
   /* Track */
   .Steps::-webkit-scrollbar-track {
     box-shadow: none;
-    border:1px solid #24aae1;
+    border: 1px solid #24aae1;
     border-radius: 10px;
   }
 

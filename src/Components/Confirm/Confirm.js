@@ -12,6 +12,12 @@ class Confirm extends Component {
     this.props.sendConfirm(data);
   };
 
+  componentWillReceiveProps = props => {
+    if (props.AuthorizeStatus && !props.fail) {
+      this.props.history.push("/account/Wallet");
+    }
+  };
+
   render() {
     return (
       <div className={classes.father}>
@@ -25,6 +31,13 @@ class Confirm extends Component {
   }
 }
 
+const mapStateToProps = state => {
+  return {
+    fail: state.AUTH.fail,
+    AuthorizeStatus: state.AUTH.AuthorizeStatus
+  };
+};
+
 const mapDispatchToProps = dispatch => {
   return {
     sendConfirm: value => dispatch(sendConfirm(value))
@@ -33,7 +46,7 @@ const mapDispatchToProps = dispatch => {
 
 export default withRouter(
   connect(
-    null,
+    mapStateToProps,
     mapDispatchToProps
   )(Confirm)
 );

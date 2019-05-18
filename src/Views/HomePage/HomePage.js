@@ -11,8 +11,8 @@ import SendToFriends from "../../Components/HomePage/SendToFriends/SendToFriends
 import WinningTickets from "../../Components/HomePage/WinningTickets/WinningTickets";
 import WhyUs from "../../Components/HomePage/WhyUs/WhyUs";
 import KnowUs from "../../Components/HomePage/KnowUs/KnowUs";
-import { log_in_Req } from "../../Store/Action";
-var CryptoJS = require("crypto-js");
+import { AuthRedux } from "../../Store/Action";
+// var CryptoJS = require("crypto-js");
 
 class HomePage extends Component {
   componentDidMount = () => {
@@ -20,12 +20,12 @@ class HomePage extends Component {
 
     if (!this.props.AuthorizeStatus && localStorage["user"]) {
       //get user information from Storage
-      const key = "IranLuckHashCode";
-      let storage = localStorage.getItem("user");
-      let decrypted = CryptoJS.AES.decrypt(storage, key);
-      const Data = JSON.parse(decrypted.toString(CryptoJS.enc.Utf8));
-      this.props.log_in_Req(Data);
-    } 
+      // const key = "IranLuckHashCode";
+      // let storage = localStorage.getItem("user");
+      // let decrypted = CryptoJS.AES.decrypt(storage, key);
+      // const Data = JSON.parse(decrypted.toString(CryptoJS.enc.Utf8));
+      this.props.AuthRedux(true);
+    }
   };
 
   render() {
@@ -55,7 +55,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    log_in_Req: data => dispatch(log_in_Req(data))
+    AuthRedux: data => dispatch(AuthRedux(data))
   };
 };
 

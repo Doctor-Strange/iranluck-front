@@ -11,7 +11,8 @@ class MenuItems extends Component {
   };
 
   LOGOUT = () => {
-    localStorage.clear("user");
+    sessionStorage.removeItem("user");
+    localStorage.removeItem("user");
     this.props.AuthRedux();
   };
 

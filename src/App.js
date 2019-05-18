@@ -9,6 +9,7 @@ import EventPage from "./Components/EventPage/EventPage";
 import Confirm from "./Components/Confirm/Confirm";
 import Laws from "./Views/Laws/Laws";
 import Learn from "./Views/learn/Learn";
+import ChangePassword from "./Components/ChangePassword/ChangePassword";
 
 class App extends Component {
   componentDidMount = () => {};
@@ -25,6 +26,7 @@ class App extends Component {
             <Route path="/EventPage" component={EventPage} />
             <Route path="/Confirm" component={Confirm} />
             <Route path="/Laws" component={Laws} />
+            <Route path="/ChangePassword" component={ChangePassword} />
             <Route exact path="/" component={HomePage} />
             {route}
           </Switch>

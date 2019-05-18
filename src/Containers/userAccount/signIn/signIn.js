@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { withRouter } from "react-router-dom";
 import classes from "./signIn.css";
 import { GoogleLogin } from "react-google-login";
 import { log_in_Req, FailProgress } from "../../../Store/Action";
@@ -13,7 +14,7 @@ class SignIn extends Component {
     Password: null,
     Type: "Site",
     loading: false,
-    Save: false
+    Save: true
   };
 
   onInput = (event, Field) => {
@@ -31,10 +32,7 @@ class SignIn extends Component {
       Password: this.state.Password.trim(),
       Type: "Site"
     };
-    if (this.state.Save) {
-      this.saveOnStorage(Data);
-    }
-    this.props.log_in_Req(Data);
+    this.props.log_in_Req(Data, this.state.Save ? "Local" : "session");
     this.setState({
       loading: true
     });
@@ -43,6 +41,7 @@ class SignIn extends Component {
   componentWillReceiveProps = props => {
     if (props.AuthorizeStatus && !props.fail) {
       this.props.OnDrawelClick();
+      this.props.history.push("/account/Wallet");
     } else {
       this.setState({
         loading: false
@@ -58,10 +57,7 @@ class SignIn extends Component {
         Password: value.profileObj.googleId.trim(),
         Type: "Gmail"
       };
-      if (this.state.Save) {
-        this.saveOnStorage(Data);
-      }
-      this.props.log_in_Req(Data);
+      this.props.log_in_Req(Data, this.state.Save ? "Local" : "session");
       this.setState({
         loading: true
       });
@@ -107,12 +103,15 @@ class SignIn extends Component {
               type="password"
               placeholder="رمز عبور"
             />
-            <a href="#dsfs" className={classes.forgetPass}>
+            <span
+              onClick={this.props.OnChangePassClick}
+              className={classes.forgetPass}
+            >
               رمز خود را فراموش کرده اید؟
-            </a>
+            </span>
             <label className={classes.checkbox_container}>
               من را به یاد بسپار
-              <input type="checkbox" onChange={this.onCheckBox} />
+              <input type="checkbox" checked onChange={this.onCheckBox} />
               <span className={classes.checkbox_checkmark} />
             </label>
             {this.state.loading ? (
@@ -160,12 +159,14 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    log_in_Req: data => dispatch(log_in_Req(data)),
+    log_in_Req: (data, type) => dispatch(log_in_Req(data, type)),
     FailProgress: () => dispatch(FailProgress())
   };
 };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(SignIn);
+export default withRouter(
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(SignIn)
+);
