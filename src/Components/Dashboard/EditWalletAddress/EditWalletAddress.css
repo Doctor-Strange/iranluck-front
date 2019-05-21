@@ -1,0 +1,29 @@
+.panelControl {
+  width: 92%;
+  margin: auto
+  /* padding: 2%; */
+  /* box-shadow: 0px 4px 8px #cecece; */
+  /* margin: auto; */
+  /* margin-bottom: 30px; */
+  /* margin-top: 46px; */
+}
+
+.CaptchaFather {
+  text-align: center;
+}
+.Captcha {
+  margin-top: 20px;
+  display: inline-block;
+}
+
+.panelControl input {
+  max-width: 320px;
+}
+.panelControl button {
+  height: 45px;
+  min-width: 100px;
+  padding: 3px;
+  /* margin-top: 15px; */
+  /* margin-bottom: 34px; */
+  transition: 0.25s;
+}

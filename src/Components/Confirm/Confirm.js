@@ -7,14 +7,29 @@ import Spinner from "../../UI/Spiner/Spinner";
 import { sendConfirm } from "../../Store/Action/Confirm";
 
 class Confirm extends Component {
+  state = {
+    type: null
+  };
   componentDidMount = () => {
-    const data = this.props.history.location.search.slice(1);
-    this.props.sendConfirm(data);
+    const item = this.props.history.location.search.split("&");
+    const code = item[0].substring(item[0].indexOf("=") + 1);
+    const type = item[1].split("=")[1];
+    this.setState({
+      type: type
+    });
+    this.props.sendConfirm(code, type);
   };
 
   componentWillReceiveProps = props => {
-    if (props.AuthorizeStatus && !props.fail) {
-      this.props.history.push("/account/Wallet");
+    console.log(props.AuthorizeStatus , props.redirect , props.fail)
+    if (this.state.type === "1") {
+      if (props.AuthorizeStatus && !props.fail) {
+        this.props.history.push("/account/Wallet");
+      }
+    } else {
+      if (props.redirect && !props.fail) {
+        this.props.history.push("/");
+      }
     }
   };
 
@@ -34,13 +49,14 @@ class Confirm extends Component {
 const mapStateToProps = state => {
   return {
     fail: state.AUTH.fail,
+    redirect: state.AUTH.redirect,
     AuthorizeStatus: state.AUTH.AuthorizeStatus
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    sendConfirm: value => dispatch(sendConfirm(value))
+    sendConfirm: (code, type) => dispatch(sendConfirm(code, type))
   };
 };
 

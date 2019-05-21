@@ -1,9 +1,15 @@
 import React, { Component } from "react";
 import classes from "./CountDown.css";
+import Games from "../../../Axios/Games";
 
 let time = setInterval(() => {});
 
 class Countdown extends Component {
+  constructor(props) {
+    super(props);
+    this._isMounted = false;
+    // rest of your code
+  }
   state = {
     days: 6,
     hours: 0,
@@ -13,6 +19,31 @@ class Countdown extends Component {
   };
 
   componentDidMount = () => {
+    this._isMounted = true;
+    Games({
+      method: "post",
+      url: "/GetDateCounter",
+      params: {
+        Type: 1
+      }
+    })
+      .then(response => {
+        const Time = response.data.Result.Counterstring.split("-");
+        if (this._isMounted) {
+          this.setState({
+            days: Time[0],
+            hours: Time[1],
+            minute: Time[2],
+            second: Time[3]
+          });
+        }
+      })
+      .catch(error => {
+        console.log(error);
+      })
+      .catch(error => {
+        console.log(error.response.data.Message);
+      });
     this.secondCountDown();
   };
 
@@ -75,6 +106,7 @@ class Countdown extends Component {
   };
 
   componentWillUnmount = () => {
+    this._isMounted = false;
     clearInterval(time);
   };
 

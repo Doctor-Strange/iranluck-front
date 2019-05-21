@@ -4,7 +4,7 @@ import { withRouter, NavLink } from "react-router-dom";
 import GearDashboar from "../../../Assets/GearDashboar.png";
 import info from "../../../Assets/info.png";
 import Userwallet from "../../../Assets/Userwallet.png";
-import DashboardInfo from "../../../Components/DashboardInfo/DashboardInfo";
+import DashboardInfo from "../../../Components/Dashboard/DashboardInfo/DashboardInfo";
 
 class Panel extends Component {
   render() {

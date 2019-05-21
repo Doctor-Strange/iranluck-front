@@ -13,10 +13,6 @@ class RightDashboard extends Component {
     this.props.OnItemClick();
   };
 
-  componentDidMount = () => {
-    if (localStorage["user"]) {
-    }
-  };
 
   componentDidMount = () => {
     // if  Auth is false and User Object is exist do the Automatic login
@@ -41,7 +37,8 @@ class RightDashboard extends Component {
           <img src={userIcon} alt="آیکون کاربری" />
           <div>
             <h3>{this.state.userName}</h3>
-            <p>آخرین بازدید : 98/02/15</p>
+            {/* ==> */}
+            {/* <p>آخرین بازدید : 98/02/15</p> */}
           </div>
         </div>
         <h3 className={classes.Gap}>منو اصلی</h3>

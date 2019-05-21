@@ -7,11 +7,11 @@ import RightDashboard from "../../Containers/User/RightDashboard/RightDashboard"
 import BackDraw from "../../UI/BackDraw/BackDraw";
 import Panel from "../../Containers/User/Panel/Panel";
 import telegramIcon from "../../Assets/telegramIcon.png";
-import ChargeAccount from "../../Components/Wallet/ChargeAccount/ChargeAccount";
-import WithDrawal from "../../Components/Wallet/WithDrawal/WithDrawal";
-import Wallet from "../../Components/Wallet/Wallet";
+import WithDrawal from "../../Components/Dashboard/Wallet/WithDrawal/WithDrawal";
+import Wallet from "../../Components/Dashboard/Wallet/Wallet";
 import EditProfile from "../../Containers/EditProfile/EditProfile";
-import UserInformation from "../../Components/UserInformation/UserInformation";
+import UserInformation from "../../Components/Dashboard/UserInformation/UserInformation";
+import ChargeAccount from "../../Components/Dashboard/Wallet/ChargeAccount/ChargeAccount";
 // import SupportTicket from "../../Components/SupportTicket/SupportTicket";
 
 class Dashboard extends Component {
@@ -68,9 +68,13 @@ class Dashboard extends Component {
           </div>
         </div>
         <div className={classes.support}>
-          <a target="-_blank" rel="noopener" href="https://t.me/irnsupport">
+          <a
+            target="-_blank"
+            rel="noopener"
+            href="https://t.me/iranlucksupport"
+          >
             <img src={telegramIcon} alt="telegram Support" />
-            <strong>پشتیبانی تلگرام: IRNsupport@</strong>
+            <strong>پشتیبانی تلگرام: iranlucksupport@</strong>
           </a>
         </div>
       </Hoc>

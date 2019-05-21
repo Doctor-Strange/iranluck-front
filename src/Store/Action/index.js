@@ -4,6 +4,9 @@ export {
   log_in_Req,
   FailProgress,
   ChangePassRequest,
-  ChangePassSubmit
+  ChangePassSubmit,
+  RedirectToConfirm,
+  walletAddressRequest
 } from "./Auth";
 export { sendConfirm } from "./Confirm";
+export { getWalletInformation } from "./Dashboard";

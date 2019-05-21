@@ -66,7 +66,7 @@ export const log_in_Req = (data, lifeCycle = "local") => {
       })
       .catch(error => {
         dispatch(FailProgress(true));
-        console.log(error.response.data.Message);
+        // console.log(error.response.data.Message);
       });
   };
 };
@@ -85,7 +85,7 @@ export const ChangePassRequest = data => {
       })
       .catch(error => {
         dispatch(FailProgress(true));
-        console.log(error);
+        // console.log(error.response.data.Message);
       });
   };
 };
@@ -105,7 +105,33 @@ export const ChangePassSubmit = data => {
       })
       .catch(error => {
         dispatch(FailProgress(true));
+        // console.log(error.response.data.Message);
+      });
+  };
+};
+
+export const walletAddressRequest = data => {
+  console.log(data);
+  return dispatch => {
+    Customer({
+      method: "post",
+      url: "/CreateMoneyAddressRequest",
+      data: {
+        MoneyAddress: data.MoneyAddress,
+        EmailAddress: data.EmailAddress
+      }
+    })
+      .then(response => {
+        console.log(response);
+        dispatch(RedirectToConfirm(true));
+      })
+      .catch(error => {
+        dispatch(FailProgress(true));
         console.log(error);
+      })
+      .catch(error => {
+        dispatch(FailProgress(true));
+        // console.log(error.response.data.Message);
       });
   };
 };

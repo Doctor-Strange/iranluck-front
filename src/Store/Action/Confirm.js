@@ -1,4 +1,4 @@
-import { AUTHORIZED, FAIL } from "./ActionTypes";
+import { AUTHORIZED, FAIL, REDIRECT_TO_CONFIRM } from "./ActionTypes";
 import Customer from "../../Axios/Customer";
 var CryptoJS = require("crypto-js");
 
@@ -16,23 +16,49 @@ export const FailProgress = (value = false) => {
   };
 };
 
-export const sendConfirm = data => {
-  return dispatch => {
-    Customer({
-      method: "post",
-      url: "/ConfirmEmail",
-      data: {
-        EncodedCoded: data
-      }
-    })
-      .then(response => {
-        dispatch(saveOnLocalStorage(response));
-      })
-      .catch(error => {
-        dispatch(FailProgress(true));
-        console.log(error.response.data.Message);
-      });
+export const RedirectToConfirm = (value = false) => {
+  return {
+    type: REDIRECT_TO_CONFIRM,
+    redirect: value
   };
+};
+
+export const sendConfirm = (code, type) => {
+  if (type === "1") {
+    return dispatch => {
+      Customer({
+        method: "post",
+        url: "/ConfirmEmail",
+        data: {
+          EncodedCoded: code
+        }
+      })
+        .then(response => {
+          dispatch(saveOnLocalStorage(response));
+        })
+        .catch(error => {
+          dispatch(FailProgress(true));
+          console.log(error.response.data.Message);
+        });
+    };
+  } else {
+    return dispatch => {
+      Customer({
+        method: "post",
+        url: "/CreateMoneyAddress",
+        data: {
+          EncodedCode: code
+        }
+      })
+        .then(response => {
+          dispatch(RedirectToConfirm(response));
+        })
+        .catch(error => {
+          dispatch(FailProgress(true));
+          console.log(error.response.data.Message);
+        });
+    };
+  }
 };
 
 export const saveOnLocalStorage = data => {

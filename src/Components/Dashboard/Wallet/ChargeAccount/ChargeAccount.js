@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { withRouter, NavLink } from "react-router-dom";
 import classes from "./ChargeAccount.css";
 
-import perfect from "../../../Assets/user/perfectmoneygate.jpg";
+import perfect from "../../../../Assets/user/perfectmoneygate.jpg";
 
 class ChargeAccount extends Component {
   render() {

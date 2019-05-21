@@ -1,9 +1,11 @@
 import { createStore, combineReducers, compose, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 import Auth from "./Reducer/Auth";
+import Dashboard from "./Reducer/Dashboard";
 
 const rootReducer = combineReducers({
-  AUTH: Auth
+  AUTH: Auth,
+  WALLET: Dashboard
 });
 
 let composeEnhancers = compose;

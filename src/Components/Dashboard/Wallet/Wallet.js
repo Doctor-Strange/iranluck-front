@@ -1,9 +1,9 @@
 import React from "react";
 import classes from "./Wallet.css";
 import { withRouter, NavLink } from "react-router-dom";
-import withDrawal from "../../Assets/user/withDrawal.jpg";
-import Charge from "../../Assets/user/Charge.jpg";
-import DashboardInfo from "../../Components/DashboardInfo/DashboardInfo";
+import withDrawal from "../../../Assets/user/withDrawal.jpg";
+import Charge from "../../../Assets/user/Charge.jpg";
+import DashboardInfo from "../DashboardInfo/DashboardInfo";
 
 const Wallet = props => {
   return (

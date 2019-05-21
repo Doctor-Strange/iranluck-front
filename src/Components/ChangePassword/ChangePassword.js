@@ -16,7 +16,7 @@ class ChangePassword extends Component {
 
   componentWillReceiveProps = props => {
     if (props.AuthorizeStatus) {
-        this.props.history.push('/')
+      this.props.history.push("/");
     } else {
       this.setState({
         loading: false

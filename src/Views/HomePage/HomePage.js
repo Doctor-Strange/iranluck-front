@@ -5,13 +5,13 @@ import { withRouter } from "react-router-dom";
 import Hoc from "../../Hoc/Hoc";
 import classes from "./HomePage.css";
 import HomePageHeader from "../../Components/HomePage/HomePageHeader/HomePageHeader";
-import CountDown from "../../Components/CountDown/CountDown";
 import TicketBook from "../../Containers/ticketBook/ticketBook";
 import SendToFriends from "../../Components/HomePage/SendToFriends/SendToFriends";
 import WinningTickets from "../../Components/HomePage/WinningTickets/WinningTickets";
 import WhyUs from "../../Components/HomePage/WhyUs/WhyUs";
 import KnowUs from "../../Components/HomePage/KnowUs/KnowUs";
 import { AuthRedux } from "../../Store/Action";
+import Countdown from "../../Components/HomePage/CountDown/CountDown";
 // var CryptoJS = require("crypto-js");
 
 class HomePage extends Component {
@@ -34,7 +34,7 @@ class HomePage extends Component {
         <HomePageHeader />
         <div className={classes.GrandFather}>
           <div className={classes.TicketContainer}>
-            <CountDown />
+            <Countdown />
             <TicketBook />
           </div>
         </div>

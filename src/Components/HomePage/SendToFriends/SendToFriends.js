@@ -13,14 +13,12 @@ var CryptoJS = require("crypto-js");
 let time = setInterval(() => {});
 
 class SendToFriends extends Component {
-  _isMounted = false;
   state = {
     clicked: false,
     UserRefId: ""
   };
 
   componentDidMount = () => {
-    this._isMounted = true;
     if (localStorage["user"]) {
       //get user information from Storage
       const key = "IranLuckHashCode";
@@ -28,7 +26,7 @@ class SendToFriends extends Component {
       let decrypted = CryptoJS.AES.decrypt(storage, key);
       const Data = JSON.parse(decrypted.toString(CryptoJS.enc.Utf8));
       this.setState({
-        UserRefId: "/?" + Data.Email
+        UserRefId: "/?" + Data.OwnRefNumber
       });
     }
     if (sessionStorage["user"]) {

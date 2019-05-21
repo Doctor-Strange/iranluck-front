@@ -29,9 +29,14 @@
   vertical-align: middle;
 }
 
+.Form input:disabled , .Form button:disabled:hover{
+  background: #ccc
+}
+
 .Form button:hover {
+  cursor: pointer;
   transition: 0.25s;
-  background: #3e3f78;
+  background: #349aec;
 }
 
 @media screen and (max-width: 880px) {
