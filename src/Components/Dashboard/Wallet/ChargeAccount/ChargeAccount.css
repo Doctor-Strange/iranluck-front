@@ -8,36 +8,20 @@
   margin-top: 46px;
 }
 
-.Gates {
+.panelControl button {
+  height: 45px;
   cursor: pointer;
-  /* display: inline-block;
-  margin: 10px; */
+  margin: 24px auto 20px auto;
+  min-width: 120px;
+  border: 1px solid transparent;
 }
 
-.Gates img {
-  padding: 10px;
-  transition: 0.25s;
-  border: 1px solid #ccc;
-  width: 120px;
-  border-radius: 15px;
-  display: block;
-  margin: auto;
-  margin-bottom: 10px;
-}
-
-.Gates:hover img {
-  box-shadow: 0px 5px 10px #e8e8e8;
-}
-
-.Gates p {
-  transition: 0.25s;
-  font-size: 16px;
+.CaptchaFather {
   text-align: center;
-  font-family: iransB;
 }
-
-.Gates:hover p {
-  color: #da3421;
+.Captcha {
+  margin-top: 20px;
+  display: inline-block;
 }
 
 .teach {

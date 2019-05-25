@@ -3,8 +3,13 @@ import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import classes from "./signUp.css";
 import { GoogleLogin } from "react-google-login";
-import { sign_Up_Req, FailProgress } from "../../../Store/Action";
+import {
+  sign_Up_Req,
+  FailProgress,
+  alertMessenger
+} from "../../../Store/Action";
 import Spinner from "../../../UI/Spiner/Spinner";
+import ReCAPTCHA from "react-google-recaptcha";
 import googleIcon from "../../../Assets/googleIcon.png";
 
 class SignUp extends Component {
@@ -25,16 +30,20 @@ class SignUp extends Component {
 
   onSubmitForm = event => {
     event.preventDefault();
-    this.props.FailProgress();
-    const Data = {
-      Email: this.state.Email.trim(),
-      Password: this.state.Password.trim(),
-      ParentRefNumber: this.state.ParentRefNumber
-    };
-    this.props.sign_Up_Req(Data);
-    this.setState({
-      loading: true
-    });
+    if (this.state.Password === this.state.RepeatPassword) {
+      this.props.FailProgress();
+      const Data = {
+        Email: this.state.Email.trim(),
+        Password: this.state.Password.trim(),
+        ParentRefNumber: this.state.ParentRefNumber
+      };
+      this.props.sign_Up_Req(Data);
+      this.setState({
+        loading: true
+      });
+    } else {
+      this.props.alertMessenger("رمز وارد شده با تکرار آن یکسان نیست");
+    }
   };
 
   componentWillReceiveProps = props => {
@@ -77,6 +86,19 @@ class SignUp extends Component {
     }
   };
 
+  onChange = value => {
+    this.setState({
+      SendBtnStatus: true
+    });
+  };
+
+  onError = err => {
+    // ==> COME BACK and add more code
+    this.setState({
+      SendBtnStatus: false
+    });
+  };
+
   render() {
     return (
       <div
@@ -89,25 +111,37 @@ class SignUp extends Component {
           <h2>ثبت نام</h2>
           <form onSubmit={this.onSubmitForm}>
             <input
+              maxLength="70"
+              minLength="5"
               autoComplete="false"
               onChange={e => this.onInput(e, "Email")}
               type="Text"
               placeholder="ایمیل"
             />
             <input
+              maxLength="15"
+              minLength="8"
               onChange={e => this.onInput(e, "Password")}
               type="password"
               placeholder="رمز عبور"
             />
             <input
+              minLength="8"
+              maxLength="15"
               onChange={e => this.onInput(e, "RepeatPassword")}
               type="password"
               placeholder="تکرار رمز عبور"
             />
             <input onChange={this.onInput} type="hidden" />
-            {/* <button className={classes.ButtonForm} type="submit">
-              ورود
-            </button> */}
+            <div className={classes.CaptchaFather}>
+              <ReCAPTCHA
+                onExpired={this.onError}
+                className={classes.Captcha}
+                sitekey="6LclC6MUAAAAADxEq1l358aAa0kn_NR-Is_4fbqF"
+                onChange={this.onChange}
+                onErrored={this.onError}
+              />
+            </div>
             {this.state.loading ? (
               <button
                 disabled={true}
@@ -117,7 +151,11 @@ class SignUp extends Component {
                 <Spinner />
               </button>
             ) : (
-              <button className={classes.ButtonForm} type="submit">
+              <button
+                disabled={!this.state.SendBtnStatus}
+                className={classes.ButtonForm}
+                type="submit"
+              >
                 ثبت نام
               </button>
             )}
@@ -158,7 +196,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     sign_Up_Req: data => dispatch(sign_Up_Req(data)),
-    FailProgress: () => dispatch(FailProgress())
+    FailProgress: () => dispatch(FailProgress()),
+    alertMessenger: sms => dispatch(alertMessenger(sms))
   };
 };
 export default withRouter(

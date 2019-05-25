@@ -6,6 +6,7 @@ import UserBox from "../Containers/userAccount/userAccount";
 import BackDraw from "../UI/BackDraw/BackDraw";
 import Taaj from "../Components/Taaj/Taaj";
 import Menu from "../Containers/Menu/menu";
+import Alerty from "../UI/Alerts/Alerts";
 
 class Layout extends Component {
   state = {
@@ -37,6 +38,7 @@ class Layout extends Component {
   render() {
     return (
       <Hoc>
+        <Alerty />
         {this.state.DrawelClose ? null : (
           <Hoc>
             <BackDraw

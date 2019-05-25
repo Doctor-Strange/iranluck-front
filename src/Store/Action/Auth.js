@@ -1,6 +1,27 @@
 import { AUTHORIZED, FAIL, REDIRECT_TO_CONFIRM } from "./ActionTypes";
 import Customer from "../../Axios/Customer";
+import { alertMessenger } from "./alertAction";
 var CryptoJS = require("crypto-js");
+
+const token = () => {
+  if (localStorage["user"]) {
+    //get user information from Storage
+    const key = "IranLuckHashCode";
+    let storage = localStorage.getItem("user");
+    let decrypted = CryptoJS.AES.decrypt(storage, key);
+    const Data = JSON.parse(decrypted.toString(CryptoJS.enc.Utf8));
+    return Data.Token;
+  }
+  if (sessionStorage["user"]) {
+    //get user information from Storage
+    const key = "IranLuckHashCode";
+    let storage = sessionStorage.getItem("user");
+    let decrypted = CryptoJS.AES.decrypt(storage, key);
+    const Data = JSON.parse(decrypted.toString(CryptoJS.enc.Utf8));
+    return Data.Token;
+  }
+  return "";
+};
 
 export const AuthRedux = (status = false) => {
   return {
@@ -40,7 +61,14 @@ export const sign_Up_Req = data => {
       })
       .catch(error => {
         dispatch(FailProgress(true));
-        console.log(error.response.data.Message);
+        dispatch(alertMessenger(error.response.data.Message));
+      })
+      .catch(() => {
+        dispatch(
+          alertMessenger(
+            "برای ثبت نام مجددا تلاش کنید. در ارتباط با سرور خطایی رخ داده است."
+          )
+        );
       });
   };
 };
@@ -66,7 +94,14 @@ export const log_in_Req = (data, lifeCycle = "local") => {
       })
       .catch(error => {
         dispatch(FailProgress(true));
-        // console.log(error.response.data.Message);
+        dispatch(alertMessenger(error.response.data.Message));
+      })
+      .catch(() => {
+        dispatch(
+          alertMessenger(
+            "برای ورود مجددا تلاش کنید. در ارتباط با سرور خطایی رخ داده است."
+          )
+        );
       });
   };
 };
@@ -76,6 +111,9 @@ export const ChangePassRequest = data => {
     Customer({
       method: "post",
       url: "/ChangePassRequest",
+      headers: {
+        Token: token()
+      },
       data: {
         EmailAddress: data
       }
@@ -85,7 +123,14 @@ export const ChangePassRequest = data => {
       })
       .catch(error => {
         dispatch(FailProgress(true));
-        // console.log(error.response.data.Message);
+        dispatch(alertMessenger(error.response.data.Message));
+      })
+      .catch(() => {
+        dispatch(
+          alertMessenger(
+            "خطایی رخ داده است ! برای تغییر پسورد خود مجددا تلاش کنید"
+          )
+        );
       });
   };
 };
@@ -105,33 +150,66 @@ export const ChangePassSubmit = data => {
       })
       .catch(error => {
         dispatch(FailProgress(true));
-        // console.log(error.response.data.Message);
+        dispatch(alertMessenger(error.response.data.Message));
+      })
+      .catch(() => {
+        dispatch(alertMessenger("خطایی رخ داده است ! مجددا تلاش کنید."));
       });
   };
 };
 
 export const walletAddressRequest = data => {
-  console.log(data);
   return dispatch => {
     Customer({
       method: "post",
       url: "/CreateMoneyAddressRequest",
+      headers: {
+        Token: token()
+      },
       data: {
         MoneyAddress: data.MoneyAddress,
         EmailAddress: data.EmailAddress
       }
     })
       .then(response => {
-        console.log(response);
         dispatch(RedirectToConfirm(true));
       })
       .catch(error => {
         dispatch(FailProgress(true));
-        console.log(error);
+        dispatch(alertMessenger(error.response.data.Message));
+      })
+      .catch(() => {
+        dispatch(
+          alertMessenger(
+            "خطایی رخ داده است ! مجددا برای تغییر آدرس کیف پول خود تلاش کنید."
+          )
+        );
+      });
+  };
+};
+
+export const PanelChangePassword = data => {
+  return dispatch => {
+    Customer({
+      method: "post",
+      url: "/PanelChangePassword ",
+      headers: {
+        Token: token()
+      },
+      data: {
+        NewPassword: data.NewPassword,
+        Password: data.Password
+      }
+    })
+      .then(response => {
+        dispatch(AuthRedux(false));
       })
       .catch(error => {
         dispatch(FailProgress(true));
-        // console.log(error.response.data.Message);
+        dispatch(alertMessenger(error.response.data.Message));
+      })
+      .catch(() => {
+        dispatch(alertMessenger("خطایی رخ داده است ! مجددا تلاش کنید."));
       });
   };
 };

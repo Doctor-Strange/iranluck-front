@@ -1,9 +1,8 @@
-import { WALLET_INFORMATION, FAIL } from "./ActionTypes";
+import { FAIL, REDIRECT_TO_CONFIRM, BOOK_PURCHASE } from "./ActionTypes";
 import Customer from "../../Axios/Customer";
 import { alertMessenger } from "./alertAction";
 var CryptoJS = require("crypto-js");
 const token = () => {
-  
   if (localStorage["user"]) {
     //get user information from Storage
     const key = "IranLuckHashCode";
@@ -22,6 +21,7 @@ const token = () => {
   }
   return "";
 };
+
 export const FailProgress = (value = false) => {
   return {
     type: FAIL,
@@ -29,24 +29,34 @@ export const FailProgress = (value = false) => {
   };
 };
 
-export const savewalletInfoOnRedux = (data = null) => {
+export const RedirectToConfirm = (value = false) => {
   return {
-    type: WALLET_INFORMATION,
-    wallet: data
+    type: REDIRECT_TO_CONFIRM,
+    redirect: value
   };
 };
 
-export const getWalletInformation = () => {
+export const BookPurchase = (value = false) => {
+  return {
+    type: BOOK_PURCHASE,
+    booked: value
+  };
+};
+
+export const InsertPayment = value => {
   return dispatch => {
     Customer({
-      method: "get",
+      method: "post",
+      url: "/InsertPayment",
       headers: {
         Token: token()
       },
-      url: "/GetUserWallet"
+      data: {
+        PaymentAmount: value
+      }
     })
       .then(response => {
-        dispatch(savewalletInfoOnRedux(response.data.Result));
+        dispatch(BookPurchase(response.data.Result));
       })
       .catch(error => {
         dispatch(FailProgress(true));
@@ -58,26 +68,4 @@ export const getWalletInformation = () => {
         );
       });
   };
-};
-
-// export const saveOnLocalStorage = data => {
-//   const message = JSON.stringify(data.data.Result);
-//   const key = "IranLuckHashCode";
-//   let encrypted = CryptoJS.AES.encrypt(message, key);
-//   localStorage.setItem("wallet", encrypted.toString());
-//   return dispatch => {
-//     dispatch(savewalletInfoOnRedux(data));
-//   };
-// };
-
-export const saveOnSessionStorage = data => {
-  localStorage.removeItem("user");
-  const message = JSON.stringify(data.data.Result);
-  const key = "IranLuckHashCode";
-  let encrypted = CryptoJS.AES.encrypt(message, key);
-  sessionStorage.setItem("user", encrypted.toString());
-  return;
-  //   dispatch => {
-  //     dispatch(AuthRedux(true));
-  //   };
 };

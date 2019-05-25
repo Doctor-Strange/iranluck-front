@@ -13,7 +13,9 @@ class TicketForm extends Component {
 
   onError = err => {
     // ==> COME BACK and add more code
-    console.log("err", err);
+    this.setState({
+      SendBtnStatus: false
+    });
   };
 
   render() {
@@ -29,6 +31,7 @@ class TicketForm extends Component {
               sitekey="6LclC6MUAAAAADxEq1l358aAa0kn_NR-Is_4fbqF"
               onChange={this.onChange}
               onErrored={this.onError}
+              onExpired={this.onError}
             />
           </div>
           <button disabled={!this.state.SendBtnStatus} type="submit">

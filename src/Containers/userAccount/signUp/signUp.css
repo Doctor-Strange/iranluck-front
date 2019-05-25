@@ -12,13 +12,46 @@
 }
 
 .box {
-  padding-top: 20px;
+  padding-top: 15px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-content: center;
 }
 
+.box input {
+  background: #f7f7f7;
+  border: 1px solid #d3d3d3;
+  border-radius: 4px;
+  padding: 8px;
+  width: 65%;
+  display: block;
+  font-family: "iransM";
+  text-align: right;
+  color: #424242;
+  margin: 8px auto 0;
+}
+
+.box h2 {
+  line-height: 1.5;
+}
+.CaptchaFather {
+  margin-top: 20px;
+}
+
+.CaptchaFather iframe {
+  display: block;
+  width: 162px;
+  border-right: 1px solid #d3d3d3;
+  margin: auto;
+  height: 76px;
+}
+
+.CaptchaFather div {
+  display: block;
+  margin: auto;
+  width: 100% !important;
+}
 .forgetPass {
   font-family: "iransM";
   color: firebrick;
@@ -30,9 +63,9 @@
 }
 
 .ButtonForm {
-  cursor: pointer;
   height: 45px;
-  margin: 35px auto 20px auto;
+  cursor: pointer;
+  margin: 24px auto 20px auto;
   width: 71%;
   border: 1px solid transparent;
 }

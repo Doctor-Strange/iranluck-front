@@ -2,7 +2,11 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import classes from "./ChangePassword.css";
-import { ChangePassSubmit, FailProgress } from "../../Store/Action";
+import {
+  ChangePassSubmit,
+  FailProgress,
+  alertMessenger
+} from "../../Store/Action";
 import Spinner from "../../UI/Spiner/Spinner";
 import global from "../../global.css";
 
@@ -32,9 +36,9 @@ class ChangePassword extends Component {
   };
 
   onConfirmClick = e => {
+    e.preventDefault();
+    this.props.FailProgress();
     if (this.state.Password === this.state.RepeatPass) {
-      this.props.FailProgress();
-      e.preventDefault();
       const data = {
         EncodedCoded: this.state.EncodedCoded,
         Password: this.state.Password.trim()
@@ -43,6 +47,8 @@ class ChangePassword extends Component {
       this.setState({
         loading: true
       });
+    } else {
+      this.props.alertMessenger("رمز وارد شده و تکرار آن یکسان نیست");
     }
   };
 
@@ -62,12 +68,16 @@ class ChangePassword extends Component {
             <p>رمز جدید خود را وارد کنید</p>
             <input
               onChange={e => this.onInput(e, "Password")}
+              maxLength="15"
+              minLength="8"
               required
               type="password"
               placeholder="رمز"
             />
             <p>تکرار رمز</p>
             <input
+              maxLength="15"
+              minLength="8"
               onChange={e => this.onInput(e, "RepeatPass")}
               required
               type="password"
@@ -96,7 +106,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     ChangePassSubmit: data => dispatch(ChangePassSubmit(data)),
-    FailProgress: () => dispatch(FailProgress())
+    FailProgress: () => dispatch(FailProgress()),
+    alertMessenger: sms => dispatch(alertMessenger(sms))
   };
 };
 

@@ -1,6 +1,8 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 import classes from "./CountDown.css";
 import Games from "../../../Axios/Games";
+import { alertMessenger } from "../../../Store/Action";
 
 let time = setInterval(() => {});
 
@@ -39,10 +41,12 @@ class Countdown extends Component {
         }
       })
       .catch(error => {
-        console.log(error);
+        this.props.alertMessenger(error.response.data.Message);
       })
-      .catch(error => {
-        console.log(error.response.data.Message);
+      .catch(() => {
+        this.props.alertMessenger(
+          "روز شمار به درستی اجرا نشده است صفحه را مجددا براگذاری کنید"
+        );
       });
     this.secondCountDown();
   };
@@ -136,4 +140,13 @@ class Countdown extends Component {
     );
   }
 }
-export default Countdown;
+
+const mapDispatchToProps = dispatch => {
+  return {
+    alertMessenger: sms => dispatch(alertMessenger(sms))
+  };
+};
+export default connect(
+  null,
+  mapDispatchToProps
+)(Countdown);

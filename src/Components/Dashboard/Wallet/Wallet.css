@@ -25,13 +25,16 @@
   font-family: iransM;
 }
 
-.topPart p:hover {
-    text-decoration: underline
+.topPart img {
+  width: 64px;
 }
 
+.topPart p:hover {
+  text-decoration: underline;
+}
 
 .pandSpan p {
-    line-height: 3;
+  line-height: 3;
   color: green;
   font-family: iransBL;
   vertical-align: middle;
@@ -39,16 +42,15 @@
   border-radius: 4px;
 }
 .pandSpan span {
-    font-family: iransM;
-    color: green;
-    border: 1px solid green;
-    font-size: 11px;
-    border-radius: 4px;
-    display: inline-block;
-    margin: 0 10px;
-    padding: 0px 6px;
-    vertical-align: middle;
-
+  font-family: iransM;
+  color: green;
+  border: 1px solid green;
+  font-size: 11px;
+  border-radius: 4px;
+  display: inline-block;
+  margin: 0 10px;
+  padding: 0px 6px;
+  vertical-align: middle;
 }
 .deposit,
 .luckyCoin,

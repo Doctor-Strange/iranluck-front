@@ -1,6 +1,6 @@
 .father {
   min-height: 480px;
-  text-align: center
+  text-align: center;
 }
 
 .father h2 {
@@ -11,4 +11,38 @@
 
 .father p {
   margin: 10px 0 10px;
+}
+
+.Fail {
+  font-size: 24px;
+  font-family: iransBL;
+  color: firebrick;
+}
+
+.panelControl {
+  background: #fff;
+  width: 92%;
+  padding: 2%;
+  box-shadow: 0px 4px 8px #cecece;
+  margin: auto;
+  margin-top: 46px;
+  text-align: right;
+  margin-bottom: 30px;
+}
+.teach {
+  margin-top: 30px;
+}
+
+.teach a {
+  display: block;
+  color: #0b94ef;
+  transition: 0.25s;
+  cursor: pointer;
+  font-family: iransB;
+  line-height: 2.5;
+  font-size: 14px;
+}
+
+.teach a:hover {
+  color: #009688;
 }

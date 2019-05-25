@@ -153,7 +153,7 @@
 @media screen and (max-width: 720px) {
   .boxcontainer {
     width: 280px;
-    height: 400px;
+    /* height: 400px; */
   }
   .switch{
     left: 0;

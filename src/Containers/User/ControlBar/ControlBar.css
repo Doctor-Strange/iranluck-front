@@ -4,7 +4,7 @@
   position: relative;
 }
 
-.Responsive{
+.Responsive {
   padding: 0 1%;
 }
 
@@ -18,11 +18,12 @@
 
 .p1 {
   display: none;
+  cursor: pointer;
   width: 10%;
+  padding: 10px;
 }
 
 .p1 img {
-  cursor: pointer;
   width: 21px;
   padding: 3px;
   margin-bottom: -11px;
@@ -82,8 +83,9 @@
 @media screen and (max-width: 650px) {
   .p1 {
     position: absolute;
-    top: -37px;
-    left: 10px;
+    top: -49px;
+    left: 5px;
+    cursor: pointer;
     display: inline-block;
   }
 }

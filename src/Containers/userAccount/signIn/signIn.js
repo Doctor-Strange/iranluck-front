@@ -6,6 +6,7 @@ import { GoogleLogin } from "react-google-login";
 import { log_in_Req, FailProgress } from "../../../Store/Action";
 import googleIcon from "../../../Assets/googleIcon.png";
 import Spinner from "../../../UI/Spiner/Spinner";
+import ReCAPTCHA from "react-google-recaptcha";
 var CryptoJS = require("crypto-js");
 
 class SignIn extends Component {
@@ -14,6 +15,7 @@ class SignIn extends Component {
     Password: null,
     Type: "Site",
     loading: false,
+    SendBtnStatus: false,
     Save: true
   };
 
@@ -82,6 +84,18 @@ class SignIn extends Component {
     localStorage.setItem("user", encrypted.toString());
   };
 
+  onChange = value => {
+    this.setState({
+      SendBtnStatus: true
+    });
+  };
+
+  onError = err => {
+    // ==> COME BACK and add more code
+    this.setState({
+      SendBtnStatus: false
+    });
+  };
   render() {
     return (
       <div
@@ -94,11 +108,15 @@ class SignIn extends Component {
           <h2>ورود</h2>
           <form onSubmit={this.onSubmitForm}>
             <input
+              maxLength="70"
+              minLength="5"
               onChange={e => this.onInput(e, "Email")}
               type="Text"
               placeholder="ایمیل"
             />
             <input
+              maxLength="15"
+              minLength="8"
               onChange={e => this.onInput(e, "Password")}
               type="password"
               placeholder="رمز عبور"
@@ -111,9 +129,18 @@ class SignIn extends Component {
             </span>
             <label className={classes.checkbox_container}>
               من را به یاد بسپار
-              <input type="checkbox" checked onChange={this.onCheckBox} />
+              <input type="checkbox" checked = {this.state.Save} onChange={this.onCheckBox} />
               <span className={classes.checkbox_checkmark} />
             </label>
+            <div className={classes.CaptchaFather}>
+              <ReCAPTCHA
+                onExpired={this.onError}
+                className={classes.Captcha}
+                sitekey="6LclC6MUAAAAADxEq1l358aAa0kn_NR-Is_4fbqF"
+                onChange={this.onChange}
+                onErrored={this.onError}
+              />
+            </div>
             {this.state.loading ? (
               <button
                 disabled={true}
@@ -123,7 +150,11 @@ class SignIn extends Component {
                 <Spinner />
               </button>
             ) : (
-              <button className={classes.ButtonForm} type="submit">
+              <button
+                disabled={!this.state.SendBtnStatus}
+                className={classes.ButtonForm}
+                type="submit"
+              >
                 ورود{" "}
               </button>
             )}

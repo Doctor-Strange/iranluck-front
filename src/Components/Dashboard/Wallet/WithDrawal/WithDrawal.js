@@ -3,10 +3,14 @@ import { connect } from "react-redux";
 import { withRouter, NavLink } from "react-router-dom";
 import classes from "./WithDrawal.css";
 import ReCAPTCHA from "react-google-recaptcha";
+import Spinner from "../../../../UI/Spiner/Spinner";
+import { RedirectToConfirm, alertMessenger } from "../../../../Store/Action";
 var CryptoJS = require("crypto-js");
 
 class WithDrawal extends Component {
   state = {
+    loading: false,
+    Amount: null,
     EmailAddress: null,
     walletAddress: null,
     SendBtnStatus: false
@@ -18,8 +22,11 @@ class WithDrawal extends Component {
   };
   onError = err => {
     // ==> COME BACK and add more code
-    console.log("err", err);
+    this.setState({
+      SendBtnStatus: false
+    });
   };
+  
   componentDidMount = () => {
     if (localStorage["user"]) {
       if (!this.props.wallet.WalletAddress) {
@@ -50,6 +57,41 @@ class WithDrawal extends Component {
       });
     }
   };
+
+  onFormSubmit = e => {
+    e.preventDefault();
+    if (this.state.Amount) {
+      this.props.RedirectToConfirm();
+      this.setState({
+        loading: true
+      });
+      const Data = {
+        Amount: this.state.Amount,
+        EmailAddress: this.state.EmailAddress,
+        MoneyAddress: this.state.MoneyAddress
+      };
+      //===>
+      // this.props.walletAddressRequest(Data);
+    }
+  };
+
+  componentWillReceiveProps = props => {
+    if (props.redirect && !props.fail) {
+      this.props.history.push(`/EventPage/?${this.state.EmailAddress}`);
+    } else {
+      this.setState({
+        loading: false
+      });
+    }
+  };
+
+  onInputChange = e => {
+    e.persist();
+    this.setState({
+      Amount: e.target.value
+    });
+  };
+
   render() {
     return (
       <div className={classes.panelControl}>
@@ -57,6 +99,7 @@ class WithDrawal extends Component {
         <div className={classes.withdrawal}>
           <div className={classes.InputFather}>
             <input
+              onChange={this.onInputChange}
               type="number"
               step="1"
               placeholder="تعداد سکه"
@@ -66,26 +109,41 @@ class WithDrawal extends Component {
             <span>حداکثر تعداد سکه قابل برداشت در هر روز 300 عدد می باشد</span>
           </div>
           <p>
-            عدد سکه پرفکت مانی از حساب کاربری {this.state.EmailAddress} به آدرس
-            کیف پول
+            عدد سکه پرفکت مانی از حساب کاربری ({this.state.EmailAddress}) ایران
+            لاک به آدرس کیف پول
           </p>
           <div className={classes.pandSpan}>
             <p>{this.state.walletAddress}</p>
             <span>تایید شده</span>
           </div>
           <p>انتقال داده شود.</p>
-          <form>
+          <form onSubmit={this.onFormSubmit}>
             <div className={classes.CaptchaFather}>
               <ReCAPTCHA
                 className={classes.Captcha}
                 sitekey="6LclC6MUAAAAADxEq1l358aAa0kn_NR-Is_4fbqF"
                 onChange={this.onChange}
                 onErrored={this.onError}
+                onExpired={this.onError}
               />
             </div>
-            <button disabled={!this.state.SendBtnStatus} type="submit">
-              تایید
-            </button>
+            {this.state.loading ? (
+              <button
+                disabled={true}
+                className={classes.ButtonForm}
+                type="submit"
+              >
+                <Spinner />
+              </button>
+            ) : (
+              <button
+                disabled={!this.state.SendBtnStatus}
+                className={classes.ButtonForm}
+                type="submit"
+              >
+                تایید
+              </button>
+            )}
           </form>
         </div>
         <div className={classes.teach}>
@@ -99,8 +157,22 @@ class WithDrawal extends Component {
 
 const mapStateToProps = state => {
   return {
-    wallet: state.WALLET.wallet
+    wallet: state.WALLET.wallet,
+    redirect: state.AUTH.redirect,
+    fail: state.AUTH.fail
   };
 };
 
-export default withRouter(connect(mapStateToProps)(WithDrawal));
+const mapDispatchToProps = dispatch => {
+  return {
+    RedirectToConfirm: data => dispatch(RedirectToConfirm(data)),
+    alertMessenger: data => dispatch(alertMessenger(data))
+  };
+};
+
+export default withRouter(
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(WithDrawal)
+);

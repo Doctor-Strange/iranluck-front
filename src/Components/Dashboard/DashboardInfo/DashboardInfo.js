@@ -13,7 +13,8 @@ class DashboardInfo extends Component {
     }
   };
 
-  componentWillReceiveProps = props => {};
+  componentWillReceiveProps = props => {
+  };
   render() {
     let { CoinCount, TotalAmount, WalletAddress } = this.props.wallet;
 

@@ -6,7 +6,10 @@ export {
   ChangePassRequest,
   ChangePassSubmit,
   RedirectToConfirm,
-  walletAddressRequest
+  walletAddressRequest,
+  PanelChangePassword
 } from "./Auth";
 export { sendConfirm } from "./Confirm";
+export { alertMessenger } from "./alertAction";
 export { getWalletInformation } from "./Dashboard";
+export { InsertPayment } from "./Payment";

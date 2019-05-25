@@ -33,7 +33,9 @@ class ChangePassForm extends Component {
 
   onError = err => {
     // ==> COME BACK and add more code
-    console.log("err", err);
+    this.setState({
+      SendBtnStatus: false
+    });
   };
 
   onInput = event => {
@@ -70,6 +72,7 @@ class ChangePassForm extends Component {
               className={classes.Captcha}
               sitekey="6LclC6MUAAAAADxEq1l358aAa0kn_NR-Is_4fbqF"
               onChange={this.onChange}
+              onExpired={this.onError}
               onErrored={this.onError}
             />
           </div>

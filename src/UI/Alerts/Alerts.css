@@ -1,0 +1,55 @@
+.AlertyBox {
+  width: 80%;
+  position: fixed;
+  bottom: 3%;
+  right: 3%;
+  background: #ffb74d;
+  z-index: 9999;
+  padding: 10px 40px 10px 60px;
+}
+
+.AlertyBox span {
+  font-family: iransBL;
+}
+
+.ShowAlert {
+  animation: ShowAnim 1 ease 0.2s forwards;
+}
+
+@keyframes ShowAnim {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.HideAlert {
+  animation: HideAnim 3s ease forwards;
+}
+
+@keyframes HideAnim {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+
+.AlertyBox img {
+  display: inline-block;
+  margin-left: 10px;
+  vertical-align: text-bottom;
+}
+
+@media screen and (max-width: 720px) {
+  .AlertyBox {
+    width: 80%;
+    padding: 10px;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+}

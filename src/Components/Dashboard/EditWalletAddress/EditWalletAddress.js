@@ -23,7 +23,9 @@ class EditWalletAddress extends Component {
   };
   onError = err => {
     // ==> COME BACK and add more code
-    console.log("err", err);
+    this.setState({
+      SendBtnStatus: false
+    });
   };
 
   componentDidMount = () => {
@@ -91,8 +93,9 @@ class EditWalletAddress extends Component {
               onChange={this.onInputChange}
               placeholder="آدرس کیف پول"
               required
+              maxLength="25"
+              minLength="8"
               type="text"
-              maxLength="15"
             />
             <div className={classes.CaptchaFather}>
               <ReCAPTCHA
@@ -100,6 +103,7 @@ class EditWalletAddress extends Component {
                 sitekey="6LclC6MUAAAAADxEq1l358aAa0kn_NR-Is_4fbqF"
                 onChange={this.onChange}
                 onErrored={this.onError}
+                onExpired={this.onError}
               />
             </div>
             {this.state.loading ? (
