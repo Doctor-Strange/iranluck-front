@@ -12,7 +12,7 @@ import WhyUs from "../../Components/HomePage/WhyUs/WhyUs";
 import KnowUs from "../../Components/HomePage/KnowUs/KnowUs";
 import { AuthRedux } from "../../Store/Action";
 import Countdown from "../../Components/HomePage/CountDown/CountDown";
-// var CryptoJS = require("crypto-js");
+var CryptoJS = require("crypto-js");
 
 class HomePage extends Component {
   componentDidMount = () => {
@@ -24,6 +24,7 @@ class HomePage extends Component {
       // let storage = localStorage.getItem("user");
       // let decrypted = CryptoJS.AES.decrypt(storage, key);
       // const Data = JSON.parse(decrypted.toString(CryptoJS.enc.Utf8));
+      // console.log(Data.Token);
       this.props.AuthRedux(true);
     }
   };

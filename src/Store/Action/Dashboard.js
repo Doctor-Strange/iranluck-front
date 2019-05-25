@@ -3,7 +3,6 @@ import Customer from "../../Axios/Customer";
 import { alertMessenger } from "./alertAction";
 var CryptoJS = require("crypto-js");
 const token = () => {
-  
   if (localStorage["user"]) {
     //get user information from Storage
     const key = "IranLuckHashCode";
@@ -46,7 +45,7 @@ export const getWalletInformation = () => {
       url: "/GetUserWallet"
     })
       .then(response => {
-        dispatch(savewalletInfoOnRedux(response.data.Result));
+        dispatch(CacheWalletInfo(response));
       })
       .catch(error => {
         dispatch(FailProgress(true));
@@ -70,14 +69,12 @@ export const getWalletInformation = () => {
 //   };
 // };
 
-export const saveOnSessionStorage = data => {
-  localStorage.removeItem("user");
+export const CacheWalletInfo = data => {
   const message = JSON.stringify(data.data.Result);
   const key = "IranLuckHashCode";
   let encrypted = CryptoJS.AES.encrypt(message, key);
-  sessionStorage.setItem("user", encrypted.toString());
-  return;
-  //   dispatch => {
-  //     dispatch(AuthRedux(true));
-  //   };
+  localStorage.setItem("cacheInfo", encrypted.toString());
+  return dispatch => {
+    dispatch(savewalletInfoOnRedux(data.data.Result));
+  };
 };
