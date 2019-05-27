@@ -29,7 +29,7 @@ const Wallet = props => {
         <NavLink to="/Learn/CreateWallet">+ آموزش ساخت کیف پول دیجیتال</NavLink>
         <NavLink to="/Learn/BuyPerfectMoney">+ آموزش خرید پرفکت مانی</NavLink>
         <NavLink to="/Learn/Walletaddress">+ تغییر / ثبت آدرس کیف پول</NavLink>
-        <NavLink to="">+ آموزش شارژ حساب</NavLink>
+        <NavLink to="/Learn/ChargeAccount">+ آموزش شارژ حساب</NavLink>
         <NavLink to="/Learn/WithDrawal">+ آموزش تسویه حساب</NavLink>
       </div>
     </div>

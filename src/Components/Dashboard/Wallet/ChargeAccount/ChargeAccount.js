@@ -143,6 +143,9 @@ class ChargeAccount extends Component {
             onChange={this.onInput}
             max="1000"
           />
+          <p className={classes.Alert}>
+            از تحریم شکن و یا V(-)P(_)N استفاده نکنید
+          </p>
           <div className={classes.CaptchaFather}>
             <ReCAPTCHA
               className={classes.Captcha}
@@ -167,7 +170,7 @@ class ChargeAccount extends Component {
           <p>پرفکت مانی</p>
         </div> */}
         <div className={classes.teach}>
-          <NavLink onClick={GotoTop} to="/">
+          <NavLink onClick={GotoTop} to="/Learn/ChargeAccount">
             + آموزش پرداخت از درگاه
           </NavLink>
           <NavLink onClick={GotoTop} to="/Learn">

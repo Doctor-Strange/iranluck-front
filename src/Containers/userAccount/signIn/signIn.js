@@ -46,7 +46,7 @@ class SignIn extends Component {
 
   componentWillReceiveProps = props => {
     if (props.AuthorizeStatus && !props.fail) {
-      this.props.history.push("/account/Wallet");
+      this.props.history.push("/account");
       this.props.OnDrawelClick();
       props.RedirectToConfirm();
     } else {

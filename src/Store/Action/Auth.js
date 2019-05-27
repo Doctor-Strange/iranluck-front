@@ -34,7 +34,6 @@ export const RedirectToConfirm = (value = false) => {
 };
 
 export const sign_Up_Req = data => {
-  //type = 1 Site , type =2 Google
   return dispatch => {
     Customer({
       method: "post",

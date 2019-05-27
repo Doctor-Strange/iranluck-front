@@ -8,6 +8,12 @@
   margin-top: 46px;
 }
 
+.panelControl p.Alert {
+  color: firebrick;
+  font-family: iransBL;
+  text-align: center;
+}
+
 .panelControl button {
   height: 45px;
   cursor: pointer;

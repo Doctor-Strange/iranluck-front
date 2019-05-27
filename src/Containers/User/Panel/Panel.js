@@ -35,7 +35,7 @@ class Panel extends Component {
             <NavLink to="/Learn/BuyPerfectMoney">
               + آموزش خرید پرفکت مانی
             </NavLink>
-            <NavLink to="/">+ آموزش شارژ حساب</NavLink>
+            <NavLink to="/Learn/ChargeAccount">+ آموزش شارژ حساب</NavLink>
             <NavLink to="/Learn/WithDrawal">+ آموزش تسویه حساب</NavLink>
             <NavLink to="/Learn/Walletaddress">+ تغییر آدرس کیف پول</NavLink>
           </div>

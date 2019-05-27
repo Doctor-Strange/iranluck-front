@@ -26,7 +26,7 @@ class WithDrawal extends Component {
       SendBtnStatus: false
     });
   };
-  
+
   componentDidMount = () => {
     if (localStorage["user"]) {
       if (!this.props.wallet.WalletAddress) {
@@ -147,8 +147,8 @@ class WithDrawal extends Component {
           </form>
         </div>
         <div className={classes.teach}>
-          <NavLink to="">+ تغییر آدرس کیف پول</NavLink>
-          <NavLink to="">+ آموزش تسویه حساب</NavLink>
+          <NavLink to="/Learn/Walletaddress">+ تغییر آدرس کیف پول</NavLink>
+          <NavLink to="/Learn/WithDrawal">+ آموزش تسویه حساب</NavLink>
         </div>
       </div>
     );

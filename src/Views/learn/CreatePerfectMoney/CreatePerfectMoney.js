@@ -19,14 +19,18 @@ const CreatePerfectMoney = props => {
       <div className={classes.father}>
         <p>
           به وبسایت اصلی شرکت پرفکت مانی به آدرس
-          <a href="https://perfectmoney.is" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://perfectmoney.is"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             www.perfectmoney.is
           </a>
           مراجعه میکنید
         </p>
         <p className={classes.Alert}>
-          توجه در زمان استفاده از وب سایت پرفکت مانی از فیلتر شکن و یا VPN
-          استفاده نکنید.
+          توجه در زمان استفاده از وب سایت پرفکت مانی از تحریم شکن و ... استفاده
+          نکنید.
         </p>
         <p>سپس بر روی دکمه ثبت نام کلیک کنید</p>
         <img src={one} alt="perfect Money" />

@@ -21,16 +21,33 @@ class TicketBook extends Component {
     let valid = this.validate(wallet);
     if (valid) return;
     const data = {
-      Token: this.props.AuthData.Token,
-      Count: this.state.amount,
-      Email: this.state.Email
+      Email: this.props.AuthData.Email,
+      Token: this.props.AuthData.Token
     };
+    console.log(this.state.amount === wallet.TotalAmount);
+    if (
+      wallet.CoinCount > 0 &&
+      Number(this.state.amount) <= Number(wallet.TotalAmount)
+    ) {
+      this.props.alertMessenger("یک بلیط رایگان به شما تعلق گرفت");
+      data.Count = Number(this.state.amount) + 1;
+    } else {
+      data.Count = this.state.amount;
+    }
+    this.setState({
+      loading: true
+    });
     this.props.GetTicket(data);
   };
 
   validate = wallet => {
     if (this.state.amount.length === 0 || this.state.amount <= 0) {
       return this.props.alertMessenger("عدد ورودی صحیح نیست");
+    }
+    if (wallet.CoinCount > 0 && this.state.amount > wallet.TotalAmount + 1) {
+      return this.props.alertMessenger(
+        "در هر بار خرید فقط میتوانید یک عدد سکه شانس را استفاده کنید"
+      );
     }
     if (this.state.amount > wallet.TotalAmount + wallet.CoinCount)
       return this.props.alertMessenger(

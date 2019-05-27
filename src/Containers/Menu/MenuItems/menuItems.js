@@ -26,6 +26,7 @@ class MenuItems extends Component {
     localStorage.removeItem("user");
     sessionStorage.removeItem("cacheInfo");
     this.props.AuthRedux();
+    this.props.OnItemClick();
   };
 
   componentDidMount = () => {
@@ -55,6 +56,9 @@ class MenuItems extends Component {
     const { AuthorizeStatus } = this.props;
     const Items = AuthorizeStatus ? (
       <Hoc>
+        <li className ={classes.difLi} onClick={this.onItemClick}>
+          <NavLink to="/account">حساب کاربری</NavLink>
+        </li>
         <li onClick={this.onItemClick}>
           <NavLink to="/account/Wallet">{this.state.perfectmoney} سکه</NavLink>
         </li>
