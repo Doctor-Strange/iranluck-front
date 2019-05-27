@@ -3,9 +3,14 @@ import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import ChangeLock from "../../../Assets/ChangeLock.png";
 import classes from "./ChangePassForm.css";
-import { ChangePassRequest, FailProgress } from "../../../Store/Action";
 import Spinner from "../../../UI/Spiner/Spinner";
 import ReCAPTCHA from "react-google-recaptcha";
+
+import {
+  ChangePassRequest,
+  FailProgress,
+  RedirectToConfirm
+} from "../../../Store/Action";
 
 class ChangePassForm extends Component {
   state = {
@@ -15,9 +20,11 @@ class ChangePassForm extends Component {
   };
 
   componentWillReceiveProps = props => {
+    // this.props.history.push("/confirm");
     if (props.redirect && !props.fail) {
-      this.props.OnDrawelClick();
       this.props.history.push(`/EventPage/?${this.state.EmailAddress}`);
+      this.props.OnDrawelClick();
+      props.RedirectToConfirm();
     } else {
       this.setState({
         loading: false
@@ -46,8 +53,8 @@ class ChangePassForm extends Component {
   };
 
   onConfirmClick = e => {
-    this.props.FailProgress();
     e.preventDefault();
+    this.props.FailProgress();
     this.props.ChangePassRequest(this.state.EmailAddress);
     this.setState({
       loading: true
@@ -100,7 +107,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     ChangePassRequest: email => dispatch(ChangePassRequest(email)),
-    FailProgress: () => dispatch(FailProgress())
+    FailProgress: () => dispatch(FailProgress()),
+    RedirectToConfirm: () => dispatch(RedirectToConfirm())
   };
 };
 

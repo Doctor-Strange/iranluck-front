@@ -49,7 +49,10 @@ class Layout extends Component {
           </Hoc>
         )}
         <Taaj />
-        <header id="#TOP" className={classes.header}>
+        <header
+          // id="#TOP"
+          className={classes.header}
+        >
           <div onClick={this.onmenuToggle} className={classes.ToggleIcon}>
             <div />
             <div />

@@ -1,26 +1,8 @@
 import { WALLET_INFORMATION, FAIL } from "./ActionTypes";
 import Customer from "../../Axios/Customer";
 import { alertMessenger } from "./alertAction";
+
 var CryptoJS = require("crypto-js");
-const token = () => {
-  if (localStorage["user"]) {
-    //get user information from Storage
-    const key = "IranLuckHashCode";
-    let storage = localStorage.getItem("user");
-    let decrypted = CryptoJS.AES.decrypt(storage, key);
-    const Data = JSON.parse(decrypted.toString(CryptoJS.enc.Utf8));
-    return Data.Token;
-  }
-  if (sessionStorage["user"]) {
-    //get user information from Storage
-    const key = "IranLuckHashCode";
-    let storage = sessionStorage.getItem("user");
-    let decrypted = CryptoJS.AES.decrypt(storage, key);
-    const Data = JSON.parse(decrypted.toString(CryptoJS.enc.Utf8));
-    return Data.Token;
-  }
-  return "";
-};
 export const FailProgress = (value = false) => {
   return {
     type: FAIL,
@@ -35,12 +17,12 @@ export const savewalletInfoOnRedux = (data = null) => {
   };
 };
 
-export const getWalletInformation = () => {
+export const getWalletInformation = token => {
   return dispatch => {
     Customer({
       method: "get",
       headers: {
-        Token: token()
+        Token: token
       },
       url: "/GetUserWallet"
     })
@@ -59,21 +41,21 @@ export const getWalletInformation = () => {
   };
 };
 
-// export const saveOnLocalStorage = data => {
-//   const message = JSON.stringify(data.data.Result);
-//   const key = "IranLuckHashCode";
-//   let encrypted = CryptoJS.AES.encrypt(message, key);
-//   localStorage.setItem("wallet", encrypted.toString());
-//   return dispatch => {
-//     dispatch(savewalletInfoOnRedux(data));
-//   };
-// };
+export const getWalletInformationFromStorage = () => {
+  const key = "IranLuckHashCode";
+  let storage = sessionStorage.getItem("cacheInfo");
+  let decrypted = CryptoJS.AES.decrypt(storage, key);
+  const Data = JSON.parse(decrypted.toString(CryptoJS.enc.Utf8));
+  return dispatch => {
+    dispatch(savewalletInfoOnRedux(Data));
+  };
+};
 
 export const CacheWalletInfo = data => {
   const message = JSON.stringify(data.data.Result);
   const key = "IranLuckHashCode";
   let encrypted = CryptoJS.AES.encrypt(message, key);
-  localStorage.setItem("cacheInfo", encrypted.toString());
+  sessionStorage.setItem("cacheInfo", encrypted.toString());
   return dispatch => {
     dispatch(savewalletInfoOnRedux(data.data.Result));
   };

@@ -3,31 +3,53 @@ import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import classes from "./ticketBook.css";
 import Spinner from "../../UI/Spiner/Spinner";
-import { RedirectToConfirm } from "../../Store/Action";
+import {
+  RedirectToConfirm,
+  alertMessenger,
+  GetTicket
+} from "../../Store/Action";
 
 class TicketBook extends Component {
   state = {
     loading: false,
-    MoneyAddress: null,
-    EmailAddress: null
+    amount: null
   };
 
   onFormSubmit = e => {
     e.preventDefault();
-    this.props.RedirectToConfirm();
-    // const Data = {
-    //   EmailAddress: this.state.Email,
-    //   MoneyAddress: this.state.MoneyAddress
-    // };
-    // this.props.walletAddressRequest(Data);
+    const { wallet } = this.props;
+    let valid = this.validate(wallet);
+    if (valid) return;
+    const data = {
+      Token: this.props.AuthData.Token,
+      Count: this.state.amount,
+      Email: this.state.Email
+    };
+    this.props.GetTicket(data);
   };
 
-  componentWillReceiveProps = props => {};
+  validate = wallet => {
+    if (this.state.amount.length === 0 || this.state.amount <= 0) {
+      return this.props.alertMessenger("عدد ورودی صحیح نیست");
+    }
+    if (this.state.amount > wallet.TotalAmount + wallet.CoinCount)
+      return this.props.alertMessenger(
+        "عدد وارد شده از مجموع سکه های شانس و موجودی اصلی کیف پول بیشتر است"
+      );
+    return null;
+  };
+
+  componentWillReceiveProps = props => {
+    if (props.redirect && !props.fail) {
+      this.props.history.push("/account/TicketsList");
+      this.props.RedirectToConfirm();
+    }
+  };
 
   onInputChange = e => {
     e.persist();
     this.setState({
-      MoneyAddress: e.target.value
+      amount: e.target.value
     });
   };
 
@@ -38,10 +60,12 @@ class TicketBook extends Component {
         <h3>
           تعداد بلیط <span>( با خرید هر 10 بلیط، 1 بلیط رایگان بگیرید ) </span>:
         </h3>
-        <form className={classes.Form}>
+        <form className={classes.Form} onSubmit={this.onFormSubmit}>
           <input
             type="number"
+            required
             disabled={Dis}
+            onChange={this.onInputChange}
             placeholder={Dis ? "ابتدا وارد شوید" : "تعداد"}
             step="1"
             min="1"
@@ -66,13 +90,17 @@ class TicketBook extends Component {
 const mapStateToProps = state => {
   return {
     redirect: state.AUTH.redirect,
-    fail: state.AUTH.fail
+    fail: state.AUTH.fail,
+    AuthData: state.AUTH.AuthData,
+    wallet: state.WALLET.wallet
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    RedirectToConfirm: data => dispatch(RedirectToConfirm(data))
+    RedirectToConfirm: data => dispatch(RedirectToConfirm(data)),
+    alertMessenger: sms => dispatch(alertMessenger(sms)),
+    GetTicket: data => dispatch(GetTicket(data))
   };
 };
 

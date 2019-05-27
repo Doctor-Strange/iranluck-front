@@ -1,32 +1,25 @@
 import React, { Component } from "react";
+
+import { connect } from "react-redux";
 import { withRouter, NavLink } from "react-router-dom";
 
 import classes from "./RightDashboard.css";
 import userIcon from "../../../Assets/user/userIcon.png";
-var CryptoJS = require("crypto-js");
 
 class RightDashboard extends Component {
   state = {
     userName: null
   };
+
   onItemClick = () => {
     this.props.OnItemClick();
   };
 
-
   componentDidMount = () => {
-    // if  Auth is false and User Object is exist do the Automatic login
-
-    if (!this.props.AuthorizeStatus && localStorage["user"]) {
-      // get user information from Storage
-      const key = "IranLuckHashCode";
-      let storage = localStorage.getItem("user");
-      let decrypted = CryptoJS.AES.decrypt(storage, key);
-      const Data = JSON.parse(decrypted.toString(CryptoJS.enc.Utf8));
-      this.setState({
-        userName: Data.Email.substring(0, Data.Email.indexOf("@"))
-      });
-    }
+    const { Email } = this.props.AuthData;
+    this.setState({
+      userName: Email.substring(0, Email.indexOf("@"))
+    });
   };
 
   render() {
@@ -48,6 +41,13 @@ class RightDashboard extends Component {
             className={url === "/account" ? classes.Active : null}
           >
             <NavLink to="/account">داشبورد</NavLink>
+          </li>
+          <li
+            className={url === "/account/TicketsList" ? classes.Active : null}
+          >
+            <NavLink onClick={this.onItemClick} to="/account/TicketsList">
+              بلیط ها
+            </NavLink>
           </li>
           <li className={url === "/account/Wallet" ? classes.Active : null}>
             <NavLink onClick={this.onItemClick} to="/account/Wallet">
@@ -74,4 +74,10 @@ class RightDashboard extends Component {
   }
 }
 
-export default withRouter(RightDashboard);
+const mapStateToProps = state => {
+  return {
+    AuthData: state.AUTH.AuthData
+  };
+};
+
+export default withRouter(connect(mapStateToProps)(RightDashboard));

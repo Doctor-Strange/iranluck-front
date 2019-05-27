@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import classes from "./Panel.css";
 import { withRouter, NavLink } from "react-router-dom";
 import GearDashboar from "../../../Assets/GearDashboar.png";
-import info from "../../../Assets/info.png";
+import info from "../../../Assets/ticket.png";
 import Userwallet from "../../../Assets/Userwallet.png";
 import DashboardInfo from "../../../Components/Dashboard/DashboardInfo/DashboardInfo";
 
@@ -15,10 +15,10 @@ class Panel extends Component {
             <img src={Userwallet} alt="Dashboard Icon" />
             <p>کیف پول</p>
           </NavLink>
-          <a className={classes.info} href="/account/Wallet">
-            <img src={info} alt="Dashboard Icon" />
-            <p>گزارشات</p>
-          </a>
+          <NavLink to="/account/TicketsList" className={classes.info}>
+            <img src={info} alt="Dashboard Tickets" />
+            <p>بلیط ها</p>
+          </NavLink>
           <NavLink className={classes.accout} to="/account/EditProfile">
             <img src={GearDashboar} alt="Dashboard Icon" />
             <p>حساب کاربری</p>

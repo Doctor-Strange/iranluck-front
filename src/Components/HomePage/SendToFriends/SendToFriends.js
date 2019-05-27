@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+
+import { connect } from "react-redux";
 import classes from "./SendToFriends.css";
 import global from "../../../global.css";
 import netWorkIcon from "../../../Assets/netWorkIcon.png";
@@ -18,29 +20,6 @@ class SendToFriends extends Component {
     UserRefId: ""
   };
 
-  componentDidMount = () => {
-    if (localStorage["user"]) {
-      //get user information from Storage
-      const key = "IranLuckHashCode";
-      let storage = localStorage.getItem("user");
-      let decrypted = CryptoJS.AES.decrypt(storage, key);
-      const Data = JSON.parse(decrypted.toString(CryptoJS.enc.Utf8));
-      this.setState({
-        UserRefId: "/?" + Data.OwnRefNumber
-      });
-    }
-    if (sessionStorage["user"]) {
-      //get user information from Storage
-      const key = "IranLuckHashCode";
-      let storage = sessionStorage.getItem("user");
-      let decrypted = CryptoJS.AES.decrypt(storage, key);
-      const Data = JSON.parse(decrypted.toString(CryptoJS.enc.Utf8));
-      this.setState({
-        UserRefId: "/?" + Data.OwnRefNumber
-      });
-    }
-  };
-
   onCopyClick = () => {
     this.setState(
       {
@@ -58,6 +37,26 @@ class SendToFriends extends Component {
 
   componentWillUnmount = () => {
     clearInterval(time);
+  };
+
+  componentWillReceiveProps = props => {
+    this.pathAdder(props);
+  };
+
+  componentDidMount = () => {
+    this.pathAdder(this.props);
+  };
+
+  pathAdder = props => {
+    if (props.AuthorizeStatus) {
+      this.setState({
+        UserRefId: "/?" + props.AuthData.OwnRefNumber
+      });
+    } else {
+      this.setState({
+        UserRefId: ""
+      });
+    }
   };
 
   render() {
@@ -157,4 +156,11 @@ class SendToFriends extends Component {
   }
 }
 
-export default SendToFriends;
+const mapStateToProps = state => {
+  return {
+    AuthorizeStatus: state.AUTH.AuthorizeStatus,
+    AuthData: state.AUTH.AuthData
+  };
+};
+
+export default connect(mapStateToProps)(SendToFriends);

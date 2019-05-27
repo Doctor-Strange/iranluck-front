@@ -42,7 +42,11 @@ class ChargeAccount extends Component {
     event.preventDefault();
     if (this.state.PaymentAmount) {
       this.props.FailProgress();
-      this.props.InsertPayment(this.state.PaymentAmount);
+      const data = {
+        Token: this.props.AuthData.Token,
+        PaymentAmount: this.state.PaymentAmount
+      };
+      this.props.InsertPayment(data);
       this.setState({
         loading: true
       });
@@ -181,7 +185,8 @@ const GotoTop = () => {
 const mapStateToprops = state => {
   return {
     fail: state.AUTH.fail,
-    booked: state.PAYMENT.booked
+    booked: state.PAYMENT.booked,
+    AuthData: state.AUTH.AuthData
   };
 };
 

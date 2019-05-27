@@ -1,5 +1,7 @@
-import { FAIL, REDIRECT_TO_CONFIRM, BOOK_PURCHASE } from "./ActionTypes";
-import Customer from "../../Axios/Customer";
+import { FAIL, REDIRECT_TO_CONFIRM } from "./ActionTypes";
+
+import Games from "../../Axios/Games";
+
 import { alertMessenger } from "./alertAction";
 
 export const FailProgress = (value = false) => {
@@ -16,36 +18,29 @@ export const RedirectToConfirm = (value = false) => {
   };
 };
 
-export const BookPurchase = (value = false) => {
-  return {
-    type: BOOK_PURCHASE,
-    booked: value
-  };
-};
-
-export const InsertPayment = value => {
+export const GetTicket = data => {
   return dispatch => {
-    Customer({
+    Games({
       method: "post",
-      url: "/InsertPayment",
+      url: "/GetTicket",
       headers: {
-        Token: value.Token
+        Token: data.Token
       },
       data: {
-        PaymentAmount: value.PaymentAmount
+        Count: data.Count,
+        Email: data.Email
       }
     })
       .then(response => {
-        dispatch(BookPurchase(response.data.Result));
+        console.log(response);
+        dispatch(RedirectToConfirm(true));
       })
       .catch(error => {
         dispatch(FailProgress(true));
         dispatch(alertMessenger(error.response.data.Message));
       })
       .catch(() => {
-        dispatch(
-          alertMessenger("خطایی رخ داده است ! مجددا صفحه را بازیابی کنید.")
-        );
+        dispatch(alertMessenger("خطایی رخ داده است ! مجددا تلاش کنید."));
       });
   };
 };

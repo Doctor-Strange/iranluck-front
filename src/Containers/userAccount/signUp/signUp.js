@@ -6,7 +6,8 @@ import { GoogleLogin } from "react-google-login";
 import {
   sign_Up_Req,
   FailProgress,
-  alertMessenger
+  alertMessenger,
+  RedirectToConfirm
 } from "../../../Store/Action";
 import Spinner from "../../../UI/Spiner/Spinner";
 import ReCAPTCHA from "react-google-recaptcha";
@@ -48,8 +49,9 @@ class SignUp extends Component {
 
   componentWillReceiveProps = props => {
     if (props.redirect && !props.fail) {
-      this.props.OnDrawelClick();
       this.props.history.push(`/EventPage/?${this.state.Email}`);
+      this.props.OnDrawelClick();
+      props.RedirectToConfirm();
     } else {
       this.setState({
         loading: false
@@ -197,6 +199,7 @@ const mapDispatchToProps = dispatch => {
   return {
     sign_Up_Req: data => dispatch(sign_Up_Req(data)),
     FailProgress: () => dispatch(FailProgress()),
+    RedirectToConfirm: data => dispatch(RedirectToConfirm(data)),
     alertMessenger: sms => dispatch(alertMessenger(sms))
   };
 };

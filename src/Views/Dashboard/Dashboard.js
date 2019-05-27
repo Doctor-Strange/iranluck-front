@@ -12,6 +12,7 @@ import Wallet from "../../Components/Dashboard/Wallet/Wallet";
 import EditProfile from "../../Containers/EditProfile/EditProfile";
 import UserInformation from "../../Components/Dashboard/UserInformation/UserInformation";
 import ChargeAccount from "../../Components/Dashboard/Wallet/ChargeAccount/ChargeAccount";
+import TicketsList from "../../Components/Dashboard/TicketsList/TicketsList";
 // import SupportTicket from "../../Components/SupportTicket/SupportTicket";
 
 class Dashboard extends Component {
@@ -57,6 +58,7 @@ class Dashboard extends Component {
                 <Route path="/account/WithDrawal" component={WithDrawal} />
                 <Route path="/account/Wallet" component={Wallet} />
                 <Route path="/account/EditProfile" component={EditProfile} />
+                <Route path="/account/TicketsList" component={TicketsList} />
                 {/* <Route path="/account/Ticket" component={SupportTicket} /> */}
                 <Route
                   path="/account/information"

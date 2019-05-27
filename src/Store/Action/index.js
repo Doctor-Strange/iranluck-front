@@ -7,9 +7,14 @@ export {
   ChangePassSubmit,
   RedirectToConfirm,
   walletAddressRequest,
-  PanelChangePassword
+  PanelChangePassword,
+  getDataFromStorage
 } from "./Auth";
 export { sendConfirm } from "./Confirm";
 export { alertMessenger } from "./alertAction";
-export { getWalletInformation } from "./Dashboard";
+export {
+  getWalletInformation,
+  getWalletInformationFromStorage
+} from "./Dashboard";
 export { InsertPayment } from "./Payment";
+export { GetTicket } from "./Game";

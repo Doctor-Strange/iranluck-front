@@ -1,30 +1,33 @@
-import { AUTHORIZED, FAIL, REDIRECT_TO_CONFIRM } from "./ActionTypes";
+import {
+  AUTHORIZED,
+  FAIL,
+  REDIRECT_TO_CONFIRM,
+  WALLET_INFORMATION
+} from "./ActionTypes";
 import Customer from "../../Axios/Customer";
 import { alertMessenger } from "./alertAction";
 var CryptoJS = require("crypto-js");
-const token = () => {
-  if (localStorage["user"]) {
-    //get user information from Storage
-    const key = "IranLuckHashCode";
-    let storage = localStorage.getItem("user");
-    let decrypted = CryptoJS.AES.decrypt(storage, key);
-    const Data = JSON.parse(decrypted.toString(CryptoJS.enc.Utf8));
-    return Data.Token;
+
+export const AuthRedux = (status = false, data = null) => {
+  if (data) {
+    return {
+      type: AUTHORIZED,
+      AuthorizeStatus: status,
+      AuthData: data
+    };
+  } else {
+    return {
+      type: AUTHORIZED,
+      AuthorizeStatus: status,
+      AuthData: data
+    };
   }
-  if (sessionStorage["user"]) {
-    //get user information from Storage
-    const key = "IranLuckHashCode";
-    let storage = sessionStorage.getItem("user");
-    let decrypted = CryptoJS.AES.decrypt(storage, key);
-    const Data = JSON.parse(decrypted.toString(CryptoJS.enc.Utf8));
-    return Data.Token;
-  }
-  return "";
 };
-export const AuthRedux = (status = false) => {
+
+export const savewalletInfoOnRedux = (data = null) => {
   return {
-    type: AUTHORIZED,
-    AuthorizeStatus: status
+    type: WALLET_INFORMATION,
+    wallet: data
   };
 };
 
@@ -42,7 +45,8 @@ export const RedirectToConfirm = (value = false) => {
   };
 };
 
-export const sendConfirm = (code, Token, type) => {
+export const sendConfirm = (code, Token, type, reduxToken) => {
+  console.log(code, Token, type, reduxToken);
   if (type === "1") {
     return dispatch => {
       Customer({
@@ -79,7 +83,7 @@ export const sendConfirm = (code, Token, type) => {
         }
       })
         .then(response => {
-          dispatch(RedirectToConfirm(response));
+          dispatch(CacheWalletInfo(response));
         })
         .catch(error => {
           dispatch(FailProgress(true));
@@ -98,7 +102,7 @@ export const sendConfirm = (code, Token, type) => {
         method: "post",
         url: "/ChangePaymentstatus",
         headers: {
-          Token: token()
+          Token: reduxToken.Token
         },
         data: {
           ID: code,
@@ -123,11 +127,24 @@ export const sendConfirm = (code, Token, type) => {
 
 export const saveOnLocalStorage = data => {
   sessionStorage.removeItem("user");
-  const message = JSON.stringify(data.data.Result);
+  const info = data.data.Result;
+  const message = JSON.stringify(info);
   const key = "IranLuckHashCode";
   let encrypted = CryptoJS.AES.encrypt(message, key);
   localStorage.setItem("user", encrypted.toString());
   return dispatch => {
-    dispatch(AuthRedux(true));
+    dispatch(AuthRedux(true, info));
+  };
+};
+
+export const CacheWalletInfo = data => {
+  console.log(data);
+  const message = JSON.stringify(data.data.Result);
+  const key = "IranLuckHashCode";
+  let encrypted = CryptoJS.AES.encrypt(message, key);
+  sessionStorage.setItem("cacheInfo", encrypted.toString());
+  return dispatch => {
+    dispatch(savewalletInfoOnRedux(data.data.Result));
+    dispatch(RedirectToConfirm(true));
   };
 };

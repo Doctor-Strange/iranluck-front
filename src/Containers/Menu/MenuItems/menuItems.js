@@ -3,11 +3,16 @@ import classes from "./menuItems.css";
 import Hoc from "../../../Hoc/Hoc";
 import { connect } from "react-redux";
 import { withRouter, NavLink } from "react-router-dom";
-import { AuthRedux, getWalletInformation } from "../../../Store/Action";
+import {
+  AuthRedux,
+  getWalletInformation,
+  getDataFromStorage,
+  getWalletInformationFromStorage
+} from "../../../Store/Action";
 var CryptoJS = require("crypto-js");
 
 class MenuItems extends Component {
-  State = {
+  state = {
     perfectmoney: "...",
     lukyCoin: "..."
   };
@@ -19,29 +24,30 @@ class MenuItems extends Component {
   LOGOUT = () => {
     sessionStorage.removeItem("user");
     localStorage.removeItem("user");
-    localStorage.removeItem("cacheInfo");
+    sessionStorage.removeItem("cacheInfo");
     this.props.AuthRedux();
   };
 
   componentDidMount = () => {
     // if  Auth is false and User Object is exist do the Automatic login
     if (!this.props.AuthorizeStatus && localStorage["user"]) {
-      this.props.getWalletInformation();
+      this.props.getDataFromStorage();
+      // read Storage and put information in redux
     }
   };
 
-  componentWillReceiveProps = () => {
-    if (localStorage["cacheInfo"]) {
-      //get user information from Storage
-      const key = "IranLuckHashCode";
-      let storage = localStorage.getItem("cacheInfo");
-      let decrypted = CryptoJS.AES.decrypt(storage, key);
-      const Data = JSON.parse(decrypted.toString(CryptoJS.enc.Utf8));
+  componentWillReceiveProps = props => {
+    if (props.AuthorizeStatus && !sessionStorage["cacheInfo"]) {
+      const { Token } = props.AuthData;
+      this.props.getWalletInformation(Token);
+    } else if (props.wallet) {
+      const { TotalAmount, CoinCount } = props.wallet;
       this.setState({
-        perfectmoney: Data.TotalAmount,
-        lukyCoin: Data.CoinCount
+        perfectmoney: TotalAmount,
+        lukyCoin: CoinCount
       });
-      // return Data;
+    } else if (props.AuthorizeStatus && sessionStorage["cacheInfo"]) {
+      this.props.getWalletInformationFromStorage();
     }
   };
 
@@ -73,14 +79,20 @@ class MenuItems extends Component {
 
 const mapStateToProps = state => {
   return {
-    AuthorizeStatus: state.AUTH.AuthorizeStatus
+    redirect: state.AUTH.redirect,
+    AuthorizeStatus: state.AUTH.AuthorizeStatus,
+    AuthData: state.AUTH.AuthData,
+    wallet: state.WALLET.wallet
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    AuthRedux: () => dispatch(AuthRedux()),
-    getWalletInformation: data => dispatch(getWalletInformation(data))
+    AuthRedux: data => dispatch(AuthRedux(data)),
+    getDataFromStorage: () => dispatch(getDataFromStorage()),
+    getWalletInformation: data => dispatch(getWalletInformation(data)),
+    getWalletInformationFromStorage: () =>
+      dispatch(getWalletInformationFromStorage())
   };
 };
 

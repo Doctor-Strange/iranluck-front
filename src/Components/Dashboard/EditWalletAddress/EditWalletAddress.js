@@ -58,8 +58,7 @@ class EditWalletAddress extends Component {
       loading: true
     });
     const Data = {
-      // loading: true,
-      // Token: this.state.Token,
+      Token: this.props.AuthData.Token,
       EmailAddress: this.state.EmailAddress,
       MoneyAddress: this.state.MoneyAddress
     };
@@ -69,6 +68,7 @@ class EditWalletAddress extends Component {
   componentWillReceiveProps = props => {
     if (props.redirect && !props.fail) {
       this.props.history.push(`/EventPage/?${this.state.EmailAddress}`);
+      props.RedirectToConfirm();
     } else {
       this.setState({
         loading: false
@@ -133,7 +133,8 @@ class EditWalletAddress extends Component {
 const mapStateToProps = state => {
   return {
     redirect: state.AUTH.redirect,
-    fail: state.AUTH.fail
+    fail: state.AUTH.fail,
+    AuthData: state.AUTH.AuthData
   };
 };
 

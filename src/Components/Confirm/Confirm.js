@@ -4,7 +4,7 @@ import { withRouter, NavLink } from "react-router-dom";
 import classes from "./Confirm.css";
 import global from "../../global.css";
 import Spinner from "../../UI/Spiner/Spinner";
-import { sendConfirm } from "../../Store/Action/Confirm";
+import { sendConfirm, RedirectToConfirm } from "../../Store/Action/Confirm";
 import Hoc from "../../Hoc/Hoc";
 
 class Confirm extends Component {
@@ -12,13 +12,14 @@ class Confirm extends Component {
     type: null,
     Cancel: false
   };
+
   componentDidMount = () => {
     const item = this.props.history.location.search.split("&");
     const hash = item[0].substring(item[0].indexOf("=") + 1);
     const type = item[1].split("=")[1];
     const slp = hash.split("Join");
     const code = slp[0];
-    const Token = slp[1];    
+    const Token = slp[1];
     if (Number(type) === 4) {
       this.setState({
         Cancel: true
@@ -27,7 +28,7 @@ class Confirm extends Component {
       this.setState({
         type: type
       });
-      this.props.sendConfirm(code, Token, type);
+      this.props.sendConfirm(code, Token, type, this.props.AuthData);
     }
   };
 
@@ -39,6 +40,7 @@ class Confirm extends Component {
     } else {
       if (props.redirect && !props.fail) {
         this.props.history.push("/");
+        props.RedirectToConfirm();
       }
     }
   };
@@ -89,13 +91,16 @@ const mapStateToProps = state => {
   return {
     fail: state.AUTH.fail,
     redirect: state.AUTH.redirect,
-    AuthorizeStatus: state.AUTH.AuthorizeStatus
+    AuthorizeStatus: state.AUTH.AuthorizeStatus,
+    AuthData: state.AUTH.AuthData
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    sendConfirm: (code, Token, type) => dispatch(sendConfirm(code, Token, type))
+    sendConfirm: (code, Token, type, reduxToken) =>
+      dispatch(sendConfirm(code, Token, type, reduxToken)),
+    RedirectToConfirm: () => dispatch(RedirectToConfirm())
   };
 };
 

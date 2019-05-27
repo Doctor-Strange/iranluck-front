@@ -5,6 +5,7 @@ import classes from "./ChangePassword.css";
 import {
   ChangePassSubmit,
   FailProgress,
+  RedirectToConfirm,
   alertMessenger
 } from "../../Store/Action";
 import Spinner from "../../UI/Spiner/Spinner";
@@ -21,6 +22,7 @@ class ChangePassword extends Component {
   componentWillReceiveProps = props => {
     if (props.AuthorizeStatus) {
       this.props.history.push("/");
+      this.props.RedirectToConfirm();
     } else {
       this.setState({
         loading: false
@@ -107,7 +109,8 @@ const mapDispatchToProps = dispatch => {
   return {
     ChangePassSubmit: data => dispatch(ChangePassSubmit(data)),
     FailProgress: () => dispatch(FailProgress()),
-    alertMessenger: sms => dispatch(alertMessenger(sms))
+    alertMessenger: sms => dispatch(alertMessenger(sms)),
+    RedirectToConfirm: data => dispatch(RedirectToConfirm(data))
   };
 };
 

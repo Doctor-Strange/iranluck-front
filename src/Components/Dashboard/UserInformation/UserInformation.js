@@ -1,33 +1,20 @@
 import React, { Component } from "react";
+
+import { connect } from "react-redux";
 import classes from "./UserInformation.css";
 import userIcon from "../../../Assets/user/userIcon.png";
-var CryptoJS = require("crypto-js");
+import Hoc from "../../../Hoc/Hoc";
 
 class UserInformation extends Component {
   state = { Email: null, walletAddress: null };
 
   componentWillMount = () => {
-    if (localStorage["user"]) {
-      //get user information from Storage
-      const key = "IranLuckHashCode";
-      let storage = localStorage.getItem("user");
-      let decrypted = CryptoJS.AES.decrypt(storage, key);
-      const Data = JSON.parse(decrypted.toString(CryptoJS.enc.Utf8));
-      this.setState({
-        Email: Data.Email
-      });
-    }
-    if (sessionStorage["user"]) {
-      //get user information from Storage
-      const key = "IranLuckHashCode";
-      let storage = sessionStorage.getItem("user");
-      let decrypted = CryptoJS.AES.decrypt(storage, key);
-      const Data = JSON.parse(decrypted.toString(CryptoJS.enc.Utf8));
-      this.setState({
-        Email: Data.Email
-      });
-    }
+    this.setState({
+      Email: this.props.AuthData.Email,
+      walletAddress: this.props.wallet.WalletAddress
+    });
   };
+
   render() {
     return (
       <div className={classes.panelControl}>
@@ -35,10 +22,25 @@ class UserInformation extends Component {
           <img src={userIcon} alt="آیکون کاربری" />
           <p className={classes.title}>ایمیل تایید شده</p>
           <p className={classes.userName}>{this.state.Email}</p>
+          {this.state.walletAddress ? (
+            <Hoc>
+              <p className={classes.title}>آدرس کیف پول تایید شده</p>
+              <p className={classes.userName}>{this.state.walletAddress}</p>
+            </Hoc>
+          ) : (
+            <p className={classes.title}>آدرس کیف پول ثبت نشده است</p>
+          )}
         </div>
       </div>
     );
   }
 }
 
-export default UserInformation;
+const mapStateToProps = state => {
+  return {
+    AuthData: state.AUTH.AuthData,
+    wallet: state.WALLET.wallet
+  };
+};
+
+export default connect(mapStateToProps)(UserInformation);

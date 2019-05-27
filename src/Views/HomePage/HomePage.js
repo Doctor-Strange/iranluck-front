@@ -10,14 +10,13 @@ import SendToFriends from "../../Components/HomePage/SendToFriends/SendToFriends
 import WinningTickets from "../../Components/HomePage/WinningTickets/WinningTickets";
 import WhyUs from "../../Components/HomePage/WhyUs/WhyUs";
 import KnowUs from "../../Components/HomePage/KnowUs/KnowUs";
-import { AuthRedux } from "../../Store/Action";
+// import { AuthRedux } from "../../Store/Action";
 import Countdown from "../../Components/HomePage/CountDown/CountDown";
 var CryptoJS = require("crypto-js");
 
 class HomePage extends Component {
   componentDidMount = () => {
     // if  Auth is false and User Object is exist do the Automatic login
-
     if (!this.props.AuthorizeStatus && localStorage["user"]) {
       //get user information from Storage
       // const key = "IranLuckHashCode";
@@ -25,7 +24,6 @@ class HomePage extends Component {
       // let decrypted = CryptoJS.AES.decrypt(storage, key);
       // const Data = JSON.parse(decrypted.toString(CryptoJS.enc.Utf8));
       // console.log(Data.Token);
-      this.props.AuthRedux(true);
     }
   };
 
@@ -54,15 +52,10 @@ const mapStateToProps = state => {
   };
 };
 
-const mapDispatchToProps = dispatch => {
-  return {
-    AuthRedux: data => dispatch(AuthRedux(data))
-  };
-};
+// const mapDispatchToProps = dispatch => {
+//   return {
+//     AuthRedux: data => dispatch(AuthRedux(data))
+//   };
+// };
 
-export default withRouter(
-  connect(
-    mapStateToProps,
-    mapDispatchToProps
-  )(HomePage)
-);
+export default withRouter(connect(mapStateToProps)(HomePage));

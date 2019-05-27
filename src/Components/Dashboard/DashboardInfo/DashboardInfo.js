@@ -2,22 +2,12 @@ import React, { Component } from "react";
 import { withRouter, NavLink } from "react-router-dom";
 import classes from "./DashboardInfo.css";
 import { connect } from "react-redux";
-import { getWalletInformation } from "../../../Store/Action";
 import Hoc from "../../../Hoc/Hoc";
 import EditWalletAddress from "../EditWalletAddress/EditWalletAddress";
 
 class DashboardInfo extends Component {
-  componentDidMount = () => {
-    if (localStorage["user"] || sessionStorage["user"]) {
-      this.props.getWalletInformation();
-    }
-  };
-
-  componentWillReceiveProps = props => {
-  };
   render() {
     let { CoinCount, TotalAmount, WalletAddress } = this.props.wallet;
-
     return (
       <div className={classes.panelControl}>
         <h3>کیف پول</h3>
@@ -54,15 +44,4 @@ const mapStateToProps = state => {
   };
 };
 
-const mapDispathToProps = dispatch => {
-  return {
-    getWalletInformation: () => dispatch(getWalletInformation())
-  };
-};
-
-export default withRouter(
-  connect(
-    mapStateToProps,
-    mapDispathToProps
-  )(DashboardInfo)
-);
+export default withRouter(connect(mapStateToProps)(DashboardInfo));

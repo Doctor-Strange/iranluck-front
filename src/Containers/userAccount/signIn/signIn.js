@@ -3,7 +3,11 @@ import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import classes from "./signIn.css";
 import { GoogleLogin } from "react-google-login";
-import { log_in_Req, FailProgress } from "../../../Store/Action";
+import {
+  RedirectToConfirm,
+  log_in_Req,
+  FailProgress
+} from "../../../Store/Action";
 import googleIcon from "../../../Assets/googleIcon.png";
 import Spinner from "../../../UI/Spiner/Spinner";
 import ReCAPTCHA from "react-google-recaptcha";
@@ -42,8 +46,9 @@ class SignIn extends Component {
 
   componentWillReceiveProps = props => {
     if (props.AuthorizeStatus && !props.fail) {
-      this.props.OnDrawelClick();
       this.props.history.push("/account/Wallet");
+      this.props.OnDrawelClick();
+      props.RedirectToConfirm();
     } else {
       this.setState({
         loading: false
@@ -129,7 +134,11 @@ class SignIn extends Component {
             </span>
             <label className={classes.checkbox_container}>
               من را به یاد بسپار
-              <input type="checkbox" checked = {this.state.Save} onChange={this.onCheckBox} />
+              <input
+                type="checkbox"
+                checked={this.state.Save}
+                onChange={this.onCheckBox}
+              />
               <span className={classes.checkbox_checkmark} />
             </label>
             <div className={classes.CaptchaFather}>
@@ -191,6 +200,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     log_in_Req: (data, type) => dispatch(log_in_Req(data, type)),
+    RedirectToConfirm: data => dispatch(RedirectToConfirm(data)),
     FailProgress: () => dispatch(FailProgress())
   };
 };

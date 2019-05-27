@@ -42,6 +42,7 @@ class EditProfile extends Component {
     if (this.state.NewPassword === this.state.RepeatNewPassword) {
       this.props.FailProgress();
       const Data = {
+        Token: this.props.AuthData.Token,
         Password: this.state.Password.trim(),
         NewPassword: this.state.NewPassword.trim()
       };
@@ -113,7 +114,8 @@ class EditProfile extends Component {
 
 const mapStateToprops = state => {
   return {
-    fail: state.AUTH.fail
+    fail: state.AUTH.fail,
+    AuthData: state.AUTH.AuthData
   };
 };
 

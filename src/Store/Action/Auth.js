@@ -3,31 +3,20 @@ import Customer from "../../Axios/Customer";
 import { alertMessenger } from "./alertAction";
 var CryptoJS = require("crypto-js");
 
-const token = () => {
-  if (localStorage["user"]) {
-    //get user information from Storage
-    const key = "IranLuckHashCode";
-    let storage = localStorage.getItem("user");
-    let decrypted = CryptoJS.AES.decrypt(storage, key);
-    const Data = JSON.parse(decrypted.toString(CryptoJS.enc.Utf8));
-    return Data.Token;
+export const AuthRedux = (status = false, data = null) => {
+  if (data) {
+    return {
+      type: AUTHORIZED,
+      AuthorizeStatus: status,
+      AuthData: data
+    };
+  } else {
+    return {
+      type: AUTHORIZED,
+      AuthorizeStatus: status,
+      AuthData: data
+    };
   }
-  if (sessionStorage["user"]) {
-    //get user information from Storage
-    const key = "IranLuckHashCode";
-    let storage = sessionStorage.getItem("user");
-    let decrypted = CryptoJS.AES.decrypt(storage, key);
-    const Data = JSON.parse(decrypted.toString(CryptoJS.enc.Utf8));
-    return Data.Token;
-  }
-  return "";
-};
-
-export const AuthRedux = (status = false) => {
-  return {
-    type: AUTHORIZED,
-    AuthorizeStatus: status
-  };
 };
 
 export const FailProgress = (value = false) => {
@@ -111,9 +100,6 @@ export const ChangePassRequest = data => {
     Customer({
       method: "post",
       url: "/ChangePassRequest",
-      headers: {
-        Token: token()
-      },
       data: {
         EmailAddress: data
       }
@@ -164,7 +150,7 @@ export const walletAddressRequest = data => {
       method: "post",
       url: "/CreateMoneyAddressRequest",
       headers: {
-        Token: token()
+        Token: data.Token
       },
       data: {
         MoneyAddress: data.MoneyAddress,
@@ -194,7 +180,7 @@ export const PanelChangePassword = data => {
       method: "post",
       url: "/PanelChangePassword ",
       headers: {
-        Token: token()
+        Token: data.Token
       },
       data: {
         NewPassword: data.NewPassword,
@@ -214,24 +200,37 @@ export const PanelChangePassword = data => {
   };
 };
 
+export const getDataFromStorage = () => {
+  return dispatch => {
+    //get user information from Storage
+    const key = "IranLuckHashCode";
+    let storage = localStorage.getItem("user");
+    let decrypted = CryptoJS.AES.decrypt(storage, key);
+    const Data = JSON.parse(decrypted.toString(CryptoJS.enc.Utf8));
+    dispatch(AuthRedux(true, Data));
+  };
+};
+
 export const saveOnLocalStorage = data => {
   sessionStorage.removeItem("user");
-  const message = JSON.stringify(data.data.Result);
+  const info = data.data.Result;
+  const message = JSON.stringify(info);
   const key = "IranLuckHashCode";
   let encrypted = CryptoJS.AES.encrypt(message, key);
   localStorage.setItem("user", encrypted.toString());
   return dispatch => {
-    dispatch(AuthRedux(true));
+    dispatch(AuthRedux(true, info));
   };
 };
 
 export const saveOnSessionStorage = data => {
+  const info = data.data.Result;
   localStorage.removeItem("user");
-  const message = JSON.stringify(data.data.Result);
+  const message = JSON.stringify(info);
   const key = "IranLuckHashCode";
   let encrypted = CryptoJS.AES.encrypt(message, key);
   sessionStorage.setItem("user", encrypted.toString());
   return dispatch => {
-    dispatch(AuthRedux(true));
+    dispatch(AuthRedux(true, info));
   };
 };
