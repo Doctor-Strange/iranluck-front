@@ -2,13 +2,13 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import classes from "./EditProfile.css";
 import EditWalletAddress from "../../Components/Dashboard/EditWalletAddress/EditWalletAddress";
-import ReCAPTCHA from "react-google-recaptcha";
 import {
   PanelChangePassword,
   FailProgress,
   alertMessenger
 } from "../../Store/Action";
 import Spinner from "../../UI/Spiner/Spinner";
+import GoogleCaptcha from "../../UI/GoogleCaptcha";
 
 class EditProfile extends Component {
   state = {
@@ -84,15 +84,11 @@ class EditProfile extends Component {
               required
               type="password"
             />
-            <div className={classes.CaptchaFather}>
-              <ReCAPTCHA
-                className={classes.Captcha}
-                sitekey="6LclC6MUAAAAADxEq1l358aAa0kn_NR-Is_4fbqF"
-                onChange={this.onChange}
-                onExpired={this.onError}
-                onErrored={this.onError}
-              />
-            </div>
+            <GoogleCaptcha
+              onChange={this.onChange}
+              onErrored={this.onError}
+              onExpired={this.onError}
+            />
             {this.state.loading ? (
               <button disabled={true} type="submit">
                 <Spinner />

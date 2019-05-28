@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { withRouter, NavLink } from "react-router-dom";
 import classes from "./WithDrawal.css";
-import ReCAPTCHA from "react-google-recaptcha";
 import Spinner from "../../../../UI/Spiner/Spinner";
 import { RedirectToConfirm, alertMessenger } from "../../../../Store/Action";
+import GoogleCaptcha from "../../../../UI/GoogleCaptcha";
 var CryptoJS = require("crypto-js");
 
 class WithDrawal extends Component {
@@ -118,15 +118,11 @@ class WithDrawal extends Component {
           </div>
           <p>انتقال داده شود.</p>
           <form onSubmit={this.onFormSubmit}>
-            <div className={classes.CaptchaFather}>
-              <ReCAPTCHA
-                className={classes.Captcha}
-                sitekey="6LclC6MUAAAAADxEq1l358aAa0kn_NR-Is_4fbqF"
-                onChange={this.onChange}
-                onErrored={this.onError}
-                onExpired={this.onError}
-              />
-            </div>
+            <GoogleCaptcha
+              onChange={this.onChange}
+              onErrored={this.onError}
+              onExpired={this.onError}
+            />
             {this.state.loading ? (
               <button
                 disabled={true}

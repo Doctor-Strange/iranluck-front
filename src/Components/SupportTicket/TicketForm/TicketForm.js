@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { withRouter, NavLink } from "react-router-dom";
 import classes from "./TicketForm.css";
-import ReCAPTCHA from "react-google-recaptcha";
+import GoogleCaptcha from "../../../UI/GoogleCaptcha";
 
 class TicketForm extends Component {
   state = { SendBtnStatus: false };
@@ -25,15 +25,11 @@ class TicketForm extends Component {
         <form>
           <input type="text" placeholder="عنوان" required />
           <textarea placeholder="متن پیام" rows="3" required />
-          <div className={classes.CaptchaFather}>
-            <ReCAPTCHA
-              className={classes.Captcha}
-              sitekey="6LclC6MUAAAAADxEq1l358aAa0kn_NR-Is_4fbqF"
-              onChange={this.onChange}
-              onErrored={this.onError}
-              onExpired={this.onError}
-            />
-          </div>
+          <GoogleCaptcha
+            onChange={this.onChange}
+            onErrored={this.onError}
+            onExpired={this.onError}
+          />
           <button disabled={!this.state.SendBtnStatus} type="submit">
             ارسال
           </button>

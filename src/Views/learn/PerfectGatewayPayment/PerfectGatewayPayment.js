@@ -7,6 +7,8 @@ import four from "../../../Assets/Learn/PerfectGatewayPayment/4.jpg";
 import five from "../../../Assets/Learn/PerfectGatewayPayment/5.jpg";
 import six from "../../../Assets/Learn/PerfectGatewayPayment/6.jpg";
 import seven from "../../../Assets/Learn/PerfectGatewayPayment/7.jpg";
+import eight from "../../../Assets/Learn/PerfectGatewayPayment/8.jpg";
+import nine from "../../../Assets/Learn/PerfectGatewayPayment/9.jpg";
 import classes from "./PerfectGatewayPayment.css";
 
 const PerfectGatewayPayment = props => {
@@ -36,7 +38,9 @@ const PerfectGatewayPayment = props => {
         </p>
         <img src={one} alt="perfect Money" />
         <p>سپس به درگاه پرفکت مانی هدایت خواهید شد</p>
-        <p className={classes.Alert}>https://perfectmoney.is</p>
+        <p className={classes.Alert}>
+          ابتدای آدرس حتما باید https://perfectmoney.is باشد
+        </p>
         <p>بر روی دکمه پرداخت کلیک کنید</p>
         <img src={two} alt="perfect Money" />
 
@@ -46,28 +50,31 @@ const PerfectGatewayPayment = props => {
         <p>بر روی دکمه تایید کلیک کنید</p>
         <img src={three} alt="perfect Money" />
         <p>
-          در صورتی که برای اولین بار از این درگاه استفاده کنید ایمیل تایید برای
-          شما ارسال خواهد شد، که در آن کد اعتبار سنجی وجود دارد
-        </p>
-        <p>
-          به ایمیل خود رفته، کد را کپی کنید و در کادر مربوطه وارد کرده و بر روی
-          دکمه تایید کلیک کنید
+          در صورتی که برای اولین بار از این درگاه استفاده کنید. صفحه زیر برای
+          شما نمایش داده خواهد شد
         </p>
         <img src={four} alt="perfect Money" />
-
+        <p>
+          ایمیل تایید به آدرس ایمیل شما ارسال خواهد شد، که در آن کد اعتبار سنجی
+          وجود دارد
+        </p>
+        <p>به ایمیل خود رفته، کد را کپی کنید</p>
+        <img src={five} alt="perfect Money" />
+        <p>و در کادر مربوطه وارد کرده و بر روی دکمه تایید کلیک کنید</p>
+        <img src={six} alt="perfect Money" />
         <p className={classes.Alert}>
           در صورتی که مجموع پرداختی بیشتر از موجودی حساب شما باشد خطای قرمز رنگی
           نمایش داده خواهد شد
         </p>
         <p>بعد از بررسی اطلاعات بر روی دکمه تایید کلیک کنید</p>
-        <img src={five} alt="perfect Money" />
+        <img src={seven} alt="perfect Money" />
         <p>بر روی دکمه تایید کلیک کنید</p>
-        <img src={six} alt="perfect Money" />
+        <img src={eight} alt="perfect Money" />
         <p>
           سپس به وبسایت ایران لاک هدایت خواهید شد و بعد از چند ثانیه حساب شما به
           صورت خودکار شارژ میگردد
         </p>
-        <img src={seven} alt="perfect Money" />
+        <img src={nine} alt="perfect Money" />
       </div>
     </div>
   );

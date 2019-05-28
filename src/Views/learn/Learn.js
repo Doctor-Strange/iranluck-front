@@ -76,7 +76,9 @@ const Learn = props => {
             <div>
               <h3>گام چهارم </h3>
               <NavLink
-                className={url === "/Learn/ChargeAccount" ? classes.Active : null}
+                className={
+                  url === "/Learn/ChargeAccount" ? classes.Active : null
+                }
                 onClick={GotoTop}
                 to="/Learn/ChargeAccount"
               >

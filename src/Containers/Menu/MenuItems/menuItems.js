@@ -9,11 +9,14 @@ import {
   getDataFromStorage,
   getWalletInformationFromStorage
 } from "../../../Store/Action";
+
+import Loader from "../../../UI/Loader";
+
 var CryptoJS = require("crypto-js");
 
 class MenuItems extends Component {
   state = {
-    perfectmoney: "...",
+    perfectmoney: null,
     lukyCoin: "..."
   };
 
@@ -53,14 +56,28 @@ class MenuItems extends Component {
   };
 
   render() {
+    let Amount = this.state.perfectmoney !== null ? (
+      this.state.perfectmoney
+    ) : (
+      <Loader
+        styleProps={{
+          width: "15px",
+          height: "15px",
+          margin: "0 5px",
+          display: "inline-block",
+          border: "2px solid transparent",
+          borderTop: "2px solid #ffffff"
+        }}
+      />
+    );
     const { AuthorizeStatus } = this.props;
     const Items = AuthorizeStatus ? (
       <Hoc>
-        <li className ={classes.difLi} onClick={this.onItemClick}>
+        <li className={classes.difLi} onClick={this.onItemClick}>
           <NavLink to="/account">حساب کاربری</NavLink>
         </li>
         <li onClick={this.onItemClick}>
-          <NavLink to="/account/Wallet">{this.state.perfectmoney} سکه</NavLink>
+          <NavLink to="/account/Wallet">{Amount} سکه</NavLink>
         </li>
         <li onClick={this.onItemClick}>
           <NavLink to="/account/Charge">شارژ</NavLink>

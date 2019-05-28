@@ -10,7 +10,7 @@ import {
 } from "../../../Store/Action";
 import googleIcon from "../../../Assets/googleIcon.png";
 import Spinner from "../../../UI/Spiner/Spinner";
-import ReCAPTCHA from "react-google-recaptcha";
+import GoogleCaptcha from "../../../UI/GoogleCaptcha";
 var CryptoJS = require("crypto-js");
 
 class SignIn extends Component {
@@ -142,13 +142,11 @@ class SignIn extends Component {
               <span className={classes.checkbox_checkmark} />
             </label>
             <div className={classes.CaptchaFather}>
-              <ReCAPTCHA
-                onExpired={this.onError}
-                className={classes.Captcha}
-                sitekey="6LclC6MUAAAAADxEq1l358aAa0kn_NR-Is_4fbqF"
-                onChange={this.onChange}
-                onErrored={this.onError}
-              />
+            <GoogleCaptcha
+              onChange={this.onChange}
+              onErrored={this.onError}
+              onExpired={this.onError}
+            />
             </div>
             {this.state.loading ? (
               <button

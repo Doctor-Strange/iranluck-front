@@ -4,13 +4,13 @@ import { withRouter } from "react-router-dom";
 import ChangeLock from "../../../Assets/ChangeLock.png";
 import classes from "./ChangePassForm.css";
 import Spinner from "../../../UI/Spiner/Spinner";
-import ReCAPTCHA from "react-google-recaptcha";
 
 import {
   ChangePassRequest,
   FailProgress,
   RedirectToConfirm
 } from "../../../Store/Action";
+import GoogleCaptcha from "../../../UI/GoogleCaptcha";
 
 class ChangePassForm extends Component {
   state = {
@@ -74,15 +74,11 @@ class ChangePassForm extends Component {
             type="email"
             placeholder="ایمیل"
           />
-          <div className={classes.CaptchaFather}>
-            <ReCAPTCHA
-              className={classes.Captcha}
-              sitekey="6LclC6MUAAAAADxEq1l358aAa0kn_NR-Is_4fbqF"
-              onChange={this.onChange}
-              onExpired={this.onError}
-              onErrored={this.onError}
-            />
-          </div>
+          <GoogleCaptcha
+            onChange={this.onChange}
+            onErrored={this.onError}
+            onExpired={this.onError}
+          />
           {this.state.loading ? (
             <button disabled={true} type="submit">
               <Spinner />

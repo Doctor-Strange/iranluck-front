@@ -34,14 +34,6 @@
   padding: 2%;
 }
 
-.CaptchaFather {
-  text-align: center;
-}
-.Captcha {
-  margin-top: 20px;
-  display: inline-block;
-}
-
 .Container button {
   height: 45px;
   cursor: pointer;

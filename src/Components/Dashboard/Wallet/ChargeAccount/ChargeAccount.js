@@ -2,13 +2,13 @@ import React, { Component } from "react";
 import { withRouter, NavLink } from "react-router-dom";
 import { connect } from "react-redux";
 import classes from "./ChargeAccount.css";
-import ReCAPTCHA from "react-google-recaptcha";
 import Spinner from "../../../../UI/Spiner/Spinner";
 import {
   InsertPayment,
   FailProgress,
   alertMessenger
 } from "../../../../Store/Action";
+import GoogleCaptcha from "../../../../UI/GoogleCaptcha";
 
 // import perfect from "../../../../Assets/user/perfectmoneygate.jpg";
 
@@ -146,15 +146,11 @@ class ChargeAccount extends Component {
           <p className={classes.Alert}>
             از تحریم شکن و یا V(-)P(_)N استفاده نکنید
           </p>
-          <div className={classes.CaptchaFather}>
-            <ReCAPTCHA
-              className={classes.Captcha}
-              sitekey="6LclC6MUAAAAADxEq1l358aAa0kn_NR-Is_4fbqF"
-              onChange={this.onChange}
-              onErrored={this.onError}
-              onExpired={this.onError}
-            />
-          </div>
+          <GoogleCaptcha
+            onChange={this.onChange}
+            onErrored={this.onError}
+            onExpired={this.onError}
+          />
           {this.state.loading ? (
             <button disabled={true} type="submit">
               <Spinner />

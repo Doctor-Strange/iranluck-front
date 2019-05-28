@@ -8,14 +8,6 @@
   /* margin-top: 46px; */
 }
 
-.CaptchaFather {
-  text-align: center;
-}
-.Captcha {
-  margin-top: 20px;
-  display: inline-block;
-}
-
 .panelControl input {
   max-width: 320px;
 }

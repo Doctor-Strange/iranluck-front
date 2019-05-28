@@ -10,8 +10,8 @@ import {
   RedirectToConfirm
 } from "../../../Store/Action";
 import Spinner from "../../../UI/Spiner/Spinner";
-import ReCAPTCHA from "react-google-recaptcha";
 import googleIcon from "../../../Assets/googleIcon.png";
+import GoogleCaptcha from "../../../UI/GoogleCaptcha";
 
 class SignUp extends Component {
   state = {
@@ -136,12 +136,10 @@ class SignUp extends Component {
             />
             <input onChange={this.onInput} type="hidden" />
             <div className={classes.CaptchaFather}>
-              <ReCAPTCHA
-                onExpired={this.onError}
-                className={classes.Captcha}
-                sitekey="6LclC6MUAAAAADxEq1l358aAa0kn_NR-Is_4fbqF"
+              <GoogleCaptcha
                 onChange={this.onChange}
                 onErrored={this.onError}
+                onExpired={this.onError}
               />
             </div>
             {this.state.loading ? (

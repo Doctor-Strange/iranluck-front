@@ -90,11 +90,3 @@
 .teach a:hover {
   color: #009688;
 }
-
-.CaptchaFather {
-  text-align: center;
-}
-.Captcha {
-  margin-top: 20px;
-  display: inline-block;
-}

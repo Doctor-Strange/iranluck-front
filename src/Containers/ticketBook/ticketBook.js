@@ -71,7 +71,10 @@ class TicketBook extends Component {
   };
 
   render() {
-    let Dis = localStorage["user"] || sessionStorage["user"] ? false : true;
+    let Dis =
+      (localStorage["user"] || sessionStorage["user"]) && this.props.wallet
+        ? false
+        : true;
     return (
       <div className={classes.Container}>
         <h3>
