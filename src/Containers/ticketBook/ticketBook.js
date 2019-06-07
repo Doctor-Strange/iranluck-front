@@ -49,6 +49,9 @@ class TicketBook extends Component {
         "در هر بار خرید فقط میتوانید یک عدد سکه شانس را استفاده کنید"
       );
     }
+    if (wallet.TotalAmount === 0) {
+      return this.props.alertMessenger("ابتدا حساب خود را شارژ کنید");
+    }
     if (this.state.amount > wallet.TotalAmount + wallet.CoinCount)
       return this.props.alertMessenger(
         "عدد وارد شده از مجموع سکه های شانس و موجودی اصلی کیف پول بیشتر است"
@@ -58,8 +61,13 @@ class TicketBook extends Component {
 
   componentWillReceiveProps = props => {
     if (props.redirect && !props.fail) {
+      sessionStorage.removeItem("cacheInfo");
       this.props.history.push("/account/TicketsList");
       this.props.RedirectToConfirm();
+    } else {
+      this.setState({
+        loading: false
+      });
     }
   };
 
