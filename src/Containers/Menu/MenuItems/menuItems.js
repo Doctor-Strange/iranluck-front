@@ -12,7 +12,7 @@ import {
 
 import Loader from "../../../UI/Loader";
 
-var CryptoJS = require("crypto-js");
+// var CryptoJS = require("crypto-js");
 
 class MenuItems extends Component {
   state = {

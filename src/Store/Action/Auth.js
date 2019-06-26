@@ -44,7 +44,7 @@ export const sign_Up_Req = data => {
         ParentRefNumber: data.ParentRefNumber
       }
     })
-      .then(response => {
+      .then(() => {
         dispatch(RedirectToConfirm(true));
       })
       .catch(error => {

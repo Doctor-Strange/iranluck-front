@@ -79,9 +79,9 @@ class SignUp extends Component {
     }
   };
 
-  componentDidMount = () => {
-    if (this.props.history.location.search.length > 0) {
-      const ParentRefNumber = this.props.history.location.search.slice(1);
+  componentWillMount = () => {
+    if (sessionStorage["Parent"]) {
+      const ParentRefNumber = sessionStorage["Parent"];
       this.setState({
         ParentRefNumber: ParentRefNumber.trim()
       });

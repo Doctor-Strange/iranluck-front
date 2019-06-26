@@ -12,11 +12,11 @@ import Learn from "./Views/learn/Learn";
 import ChangePassword from "./Components/ChangePassword/ChangePassword";
 
 class App extends Component {
-  componentDidMount = () => {};
+
   render() {
     let route = <Route path="/account" component={Dashboard} />;
     if (!this.props.AuthorizeStatus) {
-      route = <Redirect to="/" />;
+      route = <Route exact path="/" component={HomePage} />;
     }
     return (
       <Hoc>
@@ -24,11 +24,17 @@ class App extends Component {
           <Switch>
             <Route path="/Learn" component={Learn} />
             <Route path="/EventPage" component={EventPage} />
-            <Route path="/Confirm" component={Confirm} />
+            <Route path="/Confirm/:code/:token/:type" component={Confirm} />
             <Route path="/Laws" component={Laws} />
-            <Route path="/ChangePassword" component={ChangePassword} />
-            <Route exact path="/" component={HomePage} />
+            <Route path="/ChangePassword/:code" component={ChangePassword} />
             {route}
+            <Route exact path="/" component={HomePage} />
+            {this.props.AuthorizeStatus ? (
+              <Redirect to="/" />
+            ) : (
+              <Route exact path="/:id" component={HomePage} />
+            )}
+            <Redirect to="/" />;
           </Switch>
         </Layout>
       </Hoc>

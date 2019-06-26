@@ -14,25 +14,33 @@ class Confirm extends Component {
   };
 
   componentDidMount = () => {
-    const item = this.props.history.location.search.split("&");
-    const hash = item[0].substring(item[0].indexOf("=") + 1);
-    const type = item[1].split("=")[1];
-    const slp = hash.split("Join");
-    const code = slp[0];
-    const Token = slp[1];
-    if (Number(type) === 4) {
+    const params = this.props.match.params;
+    const code = params.code;
+    const Token = params.token;
+    const type = params.type;
+    if (Number(params.type) === 4) {
       this.setState({
         Cancel: true
       });
-    } else {
+    } else if (Number(params.type) !== 3) {
       this.setState({
         type: type
       });
-      this.props.sendConfirm(code, Token, type, this.props.AuthData);
+      this.props.sendConfirm(code, Token, type);
     }
   };
 
   componentWillReceiveProps = props => {
+    const params = this.props.match.params;
+    if (
+      !props.fail &&
+      props.AuthorizeStatus &&
+      Number(this.props.match.params.type) === 3
+    ) {
+      const code = params.code;
+      const type = params.type;
+      this.props.sendConfirm(code, null, type, props.AuthData);
+    }
     if (this.state.type === "1") {
       if (props.AuthorizeStatus && !props.fail) {
         this.props.history.push("/account/Wallet");

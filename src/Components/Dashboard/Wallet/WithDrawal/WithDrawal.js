@@ -65,11 +65,11 @@ class WithDrawal extends Component {
       this.setState({
         loading: true
       });
-      const Data = {
-        Amount: this.state.Amount,
-        EmailAddress: this.state.EmailAddress,
-        MoneyAddress: this.state.MoneyAddress
-      };
+      // const Data = {
+      //   Amount: this.state.Amount,
+      //   EmailAddress: this.state.EmailAddress,
+      //   MoneyAddress: this.state.MoneyAddress
+      // };
       //===>
       // this.props.walletAddressRequest(Data);
     }

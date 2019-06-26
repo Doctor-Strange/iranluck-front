@@ -32,7 +32,6 @@ export const GetTicket = data => {
       }
     })
       .then(response => {
-        console.log(response);
         dispatch(RedirectToConfirm(true));
       })
       .catch(error => {

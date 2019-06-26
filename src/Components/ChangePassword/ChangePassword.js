@@ -55,7 +55,8 @@ class ChangePassword extends Component {
   };
 
   componentDidMount = () => {
-    const code = this.props.history.location.search.slice(1);
+   const params = this.props.match.params
+    const code = params.code
     this.setState({
       EncodedCoded: code
     });

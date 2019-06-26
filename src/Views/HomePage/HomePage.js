@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { connect } from "react-redux";
+// import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 
 import Hoc from "../../Hoc/Hoc";
@@ -12,19 +12,23 @@ import WhyUs from "../../Components/HomePage/WhyUs/WhyUs";
 import KnowUs from "../../Components/HomePage/KnowUs/KnowUs";
 // import { AuthRedux } from "../../Store/Action";
 import Countdown from "../../Components/HomePage/CountDown/CountDown";
-var CryptoJS = require("crypto-js");
+// var CryptoJS = require("crypto-js");
 
 class HomePage extends Component {
   componentDidMount = () => {
-    // if  Auth is false and User Object is exist do the Automatic login
-    if (!this.props.AuthorizeStatus && localStorage["user"]) {
-      //get user information from Storage
-      // const key = "IranLuckHashCode";
-      // let storage = localStorage.getItem("user");
-      // let decrypted = CryptoJS.AES.decrypt(storage, key);
-      // const Data = JSON.parse(decrypted.toString(CryptoJS.enc.Utf8));
-      // console.log(Data.Token);
+    // if this user referred by another one save referrer Id on session storage
+    if (this.props.match.params.id) {
+      sessionStorage["Parent"] = this.props.match.params.id;
     }
+    // if  Auth is false and User Object is exist do the Automatic login
+    // if (!this.props.AuthorizeStatus && localStorage["user"]) {
+    //get user information from Storage
+    // const key = "IranLuckHashCode";
+    // let storage = localStorage.getItem("user");
+    // let decrypted = CryptoJS.AES.decrypt(storage, key);
+    // const Data = JSON.parse(decrypted.toString(CryptoJS.enc.Utf8));
+    // console.log(Data.Token);
+    // }
   };
 
   render() {
@@ -46,11 +50,11 @@ class HomePage extends Component {
   }
 }
 
-const mapStateToProps = state => {
-  return {
-    AuthorizeStatus: state.AUTH.AuthorizeStatus
-  };
-};
+// const mapStateToProps = state => {
+//   return {
+//     AuthorizeStatus: state.AUTH.AuthorizeStatus
+//   };
+// };
 
 // const mapDispatchToProps = dispatch => {
 //   return {
@@ -58,4 +62,5 @@ const mapStateToProps = state => {
 //   };
 // };
 
-export default withRouter(connect(mapStateToProps)(HomePage));
+// export default withRouter(connect(mapStateToProps)(HomePage));
+export default withRouter(HomePage);

@@ -46,7 +46,6 @@ export const RedirectToConfirm = (value = false) => {
 };
 
 export const sendConfirm = (code, Token, type, reduxToken) => {
-  console.log(code, Token, type, reduxToken);
   if (type === "1") {
     return dispatch => {
       Customer({
@@ -138,7 +137,6 @@ export const saveOnLocalStorage = data => {
 };
 
 export const CacheWalletInfo = data => {
-  console.log(data);
   const message = JSON.stringify(data.data.Result);
   const key = "IranLuckHashCode";
   let encrypted = CryptoJS.AES.encrypt(message, key);

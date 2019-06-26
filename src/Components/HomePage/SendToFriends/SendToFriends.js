@@ -10,7 +10,7 @@ import facebook from "../../../Assets/facebook.png";
 import whatsapp from "../../../Assets/whatsapp.png";
 import twitter from "../../../Assets/twitter.png";
 import { CopyToClipboard } from "react-copy-to-clipboard";
-var CryptoJS = require("crypto-js");
+// var CryptoJS = require("crypto-js");
 
 let time = setInterval(() => {});
 
@@ -50,7 +50,7 @@ class SendToFriends extends Component {
   pathAdder = props => {
     if (props.AuthorizeStatus) {
       this.setState({
-        UserRefId: "/?" + props.AuthData.OwnRefNumber
+        UserRefId: "/" + props.AuthData.OwnRefNumber
       });
     } else {
       this.setState({

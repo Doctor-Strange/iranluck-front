@@ -24,7 +24,6 @@ class TicketBook extends Component {
       Email: this.props.AuthData.Email,
       Token: this.props.AuthData.Token
     };
-    console.log(this.state.amount === wallet.TotalAmount);
     if (
       wallet.CoinCount > 0 &&
       Number(this.state.amount) <= Number(wallet.TotalAmount)

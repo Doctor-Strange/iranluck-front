@@ -42,7 +42,7 @@
 .CaptchaFather iframe {
   display: block;
   width: 162px;
-  border-right: 1px solid #d3d3d3;
+  border-left: 1px solid #d3d3d3;
   margin: auto;
   height: 76px;
 }
