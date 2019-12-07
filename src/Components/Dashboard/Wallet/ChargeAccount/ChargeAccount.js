@@ -51,7 +51,7 @@ class ChargeAccount extends Component {
         loading: true
       });
     } else {
-      this.props.alertMessenger("مقدار ورودی نمیتواند خالی باشد");
+      this.props.alertMessenger("The field is empty");
     }
   };
 
@@ -133,19 +133,19 @@ class ChargeAccount extends Component {
   render() {
     return (
       <div className={classes.panelControl}>
-        <h3>اتصال به درگاه :</h3>
+        <h3>How many Perfect Money do you want to transfer to your Iran Luck account?</h3>
         <form onSubmit={this.onSubmitForm}>
           <input
             type="number"
-            placeholder="تعداد"
+            placeholder="Number"
             step="1"
             min="1"
             onChange={this.onInput}
             max="1000"
           />
-          <p className={classes.Alert}>
+          {/* <p className={classes.Alert}>
             از تحریم شکن و یا V(-)P(_)N استفاده نکنید
-          </p>
+          </p> */}
           <GoogleCaptcha
             onChange={this.onChange}
             onErrored={this.onError}
@@ -157,7 +157,7 @@ class ChargeAccount extends Component {
             </button>
           ) : (
             <button disabled={!this.state.SendBtnStatus} type="submit">
-              تایید
+              Confirm
             </button>
           )}
         </form>
@@ -167,10 +167,10 @@ class ChargeAccount extends Component {
         </div> */}
         <div className={classes.teach}>
           <NavLink onClick={GotoTop} to="/Learn/ChargeAccount">
-            + آموزش پرداخت از درگاه
+            + How trasfer Perfect Money to my Iran Luck account ?
           </NavLink>
           <NavLink onClick={GotoTop} to="/Learn">
-            + آموزش ساخت کیف پول پرفکت مانی
+          + How create Perfect Money Account ?
           </NavLink>
         </div>
       </div>

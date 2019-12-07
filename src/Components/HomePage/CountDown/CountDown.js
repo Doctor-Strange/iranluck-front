@@ -45,7 +45,7 @@ class Countdown extends Component {
       })
       .catch(() => {
         this.props.alertMessenger(
-          "روز شمار به درستی اجرا نشده است صفحه را مجددا براگذاری کنید"
+          "There is a problem in Count Down, please reload the page. "
         );
       });
     this.secondCountDown();
@@ -117,23 +117,23 @@ class Countdown extends Component {
   render() {
     return (
       <div className={classes.container}>
-        <h2>فرصت خرید بلیط را از دست ندهید</h2>
+        <h2>WEEKLY JACKPOT</h2>
         <div className={classes.counterBox}>
           <div>
             <p>{this.state.days}</p>
-            <span>روز</span>
+            <span>Day</span>
           </div>
           <div>
             <p>{this.state.hours}</p>
-            <span>ساعت</span>
+            <span>Hour</span>
           </div>
           <div>
             <p>{this.state.minute}</p>
-            <span>دقیقه</span>
+            <span>Minute</span>
           </div>
           <div>
             <p>{this.state.second}</p>
-            <span>ثانیه</span>
+            <span>Second</span>
           </div>
         </div>
       </div>

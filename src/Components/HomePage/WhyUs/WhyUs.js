@@ -13,10 +13,10 @@ const WhyUs = props => {
       <div>
         <div className={global.Drop} />
       </div>
-      <h2>چرا ایران لاک؟</h2>
+      <h2>Why you can trust Iran Luck?</h2>
       <h3>
-        قرعه کشی آنلاین، بدون نیاز به احراز هویت، پرداخت ایمن از طریق کیف پول
-        دیجیتال!
+        All lottery tickets and winner numbers are chosen by Google random
+        algorithm.
       </h3>
       <div className={classes.padding}>
         <div className={classes.reason}>
@@ -24,8 +24,8 @@ const WhyUs = props => {
             <img src={withdrawal} alt="آیکون های بخش چرا ایران لاک" />
           </div>
           <div className={classes.secondDIV}>
-            <h4>برداشت وجه</h4>
-            <p>برداشت وجه در هر زمان بدون نیاز به سقف معین</p>
+            <h4>WIthdraw</h4>
+            <p>You can take all your deposit in less than a minute.</p>
           </div>
         </div>
         <div className={classes.reason}>
@@ -33,8 +33,8 @@ const WhyUs = props => {
             <img src={GiveBitcoin} alt="آیکون های بخش چرا ایران لاک" />
           </div>
           <div className={classes.secondDIV}>
-            <h4>ارز دیجیتال</h4>
-            <p>پرداخت بر اساس ارز های دیجیتال شما</p>
+            <h4>Digital Currency</h4>
+            <p>Payments by digital currency</p>
           </div>
         </div>
         <div className={classes.reason}>
@@ -42,8 +42,8 @@ const WhyUs = props => {
             <img src={wallet} alt="آیکون های بخش چرا ایران لاک" />
           </div>
           <div className={classes.secondDIV}>
-            <h4>کیف پول</h4>
-            <p>پرداخت ایمن به کیف پول الکترونیک شما</p>
+            <h4>Safe Wallet</h4>
+            <p>encrypted wallet for deposit</p>
           </div>
         </div>
         <div className={classes.reason}>
@@ -51,8 +51,11 @@ const WhyUs = props => {
             <img src={creditcard} alt="آیکون های بخش چرا ایران لاک" />
           </div>
           <div className={classes.secondDIV}>
-            <h4>تبدیل ارز</h4>
-            <p>امکان تبدیل راحت جوایز به ریال</p>
+            <h4>Exchange</h4>
+            <p>
+              It's easy to Exchange Perfect Money to any currency you want
+              around the world
+            </p>
           </div>
         </div>
       </div>

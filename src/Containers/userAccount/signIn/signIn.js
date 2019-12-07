@@ -110,30 +110,30 @@ class SignIn extends Component {
         ].join(" ")}
       >
         <div className={classes.box}>
-          <h2>ورود</h2>
+          <h2>Login</h2>
           <form onSubmit={this.onSubmitForm}>
             <input
               maxLength="70"
               minLength="5"
               onChange={e => this.onInput(e, "Email")}
               type="Text"
-              placeholder="ایمیل"
+              placeholder="Email"
             />
             <input
               maxLength="15"
               minLength="8"
               onChange={e => this.onInput(e, "Password")}
               type="password"
-              placeholder="رمز عبور"
+              placeholder="Password"
             />
             <span
               onClick={this.props.OnChangePassClick}
               className={classes.forgetPass}
             >
-              رمز خود را فراموش کرده اید؟
+              Forget my password
             </span>
             <label className={classes.checkbox_container}>
-              من را به یاد بسپار
+            Remember me
               <input
                 type="checkbox"
                 checked={this.state.Save}
@@ -162,7 +162,7 @@ class SignIn extends Component {
                 className={classes.ButtonForm}
                 type="submit"
               >
-                ورود{" "}
+                Enter{" "}
               </button>
             )}
             <GoogleLogin
@@ -172,7 +172,7 @@ class SignIn extends Component {
                   onClick={renderProps.onClick}
                   className={classes.googleLogin}
                 >
-                  <p>ورود با گوگل</p>
+                  <p>Login with Google</p>
                   <img alt="google" src={googleIcon} />
                 </div>
               )}

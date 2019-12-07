@@ -64,7 +64,7 @@ export const sendConfirm = (code, Token, type, reduxToken) => {
         })
         .catch(() => {
           dispatch(
-            alertMessenger("خطایی رخ داده است ! مجددا صفحه را بازیابی کنید.")
+            alertMessenger("Please try again later. There is a problem right now.")
           );
         });
     };
@@ -90,7 +90,7 @@ export const sendConfirm = (code, Token, type, reduxToken) => {
         })
         .catch(() => {
           dispatch(
-            alertMessenger("خطایی رخ داده است ! مجددا صفحه را بازیابی کنید.")
+            alertMessenger("Please try again later. There is a problem right now.")
           );
         });
     };
@@ -117,7 +117,7 @@ export const sendConfirm = (code, Token, type, reduxToken) => {
         })
         .catch(() => {
           dispatch(
-            alertMessenger("خطایی رخ داده است ! مجددا صفحه را بازیابی کنید.")
+            alertMessenger("Please try again later. There is a problem right now.")
           );
         });
     };

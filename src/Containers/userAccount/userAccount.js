@@ -50,11 +50,11 @@ class UserBox extends Component {
               {this.state.loginBox ? (
                 <Hoc>
                   <img className={classes.reverse} src={Arrow} alt="سوییج" />
-                  <span className={classes.span}>ثبت نام</span>
+                  <span className={classes.span}>Sign up</span>
                 </Hoc>
               ) : (
                 <Hoc>
-                  <span className={classes.Reversespan}>ورود</span>
+                  <span className={classes.Reversespan}>login</span>
                   <img className={classes.normal} src={Arrow} alt="سوییج" />
                 </Hoc>
               )}

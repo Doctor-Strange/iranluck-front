@@ -20,15 +20,15 @@ class UserInformation extends Component {
       <div className={classes.panelControl}>
         <div>
           <img src={userIcon} alt="آیکون کاربری" />
-          <p className={classes.title}>ایمیل تایید شده</p>
+          <p className={classes.title}>Your email address is Confirmed.</p>
           <p className={classes.userName}>{this.state.Email}</p>
           {this.state.walletAddress ? (
             <Hoc>
-              <p className={classes.title}>آدرس کیف پول تایید شده</p>
+              <p className={classes.title}>Your Perfect Money wallet address is Confirmed.</p>
               <p className={classes.userName}>{this.state.walletAddress}</p>
             </Hoc>
           ) : (
-            <p className={classes.title}>آدرس کیف پول ثبت نشده است</p>
+            <p className={classes.title}>Your Perfect Money wallet address is not confirmed.</p>
           )}
         </div>
       </div>

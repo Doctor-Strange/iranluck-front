@@ -66,13 +66,13 @@ class ChangePassForm extends Component {
       <div className={classes.Container}>
         <form onSubmit={this.onConfirmClick}>
           <img src={ChangeLock} alt="آیکون تغییر پسورد" />
-          <h2>تغییر پسورد حساب کاربری</h2>
-          <p> :ایمیل خود را وارد نمایید</p>
+          <h2>Change your Iran Luck password</h2>
+          <p>Enter your email address:</p>
           <input
             onChange={this.onInput}
             required
             type="email"
-            placeholder="ایمیل"
+            placeholder="Email address"
           />
           <GoogleCaptcha
             onChange={this.onChange}
@@ -85,7 +85,7 @@ class ChangePassForm extends Component {
             </button>
           ) : (
             <button disabled={!this.state.SendBtnStatus} type="submit">
-              تایید
+              Confirm
             </button>
           )}
         </form>

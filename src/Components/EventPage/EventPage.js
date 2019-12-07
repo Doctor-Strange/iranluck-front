@@ -7,22 +7,21 @@ const EventPage = props => {
   return (
     <div className={classes.father}>
       <div className={global.Responsive}>
-        <h2>تایید ایمیل</h2>
+        <h2>Confirm your email address</h2>
         <p>
-          - برای
-          <strong> تایید عملیات </strong>
-          به ایمیل <strong> {url} </strong>
-          مراجعه کرده و بر روی لینک
-          <strong> " تایید ایمیل " </strong>
-          کلیک کنید
+          - to
+          <strong> comfirm your email address </strong>
+          go to <strong> {url} </strong>
+          and click on
+          <strong> " confirm my email " </strong>
         </p>
-        <h3>توجه !!</h3>
+        {/* <h3>توجه !!</h3>
         <p>
           <strong className={classes.Alert}>
             - در صورتی که پیام ارسال شده از طرف ایران لاک در صندوق اصلی ایمیل
             شما قرار ندارد بخش هرز نامه ها ( spam ) را بررسی نمایید.
           </strong>
-        </p>
+        </p> */}
       </div>
     </div>
   );

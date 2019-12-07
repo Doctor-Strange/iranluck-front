@@ -91,7 +91,7 @@ class EditWalletAddress extends Component {
           <form onSubmit={this.onFormSubmit}>
             <input
               onChange={this.onInputChange}
-              placeholder="آدرس کیف پول"
+              placeholder="Perfect Money wallet address"
               required
               maxLength="25"
               minLength="8"
@@ -116,7 +116,7 @@ class EditWalletAddress extends Component {
                 className={classes.ButtonForm}
                 type="submit"
               >
-                تایید
+                Confirm
               </button>
             )}
           </form>

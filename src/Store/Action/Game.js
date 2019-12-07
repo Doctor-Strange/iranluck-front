@@ -39,7 +39,7 @@ export const GetTicket = data => {
         dispatch(alertMessenger(error.response.data.Message));
       })
       .catch(() => {
-        dispatch(alertMessenger("خطایی رخ داده است ! مجددا تلاش کنید."));
+        dispatch(alertMessenger("Please try again later. There is a problem right now."));
       });
   };
 };

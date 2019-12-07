@@ -7,9 +7,9 @@ const HomePageHeader = props => {
     <div className={classes.background}>
       <div className={[global.Responsive, classes.bannerPart].join(" ")}>
         <div className={classes.padding}>
-          <h1>ایران لاک</h1>
-          <h2>بزرگترین وبسایت رسمی فروش بلیط های لاتاری در ایران</h2>
-          <h3>جایزه بزرگ 100.000.000 تومانی !</h3>
+          <h1>Iran Luck</h1>
+          <h2>The biggest online lottery powered by cryptocurrencies.</h2>
+          <h3>Weekly Jackpot winner prize <strong>1000 Perfect Money</strong></h3>
         </div>
       </div>
     </div>

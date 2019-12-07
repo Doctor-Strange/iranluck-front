@@ -13,24 +13,24 @@ class DashboardInfo extends Component {
       <Hoc>
         <div className={classes.deposit}>
           <p>
-            موجودی :<span>{TotalAmount}</span>عدد پرفکت مانی
+            deposit :<span>{TotalAmount}</span>Perfect Money
           </p>
-          <NavLink to="/account/Charge"> + شارژ کیف پول</NavLink>
+          <NavLink to="/account/Charge"> + Deposit</NavLink>
         </div>
         <div className={classes.luckyCoin}>
           <p>
-            سکه های شانس :<span>{CoinCount}</span>عدد
+            Your Lucky Coins :<span>{CoinCount}</span>
           </p>
         </div>
-        {WalletAddress ? <p>آدرس کیف پول :</p> : null}
+        {WalletAddress ? <p>Your Perfect Money Wallet address :</p> : null}
         <div className={classes.pandSpan}>
           {WalletAddress ? (
             <Hoc>
               <p>{WalletAddress}</p>
-              <span>تایید شده</span>
+              <span>Confirmed</span>
             </Hoc>
           ) : (
-            <EditWalletAddress>ثبت آدرس کیف پول</EditWalletAddress>
+            <EditWalletAddress>Enter your Perfect Money Wallet address</EditWalletAddress>
           )}
         </div>
       </Hoc>
@@ -50,7 +50,7 @@ class DashboardInfo extends Component {
     );
     return (
       <div className={classes.panelControl}>
-        <h3>کیف پول</h3>
+        <h3>Wallet</h3>
         {element}
       </div>
     );

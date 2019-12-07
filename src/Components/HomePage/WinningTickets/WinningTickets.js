@@ -16,8 +16,8 @@ const WinningTickets = props => {
         <div>
           <div className={[global.Drop, classes.custom].join(" ")} />
         </div>
-        <h2>بلیط های برنده</h2>
-        <h3>حتی با کمترین شانس هم برنده هستید</h3>
+        <h2>WINNERS</h2>
+        <h3>You have a chance to win a prize in every lottery.</h3>
         <TicketPrice
           Bullets={[true, true, true, true, true, true]}
           img={true}
@@ -27,13 +27,13 @@ const WinningTickets = props => {
             Bullets={[true, true, true, true, true, false]}
             img={false}
           >
-            2.5 میلیون تومان
+            25 Perfect Moneys
           </TicketPrice>
           <TicketPrice
             Bullets={[true, true, true, true, false, false]}
             img={false}
           >
-            <p className={classes.secondP}>250</p> هزار تومان
+            <p className={classes.secondP}>250</p> Perfect Moneys
           </TicketPrice>
         </div>
         <div className={classes.boxTicket}>
@@ -41,17 +41,17 @@ const WinningTickets = props => {
             Bullets={[true, true, true, false, false, false]}
             img={false}
           >
-            <p className={classes.secondP}>25</p> هزار تومان
+            <p className={classes.secondP}>25</p> Perfect Moneys
           </TicketPrice>
           <TicketPrice
             Bullets={[true, true, false, false, false, false]}
             img={false}
           >
-            یک بلیط <p className={classes.secondP}>رایگان</p>
+            One <p className={classes.secondP}>LUCKY COIN</p>
           </TicketPrice>
         </div>
         <NavLink onClick={GotoTop} className={classes.laws} to="/Laws/Winners">
-          قوانین بازی
+          laws
         </NavLink>
       </div>
     </div>

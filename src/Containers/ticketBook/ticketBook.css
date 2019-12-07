@@ -6,12 +6,13 @@
   font-size: 18px;
   text-align: center;
   color: #42a5f5;
-  direction: rtl;
+  font-family: iransB;
 }
 
 .Container span {
   color: #42a5f5;
-  font-size: 14px;
+  display: block;
+  font-size: 12px;
 }
 
 .Form {

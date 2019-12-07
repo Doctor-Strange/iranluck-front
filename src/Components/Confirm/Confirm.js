@@ -56,23 +56,23 @@ class Confirm extends Component {
   render() {
     const failpayment = (
       <Hoc>
-        <p className={classes.Fail}>پرداخت ناموفق</p>
+        <p className={classes.Fail}>Failed Payment</p>
         <div className={classes.teach}>
-          <NavLink to="/">صفحه اصلی</NavLink>
+          <NavLink to="/">Home page</NavLink>
         </div>
         <div className={classes.panelControl}>
-          <h3>آموزش ها</h3>
+          <h3>Guides</h3>
           <div className={classes.teach}>
-            <NavLink to="/Learn">+ آموزش ساخت حساب پرفکت مانی</NavLink>
-            <NavLink to="/Learn/CreateWallet">
+            <NavLink to="/Learn">+ How create Perfect Money Account?</NavLink>
+            {/* <NavLink to="/Learn/CreateWallet">
               + آموزش ساخت کیف پول دیجیتال
-            </NavLink>
+            </NavLink> */}
             <NavLink to="/Learn/BuyPerfectMoney">
-              + آموزش خرید پرفکت مانی
+              + How purchase Perfect Money?
             </NavLink>
-            <NavLink to="/">+ آموزش شارژ حساب</NavLink>
-            <NavLink to="/Learn/WithDrawal">+ آموزش تسویه حساب</NavLink>
-            <NavLink to="/Learn/Walletaddress">+ تغییر آدرس کیف پول</NavLink>
+            {/* <NavLink to="/">+ آموزش شارژ حساب</NavLink> */}
+            <NavLink to="/Learn/WithDrawal">+ How can the withdrawal?</NavLink>
+            <NavLink to="/Learn/Walletaddress">+ How can change your Perfect Money wallet address in Iran Luck account?</NavLink>
           </div>
         </div>
       </Hoc>
@@ -84,8 +84,8 @@ class Confirm extends Component {
             failpayment
           ) : (
             <Hoc>
-              <h2>ایمیل شما با موفقیت تایید شد</h2>
-              <p>در حال دریافت اطلاعات حساب کاربری</p>
+              <h2>Your email address confirmed</h2>
+              <p>Please wait..</p>
               <Spinner />
             </Hoc>
           )}

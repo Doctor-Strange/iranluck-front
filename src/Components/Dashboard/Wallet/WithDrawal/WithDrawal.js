@@ -95,28 +95,31 @@ class WithDrawal extends Component {
   render() {
     return (
       <div className={classes.panelControl}>
-        <h3>برداشت </h3>
+        <h3>Withdrawal </h3>
         <div className={classes.withdrawal}>
           <div className={classes.InputFather}>
             <input
               onChange={this.onInputChange}
               type="number"
               step="1"
-              placeholder="تعداد سکه"
+              placeholder="Number"
               min="1"
               max="300"
             />
-            <span>حداکثر تعداد سکه قابل برداشت در هر روز 300 عدد می باشد</span>
+            <span>
+              Maximum transfer from your Iran Luck account to your Perfect Money
+              is 300 number.
+            </span>
           </div>
           <p>
-            عدد سکه پرفکت مانی از حساب کاربری ({this.state.EmailAddress}) ایران
-            لاک به آدرس کیف پول
+            I want to transfer <u>{this.state.EmailAddress}</u> number Perfect
+            Money from my Iran Luck account to this
           </p>
           <div className={classes.pandSpan}>
             <p>{this.state.walletAddress}</p>
-            <span>تایید شده</span>
+            <span>confirmed Perfect Money wallet addres.</span>
           </div>
-          <p>انتقال داده شود.</p>
+          {/* <p>انتقال داده شود.</p> */}
           <form onSubmit={this.onFormSubmit}>
             <GoogleCaptcha
               onChange={this.onChange}
@@ -137,14 +140,17 @@ class WithDrawal extends Component {
                 className={classes.ButtonForm}
                 type="submit"
               >
-                تایید
+                Confirm
               </button>
             )}
           </form>
         </div>
         <div className={classes.teach}>
-          <NavLink to="/Learn/Walletaddress">+ تغییر آدرس کیف پول</NavLink>
-          <NavLink to="/Learn/WithDrawal">+ آموزش تسویه حساب</NavLink>
+          <NavLink to="/Learn/Walletaddress">
+            + How can change your Perfect Money wallet address in Iran Luck
+            account ?
+          </NavLink>
+          <NavLink to="/Learn/WithDrawal">+ How can the withdrawal?</NavLink>
         </div>
       </div>
     );
@@ -167,8 +173,5 @@ const mapDispatchToProps = dispatch => {
 };
 
 export default withRouter(
-  connect(
-    mapStateToProps,
-    mapDispatchToProps
-  )(WithDrawal)
+  connect(mapStateToProps, mapDispatchToProps)(WithDrawal)
 );

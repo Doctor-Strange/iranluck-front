@@ -34,31 +34,31 @@ class RightDashboard extends Component {
             {/* <p>آخرین بازدید : 98/02/15</p> */}
           </div>
         </div>
-        <h3 className={classes.Gap}>منو اصلی</h3>
+        <h3 className={classes.Gap}>Menu</h3>
         <ul className={classes.menu}>
           <li
             onClick={this.onItemClick}
             className={url === "/account" ? classes.Active : null}
           >
-            <NavLink to="/account">داشبورد</NavLink>
+            <NavLink to="/account">Dashboard</NavLink>
           </li>
           <li
             className={url === "/account/TicketsList" ? classes.Active : null}
           >
             <NavLink onClick={this.onItemClick} to="/account/TicketsList">
-              بلیط ها
+              Ticket
             </NavLink>
           </li>
           <li className={url === "/account/Wallet" ? classes.Active : null}>
             <NavLink onClick={this.onItemClick} to="/account/Wallet">
-              کیف پول
+              Wallet
             </NavLink>
           </li>
           <li
             className={url === "/account/EditProfile" ? classes.Active : null}
           >
             <NavLink onClick={this.onItemClick} to="/account/EditProfile">
-              ویرایش اطلاعات
+              Edit Profile
             </NavLink>
           </li>
           {/* <li>

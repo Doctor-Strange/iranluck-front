@@ -13,32 +13,39 @@ class Panel extends Component {
         <div className={classes.Quickaccess}>
           <NavLink to="/account/Wallet" className={classes.walet}>
             <img src={Userwallet} alt="Dashboard Icon" />
-            <p>کیف پول</p>
+            <p>Wallet</p>
           </NavLink>
           <NavLink to="/account/TicketsList" className={classes.info}>
             <img src={info} alt="Dashboard Tickets" />
-            <p>بلیط ها</p>
+            <p>My Tickets</p>
           </NavLink>
           <NavLink className={classes.accout} to="/account/EditProfile">
             <img src={GearDashboar} alt="Dashboard Icon" />
-            <p>حساب کاربری</p>
+            <p>Profile</p>
           </NavLink>
         </div>
         <DashboardInfo />
         <div className={classes.panelControl}>
-          <h3>آموزش ها</h3>
+          <h3>Guides</h3>
           <div className={classes.teach}>
-            <NavLink to="/Learn">+ آموزش ساخت حساب پرفکت مانی</NavLink>
-            <NavLink to="/Learn/CreateWallet">
+            <NavLink to="/Learn">+ How create Perfect Money Account?</NavLink>
+            {/* <NavLink to="/Learn">+ آموزش ساخت حساب پرفکت مانی</NavLink> */}
+            {/* <NavLink to="/Learn/CreateWallet">
               + آموزش ساخت کیف پول دیجیتال
+            </NavLink> */}
+             <NavLink to="/Learn/BuyPerfectMoney">
+              + How purchase Perfect Money?
             </NavLink>
-            <NavLink to="/Learn/BuyPerfectMoney">
+            {/* <NavLink to="/Learn/BuyPerfectMoney">
               + آموزش خرید پرفکت مانی
-            </NavLink>
-            <NavLink to="/Learn/ChargeAccount">+ آموزش شارژ حساب</NavLink>
-            <NavLink to="/Learn/WithDrawal">+ آموزش تسویه حساب</NavLink>
-            <NavLink to="/Learn/Walletaddress">+ تغییر آدرس کیف پول</NavLink>
-          </div>
+            </NavLink> */}
+            {/* <NavLink to="/Learn/ChargeAccount">+ آموزش شارژ حساب</NavLink> */}
+            <NavLink to="/Learn/ChargeAccount">
+            + How trasfer Perfect Money to my Iran Luck account ?
+          </NavLink>
+          <NavLink to="/Learn/WithDrawal">+ How can the withdrawal?</NavLink>
+            <NavLink to="/Learn/Walletaddress">+ How can change your Perfect Money wallet address in Iran Luck account?</NavLink>
+           </div>
         </div>
       </div>
     );

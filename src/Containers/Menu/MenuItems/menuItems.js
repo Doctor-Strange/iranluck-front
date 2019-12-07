@@ -74,24 +74,24 @@ class MenuItems extends Component {
     const Items = AuthorizeStatus ? (
       <Hoc>
         <li className={classes.difLi} onClick={this.onItemClick}>
-          <NavLink to="/account">حساب کاربری</NavLink>
+          <NavLink to="/account">Account</NavLink>
         </li>
         <li onClick={this.onItemClick}>
-          <NavLink to="/account/Wallet">{Amount} سکه</NavLink>
+          <NavLink to="/account/Wallet">{Amount} PM</NavLink>
         </li>
         <li onClick={this.onItemClick}>
-          <NavLink to="/account/Charge">شارژ</NavLink>
+          <NavLink to="/account/Charge">Charge</NavLink>
         </li>
         <li onClick={this.onItemClick}>
-          <NavLink to="/account/WithDrawal">برداشت</NavLink>
+          <NavLink to="/account/WithDrawal">Withdrawal</NavLink>
         </li>
         <li onClick={this.LOGOUT} className={classes.LogBtn}>
-          خروج
+          Logout
         </li>
       </Hoc>
     ) : (
       <li onClick={this.props.OnDrawelClick} className={classes.LogBtn}>
-        ورود / ثبت نام
+        Login/Signup
       </li>
     );
     return <ul className={classes.menulist}>{Items}</ul>;

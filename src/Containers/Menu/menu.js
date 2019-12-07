@@ -26,10 +26,10 @@ class Menu extends Component {
             <div className={classes.menulist}>
               <ul>
                 <li onClick={this.onItemClick}>
-                  <NavLink to="/Learn">آموزش شارژ / تسویه</NavLink>
+                  <NavLink to="/Learn">Guides</NavLink>
                 </li>
                 <li onClick={this.onItemClick}>
-                  <NavLink to="/Laws">قوانین</NavLink>
+                  <NavLink to="/Laws">Laws</NavLink>
                 </li>
               </ul>
             </div>

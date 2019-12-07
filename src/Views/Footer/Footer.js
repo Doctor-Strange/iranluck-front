@@ -25,53 +25,52 @@ const Footer = props => {
         </div>
         <div className={classes.branding}>
           <img src={logo} alt="لوگو ایران لاک" />
-          <h2>ایران لاک</h2>
+          <h2>IRAN LUCK</h2>
         </div>
         <div className={classes.sortSection}>
           <section className={classes.aboutirnLuck}>
-            <h3>ایران لاک</h3>
+            <h3>Iran Luck</h3>
             <p>
-              ایران لاک اولین و بزرگترین عرضه کننده بلیط های لاتاری در ایران
-              است. هدف ما ایجاد فضای امن و عادلانه برای شرکت کنندگان در قرعه کشی
-              است.
+              We are the first online lottery base on Digital currency in the
+              world. You can play fair and square and earn prizes.
             </p>
             <p>
-              <strong>شماهم شانس برنده شدن را تجربه خواهید کرد.</strong>
+              <strong>You Can Win, here is your chance.</strong>
             </p>
             <a
               target="-_blank"
               rel="noopener noreferrer"
               href="https://t.me/iranlucksupport"
             >
-              پشتیبانی تلگرام: <strong>iranlucksupport@</strong>
+              Telegram support: <strong>iranlucksupport@</strong>
             </a>
           </section>
           <section className={classes.linkirnLuck}>
-            <h3>دسترسی سریع</h3>
+            <h3>Quick access</h3>
             <ul>
               {/* <li>
                 <NavLink to="">سوالات متداول</NavLink>
               </li> */}
               <li>
                 <NavLink onClick={GotoTop} to="/account">
-                  حساب کاربری
+                  My account
                 </NavLink>
               </li>
               <li>
                 <NavLink onClick={GotoTop} to="/Laws/PrivacyPolicy">
-                  حریم خصوصی
+                  Privacy Policy
                 </NavLink>
               </li>
               <li>
                 <NavLink onClick={GotoTop} to="/Learn">
-                  آموزش ساخت حساب پرفکت مانی
+                  + How create Perfect Money Account?
                 </NavLink>
               </li>
             </ul>
           </section>
           <section className={classes.Socialiranluck}>
-            <h3>شبکه های اجتماعی</h3>
-            <p>ما را در شبکه های اجتماعی دنبال کنید</p>
+            <h3>Our Social Medias</h3>
+            <p>Follow us</p>
             <a
               href="https://www.instagram.com/iranluck"
               className={classes.instaBTN}
@@ -79,7 +78,7 @@ const Footer = props => {
               rel="noopener noreferrer"
             >
               <img src={instagram} alt="آیکون اینستاگرام" />
-              ما را دنبال کنید
+              Follow
             </a>
             <a
               href="https://t.me/IranLuck"
@@ -88,13 +87,13 @@ const Footer = props => {
               rel="noopener noreferrer"
             >
               <img src={telegramIcon} alt="آیکون تلگرام" />
-              ما را دنبال کنید
+              Follow
             </a>
           </section>
         </div>
         <div className={classes.signature}>
           <img src={logo} alt="لوگو ایران لاک" />
-          <p>Copyright © 2018 IranLuck.Com All Right Reserved</p>
+          <p>Copyright © 2019 IranLuck.Com All Right Reserved</p>
         </div>
       </div>
     </footer>

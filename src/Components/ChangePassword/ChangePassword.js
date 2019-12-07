@@ -50,7 +50,7 @@ class ChangePassword extends Component {
         loading: true
       });
     } else {
-      this.props.alertMessenger("رمز وارد شده و تکرار آن یکسان نیست");
+      this.props.alertMessenger("Passwords are not equal");
     }
   };
 
@@ -66,32 +66,32 @@ class ChangePassword extends Component {
     return (
       <div className={global.Responsive}>
         <div className={classes.Container}>
-          <h2>تغییر پسورد حساب کاربری</h2>
+          <h2>change your account password</h2>
           <form onSubmit={this.onConfirmClick}>
-            <p>رمز جدید خود را وارد کنید</p>
+            <p>New password</p>
             <input
               onChange={e => this.onInput(e, "Password")}
               maxLength="15"
               minLength="8"
               required
               type="password"
-              placeholder="رمز"
+              placeholder="Password"
             />
-            <p>تکرار رمز</p>
+            <p>Repeat your password</p>
             <input
               maxLength="15"
               minLength="8"
               onChange={e => this.onInput(e, "RepeatPass")}
               required
               type="password"
-              placeholder="تکرار رمز"
+              placeholder="Repeat your password"
             />
             {this.state.loading ? (
               <button disabled={true} type="submit">
                 <Spinner />
               </button>
             ) : (
-              <button type="submit">تایید</button>
+              <button type="submit">Confirm</button>
             )}
           </form>
         </div>

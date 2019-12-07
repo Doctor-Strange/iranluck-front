@@ -4,7 +4,7 @@ import React, { Component } from "react";
 
 class TicketsList extends Component {
   render() {
-    return <p>لیست بلیط ها </p>;
+    return <p>Your Tickets List</p>;
   }
 }
 

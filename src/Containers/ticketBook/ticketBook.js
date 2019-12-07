@@ -28,7 +28,7 @@ class TicketBook extends Component {
       wallet.CoinCount > 0 &&
       Number(this.state.amount) <= Number(wallet.TotalAmount)
     ) {
-      this.props.alertMessenger("یک بلیط رایگان به شما تعلق گرفت");
+      this.props.alertMessenger("You received a free ticket");
       data.Count = Number(this.state.amount) + 1;
     } else {
       data.Count = this.state.amount;
@@ -41,19 +41,19 @@ class TicketBook extends Component {
 
   validate = wallet => {
     if (this.state.amount.length === 0 || this.state.amount <= 0) {
-      return this.props.alertMessenger("عدد ورودی صحیح نیست");
+      return this.props.alertMessenger("Not correct");
     }
     if (wallet.CoinCount > 0 && this.state.amount > wallet.TotalAmount + 1) {
       return this.props.alertMessenger(
-        "در هر بار خرید فقط میتوانید یک عدد سکه شانس را استفاده کنید"
+        "In each week you can use only one of your lucky coin"
       );
     }
     if (wallet.TotalAmount === 0) {
-      return this.props.alertMessenger("ابتدا حساب خود را شارژ کنید");
+      return this.props.alertMessenger("Please charge your account first");
     }
     if (this.state.amount > wallet.TotalAmount + wallet.CoinCount)
       return this.props.alertMessenger(
-        "عدد وارد شده از مجموع سکه های شانس و موجودی اصلی کیف پول بیشتر است"
+        "The number you typed is more than your account deposit"
       );
     return null;
   };
@@ -85,7 +85,7 @@ class TicketBook extends Component {
     return (
       <div className={classes.Container}>
         <h3>
-          تعداد بلیط <span>( با خرید هر 10 بلیط، 1 بلیط رایگان بگیرید ) </span>:
+         How many tickets do you want? <span> Purchase 10 tickets and received a free ticket </span>
         </h3>
         <form className={classes.Form} onSubmit={this.onFormSubmit}>
           <input
@@ -93,7 +93,7 @@ class TicketBook extends Component {
             required
             disabled={Dis}
             onChange={this.onInputChange}
-            placeholder={Dis ? "ابتدا وارد شوید" : "تعداد"}
+            placeholder={Dis ? "login" : "How many?"}
             step="1"
             min="1"
             max="1000"
@@ -105,7 +105,7 @@ class TicketBook extends Component {
             </button>
           ) : (
             <button disabled={Dis} type="submit">
-              خرید
+              Purchase
             </button>
           )}
         </form>

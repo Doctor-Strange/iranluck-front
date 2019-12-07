@@ -65,10 +65,9 @@ class SendToFriends extends Component {
         <div>
           <div className={global.Drop} />
         </div>
-        <h2>معرفی به دوستان</h2>
+        <h2>Invite Friends</h2>
         <h3>
-          ایران لاک را به دوستانتان معرفی کنید، اگر دوستان شما برنده شوند، شما
-          هم نصف قیمت برنده شده را هدیه خواهید گرفت.
+        introduce us to your friends. <u>You get half of the prize If they won.</u>
         </h3>
         <label className={classes.OfferToFriends}>
           <input
@@ -81,9 +80,9 @@ class SendToFriends extends Component {
             text={`http://www.iranluck.com${this.state.UserRefId}`}
           >
             <button onClick={this.onCopyClick}>
-              کپی
+              Copy
               <span className={this.state.clicked ? classes.toolTip : null}>
-                کپی شد
+                Done!
               </span>
             </button>
           </CopyToClipboard>
@@ -131,7 +130,7 @@ class SendToFriends extends Component {
             rel="noopener noreferrer"
             href={`https://telegram.me/share/url?url=http://www.iranluck.com${
               this.state.UserRefId
-            }&text=شما به وبسایت ایران لاک ، بزرگترین مرکز خرید و توزیع بلیط های لاتاری در ایران دعوت شده اید ، برای شرکت در قرعه کشی بر روی لینک بالا کلیک کنید`}
+            }&text=You are invited to Iran Luck website.Please Click on link.`}
           >
             <img
               className={classes.SocialIcon}

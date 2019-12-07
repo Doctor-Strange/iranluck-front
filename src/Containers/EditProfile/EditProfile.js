@@ -51,20 +51,20 @@ class EditProfile extends Component {
         loading: true
       });
     } else {
-      this.props.alertMessenger("رمز جدید و تکرار آن یکسان نیست");
+      this.props.alertMessenger("Passwords are not equal");
     }
   };
   render() {
     return (
       <div>
         <div className={classes.panelControl}>
-          <h3>تغییر رمز</h3>
+          <h3>Change you password</h3>
           <form onSubmit={this.onSubmitForm}>
             <input
               maxLength="15"
               minLength="8"
               onChange={e => this.onInput(e, "Password")}
-              placeholder="رمز فعلی"
+              placeholder="Current paassword"
               required
               type="password"
             />
@@ -72,7 +72,7 @@ class EditProfile extends Component {
               maxLength="15"
               minLength="8"
               onChange={e => this.onInput(e, "NewPassword")}
-              placeholder="رمز جدید"
+              placeholder="New password"
               required
               type="password"
             />
@@ -80,7 +80,7 @@ class EditProfile extends Component {
               maxLength="15"
               minLength="8"
               onChange={e => this.onInput(e, "RepeatNewPassword")}
-              placeholder="تکرار رمز جدید"
+              placeholder="Repeat your password"
               required
               type="password"
             />
@@ -95,13 +95,15 @@ class EditProfile extends Component {
               </button>
             ) : (
               <button disabled={!this.state.SendBtnStatus} type="submit">
-                تایید
+                Confirm
               </button>
             )}
           </form>
         </div>
         <div className={classes.panelControl}>
-          <EditWalletAddress>تغییر آدرس کیف پول</EditWalletAddress>;
+          <EditWalletAddress>
+            Enter your Perfect Money Wallet address
+          </EditWalletAddress>
         </div>
       </div>
     );
@@ -123,7 +125,4 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(
-  mapStateToprops,
-  mapDispatchToProps
-)(EditProfile);
+export default connect(mapStateToprops, mapDispatchToProps)(EditProfile);

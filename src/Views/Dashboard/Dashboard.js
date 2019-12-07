@@ -76,7 +76,7 @@ class Dashboard extends Component {
             href="https://t.me/iranlucksupport"
           >
             <img src={telegramIcon} alt="telegram Support" />
-            <strong>پشتیبانی تلگرام: iranlucksupport@</strong>
+            <strong>Telegram support : @iranlucksupport ---- Email support : </strong>
           </a>
         </div>
       </Hoc>

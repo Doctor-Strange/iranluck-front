@@ -54,7 +54,7 @@ export const sign_Up_Req = data => {
       .catch(() => {
         dispatch(
           alertMessenger(
-            "برای ثبت نام مجددا تلاش کنید. در ارتباط با سرور خطایی رخ داده است."
+            "Please try again later. There is a problem right now."
           )
         );
       });
@@ -87,7 +87,7 @@ export const log_in_Req = (data, lifeCycle = "local") => {
       .catch(() => {
         dispatch(
           alertMessenger(
-            "برای ورود مجددا تلاش کنید. در ارتباط با سرور خطایی رخ داده است."
+            "Please try again later. There is a problem right now."
           )
         );
       });
@@ -113,7 +113,7 @@ export const ChangePassRequest = data => {
       .catch(() => {
         dispatch(
           alertMessenger(
-            "خطایی رخ داده است ! برای تغییر پسورد خود مجددا تلاش کنید"
+            "Please try again later. There is a problem right now."
           )
         );
       });
@@ -138,7 +138,7 @@ export const ChangePassSubmit = data => {
         dispatch(alertMessenger(error.response.data.Message));
       })
       .catch(() => {
-        dispatch(alertMessenger("خطایی رخ داده است ! مجددا تلاش کنید."));
+        dispatch(alertMessenger("Please try again later. There is a problem right now."));
       });
   };
 };
@@ -166,7 +166,7 @@ export const walletAddressRequest = data => {
       .catch(() => {
         dispatch(
           alertMessenger(
-            "خطایی رخ داده است ! مجددا برای تغییر آدرس کیف پول خود تلاش کنید."
+            "Please try again later. There is a problem right now."
           )
         );
       });
@@ -194,7 +194,7 @@ export const PanelChangePassword = data => {
         dispatch(alertMessenger(error.response.data.Message));
       })
       .catch(() => {
-        dispatch(alertMessenger("خطایی رخ داده است ! مجددا تلاش کنید."));
+        dispatch(alertMessenger("Please try again later. There is a problem right now."));
       });
   };
 };
