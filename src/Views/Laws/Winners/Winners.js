@@ -8,22 +8,18 @@ const Winners = props => {
   return (
     <div>
       <div className={classes.Title}>
-        <h2> بلیط های برنده</h2>
+        <h2>Winner tickets</h2>
       </div>
       <div className={classes.father}>
-        <h3>- بلیط JackPot </h3>
+        <h3>- JackPot </h3>
         <p>
-          بلیطی که تمام شماره های آن (6 شماره یکسان) با نتیجه قرعه کشی یکسان
-          باشد بلیط JackPot است.
-        </p>
-        <p className={classes.Alert}>
-          در هر قرعه کشی فقط یک بلیط JackPot وجود دارد.
+         - All the numbers are the same as jackpot Tickets.
         </p>
         <p className={classes.green}>
-          جایزه Jackpot به صورت هفتگی در شبکه های اجتماعی ایران لاک اعلام میگردد
+          - Jackpot number will show each week in our Instagram Page.
         </p>
         <section className={classes.Socialiranluck}>
-          <p>ایران لاک را در شبکه های اجتماعی دنبال کنید</p>
+          <p>Follow us in Social Media</p>
           <a
             href="https://www.instagram.com/iranluck"
             className={classes.instaBTN}
@@ -31,7 +27,7 @@ const Winners = props => {
             rel="noopener noreferrer"
           >
             <img src={instagram} alt="آیکون اینستاگرام" />
-            ما را دنبال کنید
+            Follow us
           </a>
           <a
             href="https://t.me/IranLuck"
@@ -40,29 +36,17 @@ const Winners = props => {
             rel="noopener noreferrer"
           >
             <img src={telegramIcon} alt="آیکون تلگرام" />
-            ما را دنبال کنید
+            Follow us
           </a>
         </section>
-        <h3>- بلیط های برنده سطح پنج </h3>
-        <p>5 شماره یکسان در بلیط وجود داشته باشد</p>
-        <p className={classes.green}>برنده 2.5 میلیون تومان</p>
-        <h3>- بلیط های برنده سطح چهار </h3>
-        <p>4 شماره یکسان در بلیط وجود داشته باشد</p>
-        <p className={classes.green}>برنده 250 هزار تومان</p>
-
-        <h3>- بلیط های برنده سطح سه </h3>
-        <p>3 شماره یکسان در بلیط وجود داشته باشد</p>
-        <p className={classes.green}>برنده 25 هزار تومان</p>
-
-        <h3>- بلیط های برنده سطح دو </h3>
-        <p>2 شماره یکسان در بلیط وجود داشته باشد</p>
-        <p className={classes.green}>یک سکه شانس</p>
-
-        <p className={classes.Alert}>توجه</p>
-        <p className={classes.Alert}>
-          شماره های برنده در هر مکان از بلیط (ابتدا – وسط - انتها ) میتواند
-          باشد، اما حتما باید پشت سر هم و به ترتیب قرار گیرد.
-        </p>
+        <h3>- 250 Perfect Money </h3>
+        <p>- Your ticket Has 5 same number as Jackpot. ( Order is not important )</p>
+        <h3>- 25 Perfect Money </h3>
+        <p>- Your ticket Has 4 same number as Jackpot. ( Order is not important )</p>
+        <h3>- 2 Perfect Money </h3>
+        <p>- Your ticket Has 3 same number as Jackpot. ( Order is not important )</p>
+        <h3>- Lucky Coin </h3>
+        <p>- Your ticket Has 2 same number as Jackpot. ( Order is not important )</p>
       </div>
     </div>
   );
