@@ -11,7 +11,7 @@ const KnowUs = props => {
   return (
     <div className={[global.Responsive, classes.father].join(" ")}>
       <div>
-        <h2>ایران لاک را بیشتر بشناسید</h2>
+        <h2>Iran Luck Is Trusted</h2>
         <p>
           iran Luck is an online lottery based on Perfect Money Digital currency.
         </p>

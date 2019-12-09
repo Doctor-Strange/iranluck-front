@@ -22,17 +22,17 @@ const Learn = props => {
         <div className={classes.Steps}>
           <div className={classes.wi}>
             <div>
-              <h3>گام اول </h3>
+              <h3>The First Step</h3>
               <NavLink
                 className={url === "/Learn" ? classes.Active : null}
                 onClick={GotoTop}
                 to="/Learn"
               >
-                - ساخت حساب پرفکت مانی
+                - Create Perfect Money Account
               </NavLink>
             </div>
-            <div>
-              <h3>گام دوم </h3>
+            {/* <div>
+              <h3>The Second Step</h3>
               <NavLink
                 className={
                   url === "/Learn/CreateWallet" ? classes.Active : null
@@ -60,9 +60,9 @@ const Learn = props => {
               >
                 - ساخت کیف پول در Pay98
               </NavLink>
-            </div>
+            </div> */}
             <div>
-              <h3>گام سوم </h3>
+              <h3>The Second Step</h3>
               <NavLink
                 className={
                   url === "/Learn/BuyPerfectMoney" ? classes.Active : null
@@ -70,11 +70,11 @@ const Learn = props => {
                 onClick={GotoTop}
                 to="/Learn/BuyPerfectMoney"
               >
-                - خرید پرفکت مانی
+                - Deposit Perfect Money
               </NavLink>
             </div>
             <div>
-              <h3>گام چهارم </h3>
+              <h3>The Third Step</h3>
               <NavLink
                 className={
                   url === "/Learn/ChargeAccount" ? classes.Active : null
@@ -82,11 +82,11 @@ const Learn = props => {
                 onClick={GotoTop}
                 to="/Learn/ChargeAccount"
               >
-                آموزش شارژحساب
+                Charge Iran Luck Account
               </NavLink>
             </div>
             <div>
-              <h3>گام پنجم</h3>
+              <h3>The Forth Step</h3>
               <NavLink
                 className={
                   url === "/Learn/Walletaddress" ? classes.Active : null
@@ -94,17 +94,17 @@ const Learn = props => {
                 onClick={GotoTop}
                 to="/Learn/Walletaddress"
               >
-                - ثبت / تغییر آدرس کیف پول
+                - Set or Change your wallet address
               </NavLink>
             </div>
             <div>
-              <h3>گام آخر</h3>
+              <h3>Last but not least</h3>
               <NavLink
                 className={url === "/Learn/WithDrawal" ? classes.Active : null}
                 onClick={GotoTop}
                 to="/Learn/WithDrawal"
               >
-                - برداشت وجه
+                - Withdrawal
               </NavLink>
             </div>
           </div>

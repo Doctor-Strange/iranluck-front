@@ -43,7 +43,7 @@ class SignUp extends Component {
         loading: true
       });
     } else {
-      this.props.alertMessenger("رمز وارد شده با تکرار آن یکسان نیست");
+      this.props.alertMessenger("Passwords are not equal");
     }
   };
 
@@ -110,7 +110,7 @@ class SignUp extends Component {
         ].join(" ")}
       >
         <div className={classes.box}>
-          <h2>ثبت نام</h2>
+          <h2>Sign up</h2>
           <form onSubmit={this.onSubmitForm}>
             <input
               maxLength="70"
@@ -118,21 +118,21 @@ class SignUp extends Component {
               autoComplete="false"
               onChange={e => this.onInput(e, "Email")}
               type="Text"
-              placeholder="ایمیل"
+              placeholder="Email Address"
             />
             <input
               maxLength="15"
               minLength="8"
               onChange={e => this.onInput(e, "Password")}
               type="password"
-              placeholder="رمز عبور"
+              placeholder="Password"
             />
             <input
               minLength="8"
               maxLength="15"
               onChange={e => this.onInput(e, "RepeatPassword")}
               type="password"
-              placeholder="تکرار رمز عبور"
+              placeholder="Repeat Password"
             />
             <input onChange={this.onInput} type="hidden" />
             <div className={classes.CaptchaFather}>
@@ -156,7 +156,7 @@ class SignUp extends Component {
                 className={classes.ButtonForm}
                 type="submit"
               >
-                ثبت نام
+                Sign up
               </button>
             )}
             <GoogleLogin
@@ -166,7 +166,7 @@ class SignUp extends Component {
                   onClick={renderProps.onClick}
                   className={classes.googleLogin}
                 >
-                  <p>ورود با گوگل</p>
+                  <p>Sign up with </p>
                   <img alt="google" src={googleIcon} />
                 </div>
               )}

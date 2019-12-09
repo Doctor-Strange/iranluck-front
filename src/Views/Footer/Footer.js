@@ -42,8 +42,9 @@ const Footer = props => {
               rel="noopener noreferrer"
               href="https://t.me/iranlucksupport"
             >
-              Telegram support: <strong>iranlucksupport@</strong>
+              Telegram support: <strong>@iranlucksupport</strong>
             </a>
+            <p>Email support: <strong>info@iranluck.com</strong></p>
           </section>
           <section className={classes.linkirnLuck}>
             <h3>Quick access</h3>

@@ -84,7 +84,7 @@ class Confirm extends Component {
             failpayment
           ) : (
             <Hoc>
-              <h2>Your email address confirmed</h2>
+              <h2>It's confirmed</h2>
               <p>Please wait..</p>
               <Spinner />
             </Hoc>

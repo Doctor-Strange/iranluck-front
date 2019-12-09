@@ -14,7 +14,7 @@ const Taaj = props => {
             target="-_blank"
             href="https://t.me/iranlucksupport"
           >
-            Telegram support: @iranlucksupport ---- email: 
+            Telegram support: @iranlucksupport 
           </a>
         </div>
         <div className={classes.DIV}>

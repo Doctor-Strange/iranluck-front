@@ -25,7 +25,7 @@ const Laws = props => {
                 onClick={GotoTop}
                 to="/Laws"
               >
-                قوانین قرعه کشی
+                Lottery roles
               </NavLink>
             </div>
             <div>
@@ -34,7 +34,7 @@ const Laws = props => {
                 onClick={GotoTop}
                 to="/Laws/Winners"
               >
-                بلیط های برنده
+                Winning tickets
               </NavLink>
             </div>
             <div>
@@ -43,7 +43,7 @@ const Laws = props => {
                 onClick={GotoTop}
                 to="/Laws/WithDrawal"
               >
-                برداشت، شارژ و سکه شانس
+                Lucky Coins
               </NavLink>
             </div>
             <div>
@@ -54,7 +54,7 @@ const Laws = props => {
                 onClick={GotoTop}
                 to="/Laws/PrivacyPolicy"
               >
-                حریم خصوصی
+                Privacy Policies
               </NavLink>
             </div>
           </div>

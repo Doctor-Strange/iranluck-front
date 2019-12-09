@@ -11,38 +11,37 @@ const WithDrawal = props => {
   return (
     <div>
       <div className={classes.Title}>
-        <h2>- گام آخر</h2>
-        <h3>برداشت وجه </h3>
+        <h2>- Last Step</h2>
+        <h3>Withdrawal</h3>
       </div>
       <div className={classes.father}>
         <p>
-          به حساب کاربری خود در وبسایت اران لاک رفته
+          Go to your 
           <NavLink onClick={GotoTop} to="/account">
-            حساب کاربری
+          account
           </NavLink>
-          مراجعه کنید
         </p>
-        <p>بر روی گزینه کیف پول در منو سمت راست کلیک کنید</p>
-        <p className={classes.Alert}>
+        {/* <p>بر روی گزینه کیف پول در منو سمت راست کلیک کنید</p> */}
+        {/* <p className={classes.Alert}>
           بعد از تایید آدرس کیف پول امکان برداشت وجه از حساب ممکن خواهد بود
-        </p>
+        </p> */}
         <img src={one} alt="perfect Money" />
-        <p>بر روی گزینه برداشت کلیک کنید</p>
+        {/* <p>بر روی گزینه برداشت کلیک کنید</p> */}
         <img src={two} alt="perfect Money" />
-        <p>تعداد سکه مورد نظر خود را وارد کنید</p>
-        <p>دکمه تایید را بزنید</p>
+        {/* <p>تعداد سکه مورد نظر خود را وارد کنید</p> */}
+        {/* <p>دکمه تایید را بزنید</p> */}
         <img src={three} alt="perfect Money" />
-        <p>
+        {/* <p>
           یک ایمیل تایید عملیات به آدرس ایمیلی که در زمان ثبت نام وارد کرده اید
           ارسال خواهد شد
-        </p>
-        <p>به صندوق پستی خود رفته و بر روی لینک تایید کلیک کنید</p>
-        <p className={classes.Alert}>
+        </p> */}
+        {/* <p>به صندوق پستی خود رفته و بر روی لینک تایید کلیک کنید</p> */}
+        {/* <p className={classes.Alert}>
           در صورتی که ایمیل در صندوق اصلی شما نبود بخش هرزنامه ها ( spam ) را
           بررسی کنید
-        </p>
+        </p> */}
         <img src={four} alt="perfect Money" />
-        <p>بعد از گذشت 3 الی 10 دقیقه حساب پرفکت مانی شما شارژ میگردد</p>
+        <p>Your Perfect Money will transfer after a couple ( 3 -10 ) minutes to your Perfect Money account. </p>
         <img src={five} alt="perfect Money" />
       </div>
     </div>
