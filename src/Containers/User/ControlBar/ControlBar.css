@@ -13,7 +13,7 @@
   width: 100%;
   display: inline-block;
   vertical-align: middle;
-  text-align: left;
+  text-align: right;
 }
 
 .p1 {
@@ -51,7 +51,7 @@
   color: #fff;
   border-radius: 10px;
   top: 0;
-  right: -10px;
+  left: -10px;
 }
 
 .p2 img {
@@ -61,7 +61,7 @@
 }
 
 .p2 div.Gear {
-  margin-left: 0;
+  margin-right: 0;
 }
 
 .Gear img {
@@ -84,7 +84,7 @@
   .p1 {
     position: absolute;
     top: -49px;
-    left: 5px;
+    right: 5px;
     cursor: pointer;
     display: inline-block;
   }
@@ -93,7 +93,7 @@
 @media screen and (max-width: 480px) {
   .p2 {
     display: flex;
-    text-align: right;
+    text-align: left;
     justify-content: space-around;
     align-items: center;
   }

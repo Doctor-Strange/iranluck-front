@@ -27,13 +27,14 @@ const WinningTickets = props => {
             Bullets={[true, true, true, true, true, false]}
             img={false}
           >
-            25 Perfect Moneys
+            250 $
           </TicketPrice>
           <TicketPrice
             Bullets={[true, true, true, true, false, false]}
             img={false}
           >
-            <p className={classes.secondP}>250</p> Perfect Moneys
+            {/* <p className={classes.secondP}></p>  */}
+            25 $
           </TicketPrice>
         </div>
         <div className={classes.boxTicket}>
@@ -41,13 +42,14 @@ const WinningTickets = props => {
             Bullets={[true, true, true, false, false, false]}
             img={false}
           >
-            <p className={classes.secondP}>25</p> Perfect Moneys
+            {/* <p className={classes.secondP}>25</p>  */}
+            2 $
           </TicketPrice>
           <TicketPrice
             Bullets={[true, true, false, false, false, false]}
             img={false}
           >
-            One <p className={classes.secondP}>LUCKY COIN</p>
+            <p className={classes.secondP}>LUCKY COIN</p>
           </TicketPrice>
         </div>
         <NavLink onClick={GotoTop} className={classes.laws} to="/Laws/Winners">

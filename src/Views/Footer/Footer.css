@@ -10,7 +10,7 @@ footer {
 .shaperContainer {
   transform: rotate(180deg);
   position: absolute;
-  right: 0;
+  left: 0;
 }
 .rectangel1 {
   display: block;
@@ -68,13 +68,14 @@ footer {
 }
 
 .branding {
-  text-align: left;
+  text-align: right;
   padding-top: 25px;
 }
 
 .branding img {
   width: 65px;
-  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: -10px;
   display: inline-block;
   vertical-align: middle;
 }
@@ -84,7 +85,8 @@ footer {
   color: #fff;
   display: inline-block;
   vertical-align: middle;
-  padding-left: 30px;
+  padding-right: 30px;
+  font-family: iransBL;
 }
 
 .sortSection {
@@ -111,7 +113,7 @@ footer {
 }
 
 .linkirnLuck {
-  padding-right: 30px;
+  padding-left: 30px;
 }
 
 .sortSection section h3 {
@@ -191,18 +193,18 @@ footer {
   width: 18px;
   display: inline-block;
   vertical-align: middle;
-  margin-left: 10px;
+  margin-right: 10px;
 }
 .signature {
   margin-top: 50px;
-  text-align: left;
+  text-align: right;
 }
 
 .signature img {
   vertical-align: middle;
   display: inline-block;
   width: 30px;
-  float: right;
+  float: left;
 }
 
 .signature p {
@@ -215,7 +217,7 @@ footer {
   cursor: pointer;
   position: absolute;
   z-index: 3;
-  right: 92px;
+  left: 92px;
   display: flex;
   justify-content: center;
   align-content: center;
@@ -253,14 +255,14 @@ footer {
     vertical-align: top;
   }
   .sortSection section.linkirnLuck {
-    padding-right: 10%;
+    padding-left: 10%;
     width: 40%;
     display: inline-block;
     vertical-align: top;
   }
   .branding h2 {
     font-size: 26px;
-    padding-left: 12px;
+    padding-right: 12px;
   }
   .branding img {
     width: 55px;
@@ -280,11 +282,11 @@ footer {
     width: 95%;
     margin: auto;
   }
- .signature{
+  .signature {
     text-align: center;
   }
-  .signature img{
-      float: none;
-      width: 45px;
+  .signature img {
+    float: none;
+    width: 45px;
   }
 }

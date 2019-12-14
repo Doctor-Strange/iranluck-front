@@ -127,7 +127,7 @@
 
 .checkbox_container {
   display: block;
-  text-align: right;
+  text-align: left;
   position: relative;
   padding-right: 30px;
   width: 65%;

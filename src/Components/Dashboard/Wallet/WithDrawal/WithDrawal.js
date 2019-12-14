@@ -10,7 +10,7 @@ var CryptoJS = require("crypto-js");
 class WithDrawal extends Component {
   state = {
     loading: false,
-    Amount: null,
+    Amount: 0,
     EmailAddress: null,
     walletAddress: null,
     SendBtnStatus: false
@@ -61,7 +61,7 @@ class WithDrawal extends Component {
   onFormSubmit = e => {
     e.preventDefault();
     if (this.state.Amount) {
-      this.props.RedirectToConfirm();
+      this.props.RedirectToConfirm(true);
       this.setState({
         loading: true
       });
@@ -107,18 +107,18 @@ class WithDrawal extends Component {
               max="300"
             />
             <span>
-              Maximum transfer from your Iran Luck account to your Perfect Money
-              is 300 number.
+              The maximum transfer is 300 number in each day.
             </span>
           </div>
           <p>
-            I want to transfer <u>{this.state.EmailAddress}</u> number Perfect
-            Money from my Iran Luck account to this
+            I want to transfer <u>{this.state.Amount}</u> number Perfect
+            Money from my Iran Luck account to
           </p>
           <div className={classes.pandSpan}>
             <p>{this.state.walletAddress}</p>
-            <span>confirmed Perfect Money wallet addres.</span>
+            <span>confirmed</span>
           </div>
+          <p>Perfect Money wallet addres.</p>
           {/* <p>انتقال داده شود.</p> */}
           <form onSubmit={this.onFormSubmit}>
             <GoogleCaptcha

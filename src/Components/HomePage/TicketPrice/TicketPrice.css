@@ -4,7 +4,7 @@
   transition: 0.25s all;
 }
 .rectangle {
-  text-align: left;
+  text-align: right;
   background: #fff;
   border-radius: 10px;
   display: inline-block;
@@ -25,20 +25,20 @@
   height: 120px;
   position: absolute;
   top: -41px;
-  margin-right: 10px;
+  margin-left: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02), 0 4px 8px rgba(0, 0, 0, 0.09);
 }
 
 .Jackpot {
   display: block;
   margin: auto;
-  margin-right: -25px;
+  margin-left: -25px;
 }
 .circle .firstP {
   color: #b22222;
-  font-size: 21px;
+  font-size: 37px;
   font-family: iransB;
-  padding-top: 19px;
+  padding-top: 28px;
 }
 .Green {
   border-radius: 50%;
@@ -78,7 +78,7 @@
   }
   .Jackpot {
     width: 134px;
-    margin-right: -20px;
+    margin-left: -20px;
     padding: 0 10px;
     margin-top: -22px;
   }
@@ -90,6 +90,7 @@
   }
   .circle .firstP {
     padding: 0px 10px;
+    font-size: 22px;
   }
   .rectangle {
     width: auto;

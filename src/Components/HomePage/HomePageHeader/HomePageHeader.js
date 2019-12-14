@@ -9,7 +9,11 @@ const HomePageHeader = props => {
         <div className={classes.padding}>
           <h1>Iran Luck</h1>
           <h2>The biggest online lottery powered by cryptocurrencies.</h2>
-          <h3>Weekly Jackpot winner prize <strong>1000 Perfect Money</strong></h3>
+          <h3>
+            Weekly Jackpot winner prize
+            <br />
+            <strong>1000 Perfect Money</strong>
+          </h3>
         </div>
       </div>
     </div>

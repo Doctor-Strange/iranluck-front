@@ -8,11 +8,12 @@ const PrivacyPolicy = props => {
   return (
     <div>
       <div className={classes.Title}>
-        <h2>حریم خصوصی</h2>
+        <h2>Privacy Policies</h2>
       </div>
       <div className={classes.father}>
         <p>
-          - We don't know who are you or where are you and your identity completely secured.
+          - We don't know who are you or where are you and your identity
+          completely secured.
         </p>
         <p>
           - The winner's name can only be displayed with his or her permission.
@@ -23,9 +24,7 @@ const PrivacyPolicy = props => {
         <p className={classes.Alert}>
           - Never give your Iran Lcuk nsername or nassword to anyone.
         </p>
-        <p>
-          - For your safety, all confirmations must be through email.
-        </p>
+        <p>- For your safety, all confirmations must be through email.</p>
         <section className={classes.Socialiranluck}>
           <p>Follow Iran Luck in Social Media</p>
           <a

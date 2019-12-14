@@ -162,7 +162,7 @@ class SignIn extends Component {
                 className={classes.ButtonForm}
                 type="submit"
               >
-                Enter{" "}
+                Login{" "}
               </button>
             )}
             <GoogleLogin

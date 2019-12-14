@@ -2,10 +2,10 @@
   width: 80%;
   position: fixed;
   bottom: 3%;
-  right: 3%;
+  left: 3%;
   background: #ffb74d;
   z-index: 9999;
-  padding: 10px 40px 10px 60px;
+  padding: 10px 60px 10px 40px;
 }
 
 .AlertyBox span {
@@ -40,7 +40,7 @@
 
 .AlertyBox img {
   display: inline-block;
-  margin-left: 10px;
+  margin-right: 10px;
   vertical-align: text-bottom;
 }
 

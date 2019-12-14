@@ -9,11 +9,9 @@ const EventPage = props => {
       <div className={global.Responsive}>
         <h2>Confirm your email address</h2>
         <p>
-          - to
-          <strong> comfirm your email address </strong>
-          go to <strong> {url} </strong>
-          and click on
-          <strong> " confirm my email " </strong>
+          For confirming your email address go to
+          <strong> {url} </strong> and <strong>click</strong> on
+          <strong> " Confirm " </strong>
         </p>
         {/* <h3>توجه !!</h3>
         <p>

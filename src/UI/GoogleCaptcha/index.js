@@ -5,7 +5,7 @@ import classes from "./GoogleCaptcha.css";
 
 const GoogleCaptcha = props => {
   window.recaptchaOptions = {
-    lang: "fa",
+    lang: "en",
     useRecaptchaNet: true,
     removeOnUnmount: false
   };

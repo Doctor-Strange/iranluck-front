@@ -93,7 +93,7 @@
 @media screen and (max-width: 650px) {
   .Quickaccess a img {
     padding: 6px;
-    margin-left: 0px;
+    margin-right: 0px;
     width: 38px;
   }
   .Quickaccess a p {

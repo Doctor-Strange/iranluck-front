@@ -8,6 +8,10 @@
   /* margin-top: 46px; */
 }
 
+.panelControl h3{
+  text-align: center;
+}
+
 .panelControl input {
   max-width: 320px;
 }

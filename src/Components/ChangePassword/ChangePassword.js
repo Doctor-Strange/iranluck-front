@@ -91,7 +91,7 @@ class ChangePassword extends Component {
                 <Spinner />
               </button>
             ) : (
-              <button type="submit">Confirm</button>
+              <button type="submit">Ok</button>
             )}
           </form>
         </div>

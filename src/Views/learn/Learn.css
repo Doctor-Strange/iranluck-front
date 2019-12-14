@@ -7,8 +7,8 @@
 .Steps {
   width: 28%;
   padding-top: 20px;
-  margin-left: 2%;
-  box-shadow: -36px 0px 23px -25px #eaeaea;
+  margin-right: 2%;
+  box-shadow: 36px 0px 23px -25px #eaeaea;
 }
 
 .ViewPart {
@@ -25,7 +25,7 @@
 }
 
 .wi div {
-  margin: 2% 0% 2em 1%;
+  margin: 2% 1% 2em 0%;
   width: 99%;
 }
 
@@ -41,15 +41,15 @@
 
 .Steps .wi div a.Active {
   color: #009688;
-  padding-right: 10px;
-  border-right: 1px solid #009688;
+  padding-left: 10px;
+  border-left: 1px solid #009688;
 }
 
 @media screen and (max-width: 720px) {
   .Steps {
     width: 100%;
     padding-top: 0px;
-    margin-left: 0;
+    margin-right: 0;
     box-shadow: none;
     display: block;
     border-bottom: 2px solid #f1f1f1;

@@ -1,9 +1,9 @@
 .UserId {
-  padding-right: 10px;
+  padding-left: 10px;
 }
 .UserId img {
   width: 54px;
-  margin-left: 10px;
+  margin-right: 10px;
   margin-bottom: 5px;
   display: inline-block;
   vertical-align: middle;
@@ -11,7 +11,7 @@
 .UserId div {
   display: inline-block;
   vertical-align: middle;
-  margin: 0px 0 0px 10px;
+  margin: 0px 10px 0px 0;
 }
 
 .UserId div h3,
@@ -28,7 +28,7 @@
   background-color: #1a2226;
   color: #787878;
   font-size: 14px;
-  padding: 10px 10px 10px 0;
+  padding: 10px 0px 10px 10px;
   margin-top: 20px;
 }
 
@@ -41,16 +41,16 @@
   margin: 14px 0;
   color: #fff;
   display: block;
-  padding-right: 10px;
+  padding-left: 10px;
   font-size: 14px;
 }
 
 .menu li.Active {
-  padding-right: 10px;
+  padding-left: 10px;
 }
 
 .menu li.Active a {
-  border-right: 1px solid #fff;
+  border-left: 1px solid #fff;
 }
 
 .menu li:hover:not(.Active) {

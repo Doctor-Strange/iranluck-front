@@ -30,13 +30,17 @@ const Wallet = props => {
         {/* <NavLink to="/Learn/CreateWallet">+ آموزش ساخت کیف پول دیجیتال</NavLink> */}
         {/* <NavLink to="/Learn/BuyPerfectMoney">+ آموزش خرید پرفکت مانی</NavLink> */}
         <NavLink to="/Learn/BuyPerfectMoney">
-              + How purchase Perfect Money ?
-            </NavLink>
-            <NavLink to="/Learn/Walletaddress">+ How can change your Perfect Money wallet address in Iran Luck account?</NavLink>
+          + How purchase Perfect Money ?
+        </NavLink>
+        <NavLink to="/Learn/Walletaddress">
+          + How can change your Perfect Money wallet address in Iran Luck
+          account?
+        </NavLink>
 
-        <NavLink to="/Learn/ChargeAccount">+ How to charge my Iran Luck account?</NavLink>
+        <NavLink to="/Learn/ChargeAccount">
+          + How to charge my Iran Luck account?
+        </NavLink>
         <NavLink to="/Learn/WithDrawal">+ How can the withdrawal?</NavLink>
-        
       </div>
     </div>
   );

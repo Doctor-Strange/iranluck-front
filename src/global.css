@@ -17,8 +17,8 @@
   clear: both;
   display: block;
   bottom: -8px;
-  right: -4px;
-  left: 0%;
+  right: 0;
+  left: -4px;
   margin: auto;
   border-radius: 50%;
 }
