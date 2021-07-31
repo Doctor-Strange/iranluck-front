@@ -1,7 +1,16 @@
-import { AUTHORIZED, FAIL, REDIRECT_TO_CONFIRM } from "./ActionTypes";
+import { AUTHORIZED, FAIL, REDIRECT_TO_CONFIRM,OPEN_LOGIN_MODAL } from "./ActionTypes";
 import Customer from "../../Axios/Customer";
 import { alertMessenger } from "./alertAction";
 var CryptoJS = require("crypto-js");
+
+
+export const OpenlogInModal = (value = false) => {
+  return {
+    type: OPEN_LOGIN_MODAL,
+    open_it: value
+  };
+};
+
 
 export const AuthRedux = (status = false, data = null) => {
   if (data) {

@@ -6,7 +6,8 @@ import Spinner from "../../UI/Spiner/Spinner";
 import {
   RedirectToConfirm,
   alertMessenger,
-  GetTicket
+  GetTicket,
+  OpenlogInModal
 } from "../../Store/Action";
 
 class TicketBook extends Component {
@@ -77,15 +78,22 @@ class TicketBook extends Component {
     });
   };
 
+  logInControl = Dis => {
+    if (Dis) {
+      this.props.OpenlogInModal(true);
+    }
+  };
+
   render() {
     let Dis =
       (localStorage["user"] || sessionStorage["user"]) && this.props.wallet
         ? false
         : true;
     return (
-      <div className={classes.Container}>
+      <div className={classes.Container} onClick={() => this.logInControl(Dis)}>
         <h3>
-         How many tickets do you want? <span> Purchase 10 tickets and received a free ticket </span>
+          How many tickets do you want?{" "}
+          <span> Purchase 10 tickets and received a free ticket </span>
         </h3>
         <form className={classes.Form} onSubmit={this.onFormSubmit}>
           <input
@@ -127,13 +135,11 @@ const mapDispatchToProps = dispatch => {
   return {
     RedirectToConfirm: data => dispatch(RedirectToConfirm(data)),
     alertMessenger: sms => dispatch(alertMessenger(sms)),
-    GetTicket: data => dispatch(GetTicket(data))
+    GetTicket: data => dispatch(GetTicket(data)),
+    OpenlogInModal: data => dispatch(OpenlogInModal(data))
   };
 };
 
 export default withRouter(
-  connect(
-    mapStateToProps,
-    mapDispatchToProps
-  )(TicketBook)
+  connect(mapStateToProps, mapDispatchToProps)(TicketBook)
 );

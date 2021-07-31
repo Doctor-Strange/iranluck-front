@@ -8,7 +8,8 @@ export {
   RedirectToConfirm,
   walletAddressRequest,
   PanelChangePassword,
-  getDataFromStorage
+  getDataFromStorage,
+  OpenlogInModal
 } from "./Auth";
 export { sendConfirm } from "./Confirm";
 export { alertMessenger } from "./alertAction";

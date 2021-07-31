@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import classes from "./Layout.css";
+import { connect } from "react-redux";
 import Hoc from "../Hoc/Hoc";
 import Footer from "../Views/Footer/Footer";
 import UserBox from "../Containers/userAccount/userAccount";
@@ -7,6 +8,7 @@ import BackDraw from "../UI/BackDraw/BackDraw";
 import Taaj from "../Components/Taaj/Taaj";
 import Menu from "../Containers/Menu/menu";
 import Alerty from "../UI/Alerts/Alerts";
+import { OpenlogInModal } from "../Store/Action";
 
 class Layout extends Component {
   state = {
@@ -15,6 +17,7 @@ class Layout extends Component {
   };
 
   OnDrawelClick = () => {
+    this.props.OpenlogInModal(false);
     this.setState(pre => {
       return {
         DrawelClose: !pre.DrawelClose,
@@ -33,6 +36,12 @@ class Layout extends Component {
       : this.setState({
           ResToggleminu: false
         });
+  };
+
+  componentWillReceiveProps = props => {
+    if (props.open_it) {
+      this.OnDrawelClick();
+    }
   };
 
   render() {
@@ -77,4 +86,16 @@ class Layout extends Component {
   }
 }
 
-export default Layout;
+const mapStateToProps = state => {
+  return {
+    open_it: state.AUTH.open_it
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    OpenlogInModal: data => dispatch(OpenlogInModal(data))
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Layout);
